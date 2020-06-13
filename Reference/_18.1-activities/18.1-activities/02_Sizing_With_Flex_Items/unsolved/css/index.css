@@ -1,0 +1,56 @@
+.flexItem {
+  background-color: lightyellow;
+  margin: 10px;
+  padding: 10px;
+  width: 250px;
+  height: 250px;
+}
+.flexContainer {
+  display: flex;
+  height: 400px;
+  background-color: lightblue;
+  margin: 10px;
+  padding: 10px;
+}
+/*
+The properties above are just used to display your flex container.
+
+We have already set the parent container of the sections to flex.
+
+It is highly recommended to try out these commands in chromes web inspector to see what your code does in real time
+
+@TODO Read the documentation on the following properties if you want more info or get stuck
+- align-item Documentation - https://www.w3schools.com/cssref/css3_pr_align-items.asp
+- justify-content documentation - https://www.w3schools.com/cssref/css3_pr_justify-content.asp
+*/
+.alignItems {
+  /*
+  - under this comment type out the css property justify-content.
+  - Try out the following properties of align-items
+  - center
+  - flex-end
+  - flex-start
+  */
+
+}
+.justifyContent {
+/*
+- under this comment type out the css property justify-content.
+- Try out the following properties of justify-Content
+- center
+- flex-end
+- flex-start
+- space-between
+- space-around
+- space-evenly
+*/
+
+}
+.perfectlyCentered {
+/*
+- Under this comment type out the css property of justify-content: center;
+- Then type out the css property align-items: center;
+- Reload the browser and see for yourslef that your item is perfectly centered!
+*/
+
+}
