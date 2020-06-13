@@ -1,0 +1,146 @@
+.header{
+    height: 250px;
+    max-height: 500px;
+    background-image: url(../images/upsBackground.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+#pagetopic{
+    text-align: center;
+}
+
+.colorContainer{
+    display: inline-block;
+    margin: 15px;
+}
+
+.darkBlue{
+    background-color: 333366;
+}
+
+.darkGrey{
+    background-color: 545454;
+}
+
+.lightGrey{
+    background-color: e3e3e3;
+}
+
+.white{
+    background-color: ffffff;
+}
+
+.lightBlue{
+    background-color: 12a0f6;
+}
+
+.red{
+    background-color: f84848;
+}
+
+.orange{
+
+    background-color: fc7705;
+}
+
+.lightBlue{
+    background-color: 13a0f6;
+}
+
+.lightGreen{
+    background-color: 8abe48;
+}
+
+
+.swatch{
+    height: 200px;
+    width: 170px;
+    border: 1px solid black;
+}
+
+.hexCode{
+    padding: 15px;
+    text-align: center;
+    border: 1px solid black;
+    border-top: none;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.type_container{
+    display: inline-block;
+    margin: 20px;
+}
+
+.bold{
+    font-family: "OpenSans";
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.regular{
+    font-family: "OpenSans";
+    font-size: 30px;
+    font-weight: normal ;
+}
+
+.light{
+    font-family: "OpenSans";
+    font-size: 30px;
+    font-weight: lighter;
+}
+.button{
+    display: inline-block;
+    padding: 15px;
+    margin: 15px;
+    width: 150px;
+    text-align: center;
+    color: white;
+    outline: 1px solid red;
+}
+
+.primary{
+    background-color: #2b459a;
+}
+
+.success{
+    background-color: #8abe48;
+}
+
+.danger{
+    background-color: #f84848;
+}
+
+.warning{
+    background-color: #fc7705;
+}
+
+.info{
+    background-color: #0099fa;
+}
+
+.primaryActive{
+    background-color: #3a66b7;
+}
+
+.successActive{
+    background-color: #668c35;
+}
+
+.dangerActive{
+    background-color: #ad4848;
+}
+
+.warningActive{
+    background-color: #ba7a43;
+}
+
+.infoActive{
+    background-color: #4386ba;
+}
+
+.sectionHead{
+    border-bottom: 8px solid #dddddd;
+}
