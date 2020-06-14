@@ -301,6 +301,7 @@ p { line-height: 1.9; }
 }
 
 
+
 .interest-heading{
     font-family: 'minion-pro', serif;
     font-weight: 600;
@@ -308,9 +309,9 @@ p { line-height: 1.9; }
 }
 
 .interest-content{
-    font-family: 'open-sans', serif;
+    /* font-family: 'open-sans', serif; */
     font-weight: 300;
-    font-size: 20px;
+    font-size: 18px;
     padding-top: 5%;
     padding-bottom: 10%;
 }
