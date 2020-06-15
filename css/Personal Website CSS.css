@@ -300,6 +300,26 @@ p { line-height: 1.9; }
       
 }
 
+.latest-greatestGrid{
+    display: grid;
+    grid-template-columns: 2fr 5fr 4fr;
+    grid-template-areas: 
+    "date adventure movies"
+    "none learning books";
+    grid-gap: 40px;
+    /* padding: 20px; */
+}
+
+.latest-greatestGrid > div {
+    text-align: left;
+    font-size: 30px;
+  }
+
+.interest-content1{ grid-area: date;}
+.interest-content2{ grid-area: adventure;}
+.interest-content3{ grid-area: movies;}
+.interest-content4{grid-area:learning;}
+.interest-content5{grid-area: books;}
 
 
 .interest-heading{
@@ -316,6 +336,14 @@ p { line-height: 1.9; }
     padding-bottom: 10%;
 }
 
+.interest-content1{
+    /* font-family: 'open-sans', serif; */
+    font-weight: 300;
+    font-size: 18px;
+    padding-top: 5%;
+    padding-bottom: 10%;
+}
+
 .footer {
     font-family: 'open-sans', serif;
     font-weight: normal;
@@ -323,6 +351,15 @@ p { line-height: 1.9; }
     display: block;
     text-align: center;
     align-items: center;
+}
+
+.signature{
+    font-family: 'heatwoodregular';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.1rem;
+    padding-bottom: 5%;
+    color: #666666;
 }
 
 .interest-item{
@@ -472,7 +509,8 @@ textarea {
     }
 }
 
-@media (max-width: 992px) {    
+@media (max-width: 992px) {
+    .tm-container {    padding-left: 5%;  padding-right: 5%; }    
     .tm-nav {
         position: absolute;
         background: rgba(0, 0, 0, 0.8);
@@ -508,6 +546,7 @@ textarea {
 }
 
 @media (max-width: 768px) {
+    .tm-container {    padding-left: 1%;  padding-right: 1%; }
     .tm-row { flex-direction: column; }
 
     .tm-col-left,
@@ -557,12 +596,14 @@ textarea {
 }
 
 @media (max-width: 460px) {
+    .tm-container {    padding-left: 1%;  padding-right: 1%; }
     .tm-logo { margin-right: 15px; }
     .tm-sitename { font-size: 1.8rem; }
     .tm-slogon { font-size: 0.8rem; }
 }
 
 @media (max-width: 450px), (min-width: 768px) and (max-width: 830px), (min-width: 992px) and (max-width: 1040px) {
+    .tm-container {    padding-left: 1%;  padding-right: 1%; }
     .tm-service-media { flex-direction: column; }
     .tm-service-media-img-l { flex-direction: column-reverse; }
     .tm-service-text { margin-top: 20px; }
