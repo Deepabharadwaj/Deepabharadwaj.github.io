@@ -12,7 +12,7 @@ body {
     font-weight: 300;
     overflow-x: hidden;
     color: #303030;
-    background-color:whitesmoke;
+    background-color:white;
 }
 
 a { 
@@ -147,11 +147,11 @@ p { line-height: 1.9; }
     position: -webkit-sticky;
     position: sticky;
     top: -20px;
-    background-color: whitesmoke;
+    background-color: white;
     /* box-shadow: 0 4px 12px -12px gray; */
     /* background: whitesmoke transparent 80%; */
     /* padding-right: 10%;  */
-    z-index: 1;
+    /* z-index: 1; */
  }
 
 .tm-col-left {
@@ -199,7 +199,7 @@ p { line-height: 1.9; }
     /* background-color: ; */
     width: auto;   
     max-width: 100%; 
-    background: linear-gradient( whitesmoke 55%, #fdb92d 10%) transparent 80%;
+    background: linear-gradient( white 55%, #FEE0A0 10%) transparent 80%;
    }
 
 #about-me-img {
@@ -388,6 +388,7 @@ p { line-height: 1.9; }
 }
 .fancy-image {
     max-width: 100%;
+    cursor: pointer;
     
 }
 
