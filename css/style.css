@@ -76,7 +76,13 @@ p { line-height: 1.9; }
     /* padding-bottom: 30px;     */
 }
 
-.nav-item { margin-right: 60px; }
+.nav-item { 
+    margin-right: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .nav-item:last-child { margin-right: 0; }
 

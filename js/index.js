@@ -1,51 +1,53 @@
-function replace(location, image)
-{
-    location.src = image;
-    // $(image).fadeTo('slow' , '0.33' );
-    // $("#image").stop().animate({opacity: 0},1000,function(){
-    //     $(this).css({'background-image': "url('/images/alt_image.png')"})
-    //                .animate({opacity: 1},{duration:1000});
-    //  });
-    
+function replace(location, image){ location.src = image; }
+
+class Ball{
+  constructor(context, interval) {
+    this.context = context;
+    this.interval= interval;
+    this.rest_ball = false;
+    this.max_neg = 10;
+    this.x = 10;
+    this.dx = 0.5;
+  }
 }
 
-var context= {};
-var interval = {};
-var rest_ball = {};
-var max_neg = {};
-var x = {};
-var dx = {};
+var ball = {}; 
 
 function init(myCanvas)
 {
-  clearInterval(interval[myCanvas]);
-  context[myCanvas] = myCanvas.getContext('2d');
-  interval[myCanvas] = setInterval(draw,10, myCanvas);
-  rest_ball[myCanvas] = false;
-  max_neg[myCanvas] = 10;
-  x[myCanvas] =10;
-  dx[myCanvas] =0.5;
+  const canvas = document.getElementById(myCanvas);
+  if(!ball[myCanvas] || ball[myCanvas].interval == false){
+    ball[myCanvas] = new Ball(canvas.getContext('2d'), setInterval(draw,10, myCanvas))
+  } else {
+    ball[myCanvas].x = 10;
+    ball[myCanvas].dx = 0.5;
+    ball[myCanvas].max_neg = 10;
+    ball[myCanvas].rest_ball = false;
+  }
 }
 
 function draw(myCanvas)
 {
-  context[myCanvas].clearRect(0,0, 300,300);
-  context[myCanvas].beginPath();
-  context[myCanvas].fillStyle="#fdb92d";
-  // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
-  context[myCanvas].arc(40, x[myCanvas],10,0,Math.PI*2,true);
-  context[myCanvas].closePath();
-  context[myCanvas].fill();
+  var curr_ball = ball[myCanvas];
+  curr_ball.context.clearRect(0,0, 300,300);
+  curr_ball.context.beginPath();
+  curr_ball.context.fillStyle="#fdb92d";
+  curr_ball.context.arc(25, curr_ball.x,10,0,Math.PI*2,true);
+  curr_ball.context.closePath();
+  curr_ball.context.fill();
   // Boundary Logic
-  if( x[myCanvas]< max_neg[myCanvas] || x[myCanvas]>30) 
-    dx[myCanvas] =- dx[myCanvas]; 
-  x[myCanvas] += dx[myCanvas];
-  if(rest_ball[myCanvas] && x[myCanvas] <= -18){
-    clearInterval(interval[myCanvas]);
+  if( curr_ball.x< curr_ball.max_neg || curr_ball.x>30) 
+     curr_ball.dx =- curr_ball.dx; 
+  curr_ball.x += curr_ball.dx;
+  if(curr_ball.rest_ball && curr_ball.x <= -18){
+    clearInterval(curr_ball.interval);
+    curr_ball.interval = false;
   }
 }
 
 function kill(myCanvas) {
-    max_neg[myCanvas] = -20;
-    rest_ball[myCanvas] = true;
+  var curr_ball = ball[myCanvas];
+  curr_ball.max_neg = -30;
+  curr_ball.rest_ball = true;
+  curr_ball.dx *=3;
 }
