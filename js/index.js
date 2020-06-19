@@ -10,20 +10,21 @@ function replace(location, image)
 }
 
 var context= {};
-var ball = {};
-var x=10;
-var dx=0.2;
-var interval;
-var rest_ball = false;
-var max_neg = 0;
+var interval = {};
+var rest_ball = {};
+var max_neg = {};
+var x = {};
+var dx = {};
+
 function init(myCanvas)
 {
+  clearInterval(interval[myCanvas]);
   context[myCanvas] = myCanvas.getContext('2d');
-  interval = setInterval(draw,10, myCanvas);
-  rest_ball = false;
-  max_neg = 10;
-  x=10;
-  dx=0.5;
+  interval[myCanvas] = setInterval(draw,10, myCanvas);
+  rest_ball[myCanvas] = false;
+  max_neg[myCanvas] = 10;
+  x[myCanvas] =10;
+  dx[myCanvas] =0.5;
 }
 
 function draw(myCanvas)
@@ -32,18 +33,19 @@ function draw(myCanvas)
   context[myCanvas].beginPath();
   context[myCanvas].fillStyle="#fdb92d";
   // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
-  context[myCanvas].arc(40,x,10,0,Math.PI*2,true);
+  context[myCanvas].arc(40, x[myCanvas],10,0,Math.PI*2,true);
   context[myCanvas].closePath();
   context[myCanvas].fill();
   // Boundary Logic
-  if( x< max_neg || x>30) dx=-dx; 
-  x+=dx;
-  if(rest_ball && x <= -18){
-    clearInterval(interval);
+  if( x[myCanvas]< max_neg[myCanvas] || x[myCanvas]>30) 
+    dx[myCanvas] =- dx[myCanvas]; 
+  x[myCanvas] += dx[myCanvas];
+  if(rest_ball[myCanvas] && x[myCanvas] <= -18){
+    clearInterval(interval[myCanvas]);
   }
 }
 
-function kill() {
-    max_neg = -20;
-    rest_ball = true;
+function kill(myCanvas) {
+    max_neg[myCanvas] = -20;
+    rest_ball[myCanvas] = true;
 }
