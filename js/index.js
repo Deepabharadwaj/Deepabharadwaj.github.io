@@ -34,7 +34,7 @@ function draw(myCanvas)
   curr_ball.context.clearRect(0,0, 300,300);
   curr_ball.context.beginPath();
   curr_ball.context.fillStyle="#fdb92d";
-  curr_ball.context.arc(25, curr_ball.x,10,0,Math.PI*2,true);
+  curr_ball.context.arc(25, curr_ball.x,8,0,Math.PI*2,true);
   curr_ball.context.closePath();
   curr_ball.context.fill();
   // Boundary Logic

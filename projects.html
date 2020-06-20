@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Deepa Bharadwaj - About Page</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400"
+      rel="stylesheet"
+    />
+    <!-- https://fonts.google.com/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- https://getbootstrap.com/ -->
+    <link href="fontawesome/css/all.min.css" rel="stylesheet" />
+    <!-- https://fontawesome.com/ -->
+    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/ikz0csl.css" />
+    <link rel="stylesheet" href="css/stylesheet.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+   
+  </head>
+
+  <body>
+    <section class="tm-container">
+        <section class="tm-row pt-4">
+            <div class="left">
+            <div class="tm-site-header media">
+                <div class="tm-logo">  </div>
+            </div>
+            </div>
+            <div class="right">
+            <nav class="navbar navbar-expand-lg" id="tm-main-nav">
+                <button
+                class="navbar-toggler toggler-example mr-0 ml-auto"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbar-nav"
+                aria-controls="navbar-nav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+                >
+                <span><i class="fas fa-bars"></i></span>
+                </button>
+                <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
+                <ul class="navbar-nav text-uppercase">
+                    <li class="nav-item  active">
+                    <a class="nav-link tm-nav-link" href="projects.html" onmouseover="init('myCanvas0');" onmouseout="kill('myCanvas0')">PROJECTS</a>
+                    <canvas id="myCanvas0" width="50" height="40"></canvas>
+                    </li>
+                    <li class="nav-item">         
+                    <a class="nav-link tm-nav-link" href="index.html" onmouseover="init('myCanvas1');" onmouseout="kill('myCanvas1')"
+                        >ABOUT <span class="sr-only">(current)</span></a
+                    >
+                    <canvas id="myCanvas1" width="50" height="40" > </canvas>
+                    </li>
+                <li class="nav-item">
+                    <a class="nav-link tm-nav-link" href="resume.html"  onmouseover="init('myCanvas2');" onmouseout="kill('myCanvas2')"
+                        >RESUME</a
+                    >
+                    <canvas id="myCanvas2" width="50" height="40"> </canvas>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link tm-nav-link" href="architecture.html" onmouseover="init('myCanvas3');" onmouseout="kill('myCanvas3')">ARCHITECTURE</a>
+                    <canvas id="myCanvas3" width="50" height="40"> </canvas>
+                    </li>
+                </ul>
+                </div>
+            </nav>
+            </div>
+        </section>
+        <section class="central-container">
+            <div class ="central-image">
+                <hr class="mb-3">
+                <h2 class="mb-5 tm-content-title" id="coming-soon">
+                    <img class = "logo" src="img/under-construction/conf_t.png" style ="transform: scale(0.65)">
+                    Coming Soon 
+                    <img class = "logo" src="img/under-construction/conf_t.png"  style ="transform: scale(0.65) rotateY(180deg)">
+                </h2>
+                <p>
+                    Hold on tight! I’ve been working tirelessly for days, nights, years...lost track, but I’m super jacked up on coffee right now, and this page should be ready to go in 3,2,1... 😴
+                </p>
+            </div>
+            <div class ="central-image">
+                <img src="img/under-construction/under-construction.png" style ="transform: scale(0.9)">
+            </div>
+        </section>
+    </section>
+  </body>
+</html>
