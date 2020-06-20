@@ -194,9 +194,6 @@ p { line-height: 1.9; }
 .tm-row { 
     display: flex;
     flex-direction: row;
-    position: -webkit-sticky;
-    position: sticky;
-    top: -20px;
     background-color: white;
  }
 
@@ -239,6 +236,13 @@ p { line-height: 1.9; }
     height: 5px;
     left: 200px;
     top: 159px;
+}
+
+.yellow-box-bootstrap {
+    background-color: #fdb92d;
+    width: 60px;
+    height: 5px;
+    margin-top: 5px;
 }
 
 .yellow-underline{
@@ -524,6 +528,15 @@ textarea {
 .navbar{
     padding-top: 15px;
     padding-bottom: 0%;
+}
+
+.nav-hold {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -20px;
+    z-index: 100;
+    max-width: 100%;
+    width: 100%;
 }
 
 .form-control::-webkit-input-placeholder { color: white; } /* Edge */  
