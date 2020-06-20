@@ -440,6 +440,13 @@ p { line-height: 1.9; }
     font-family: 'minion-pro', serif;
     font-weight: regular;
     font-size: 3rem; }
+
+.tm-content-subtitle { 
+    font-family: 'minion-pro', serif;
+    font-weight: regular;
+    font-size: 2rem; 
+}
+    
 hr { border-top: 1px solid white; }
 
 .btn {
