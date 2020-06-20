@@ -1,4 +1,6 @@
-function replace(location, image){ location.src = image; }
+function replace(location, image){ 
+  $(location).attr("src", image);
+}
 
 class Ball{
   constructor(context, interval) {
@@ -50,4 +52,33 @@ function kill(myCanvas) {
   curr_ball.max_neg = -30;
   curr_ball.rest_ball = true;
   curr_ball.dx *=3;
+}
+
+$(allInView);
+$(window).scroll(allInView);
+
+
+function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop()+800;
+    var docViewBottom = docViewTop + $(window).height()-200;
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemTop <= docViewTop) && (elemTop > $(window).scrollTop()+100));
+}
+
+function allInView() {
+
+	var elements = document.getElementsByClassName("highlight");
+
+	var i;
+	for (i = 0; i < elements.length; i++) {
+		if (isScrolledIntoView(elements[i])) {
+  			elements[i].style.backgroundPosition = "-100% 0";
+		}
+		else {
+			elements[i].style.backgroundPosition = "0% 0";
+		}
+	}
 }

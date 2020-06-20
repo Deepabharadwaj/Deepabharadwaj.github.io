@@ -84,6 +84,14 @@ p { line-height: 1.9; }
     align-items: center;
 }
 
+.highlight {
+    transition: 0.5s;
+    background-size: 200% 200%;
+    background-image: linear-gradient(90deg, #ffffff00 50%,#ffc3008a 50%);
+    background-position: 0% 0;
+    /* background: linear-gradient(to right, white 55%, #FEE0A0 10%) transparent 80%; */
+}
+
 .nav-item:last-child { margin-right: 0; }
 
 .nav-item.active .tm-nav-link,
@@ -154,10 +162,6 @@ p { line-height: 1.9; }
     position: sticky;
     top: -20px;
     background-color: white;
-    /* box-shadow: 0 4px 12px -12px gray; */
-    /* background: whitesmoke transparent 80%; */
-    /* padding-right: 10%;  */
-    /* z-index: 1; */
  }
 
 .tm-col-left {
@@ -212,16 +216,9 @@ p { line-height: 1.9; }
     max-width: 100%;
     width: 100%;
     height: auto;
-    /* padding-left: 15%;
-    padding-top: 10%; */
-    /* diplay: block;
-    margin: 0 auto; */
-    /* transform: scale(2); */
 }
 .tm-content {
     vertical-align: top;
-    /* max-width: 660px; */
-    /* margin-top: 50px; */
 }
 
 .info-heading{
@@ -239,7 +236,6 @@ p { line-height: 1.9; }
     color: #9CC;
 }
 .icon {
-    /* --ionicon-stroke-width: 100px; */
     padding-left: 5px;
     padding-bottom: 4px;
     align-items: center;
@@ -251,14 +247,8 @@ p { line-height: 1.9; }
     justify-content: left;
 }
 
-
-/* .tm-about { 
-    max-width: 1000px;
-} */
-
 .photo-galary {
     display: grid;
-    /* justify-content: space-between; */
     grid-template-areas: 
     "none   photo1 none2" 
     "none   photo1 none2" 
@@ -313,7 +303,6 @@ p { line-height: 1.9; }
     "date adventure movies"
     "none learning books";
     grid-gap: 40px;
-    /* padding: 20px; */
 }
 
 .latest-greatestGrid > div {
@@ -335,7 +324,6 @@ p { line-height: 1.9; }
 }
 
 .interest-content{
-    /* font-family: 'open-sans', serif; */
     font-weight: 300;
     font-size: 18px;
     padding-top: 5%;
@@ -343,7 +331,6 @@ p { line-height: 1.9; }
 }
 
 .interest-content1{
-    /* font-family: 'open-sans', serif; */
     font-weight: 300;
     font-size: 18px;
     padding-top: 5%;
