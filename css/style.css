@@ -27,7 +27,7 @@ p { line-height: 1.9; }
 
 .central-container {
     width: 100%;
-    height: 100%;
+    height: auto;
     scale: auto;
     display: flex;
     flex-direction: column;
@@ -36,16 +36,32 @@ p { line-height: 1.9; }
 }
 .central-image {
     width: 100%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-content: center;
 }
 
-#coming-soon {
+.central-heading {
     justify-self: center;
     align-self: center;
 }
+
+.landing-page{
+    background-image: url('../img/landing-page.gif'); 
+    background-repeat: no-repeat;
+    background-position: center top 20px;
+}
+
+.top-section-splitter{
+    display: flex;
+    flex-direction: row;
+    max-width:  100%;
+    justify-content: center;
+    align-content: center;
+}
+
 .tm-logo { 
     margin-right: 20px; 
     width: 80px;
@@ -219,8 +235,8 @@ p { line-height: 1.9; }
 
 .yellow-box{
     background-color: #fdb92d;
-    width: 119px;
-    height: 9px;
+    width: 60px;
+    height: 5px;
     left: 200px;
     top: 159px;
 }
