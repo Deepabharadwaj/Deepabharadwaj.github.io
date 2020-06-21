@@ -250,7 +250,12 @@ p { line-height: 1.9; }
     width: auto;   
     max-width: 100%; 
     background: linear-gradient( white 55%, #FEE0A0 10%) transparent 80%;
-   }
+}
+
+.tools-name{
+    font-family: 'minion-pro', serif;
+    font-size: 1.5rem;
+}
 
 #about-me-img {
     max-width: 100%;
