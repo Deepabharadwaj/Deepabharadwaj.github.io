@@ -8,7 +8,7 @@ https://templatemo.com/tm-550-diagoona
 
 body {
     font-family: 'Open Sans', Arial, sans-serif;
-    font-size: 17px;
+    font-size: 1.1rem;
     font-weight: 300;
     overflow-x: hidden;
     color: #303030;
@@ -195,6 +195,7 @@ p { line-height: 1.9; }
     display: flex;
     flex-direction: row;
     background-color: white;
+    padding: 0px 15px;
  }
 
 .tm-col-left {
@@ -366,13 +367,17 @@ p { line-height: 1.9; }
     font-family: 'minion-pro', serif;
     font-weight: 600;
     font-size: 26px;
+    padding-bottom: 10px;
 }
 
+.interest-padding{
+    padding-bottom: 50px;
+}
 .interest-content{
     font-weight: 300;
-    font-size: 18px;
-    padding-top: 5%;
-    padding-bottom: 10%;
+    /* font-size: 18px; */
+    padding-top: 10px;
+    padding-right: 10px;
 }
 
 .interest-content1{
@@ -398,10 +403,6 @@ p { line-height: 1.9; }
     font-size: 1.1rem;
     padding-bottom: 5%;
     color: #666666;
-}
-
-.interest-item{
-    padding-bottom: 0;
 }
 
 .col3-left {
@@ -601,7 +602,7 @@ textarea {
 }
 
 @media (max-width: 768px) {
-    .tm-container {    padding-left: 1%;  padding-right: 1%; }
+    .tm-container {    padding-left: 5%;  padding-right: 5%; }
     .tm-row { flex-direction: column; }
 
     .tm-col-left,
@@ -651,17 +652,18 @@ textarea {
 }
 
 @media (max-width: 460px) {
-    .tm-container {    padding-left: 1%;  padding-right: 1%; }
+    .tm-container {    padding-left: 5%;  padding-right: 5%; }
     .tm-logo { margin-right: 15px; }
     .tm-sitename { font-size: 1.8rem; }
     .tm-slogon { font-size: 0.8rem; }
 }
 
 @media (max-width: 450px), (min-width: 768px) and (max-width: 830px), (min-width: 992px) and (max-width: 1040px) {
-    .tm-container {    padding-left: 1%;  padding-right: 1%; }
+    .tm-container {    padding-left: 5%;  padding-right: 5%; }
     .tm-service-media { flex-direction: column; }
     .tm-service-media-img-l { flex-direction: column-reverse; }
     .tm-service-text { margin-top: 20px; }
     .tm-service-img { margin-right: 0; }
     .tm-service-img-r { margin-left: 0; }
+    body{ font-size: 0.75rem;}
 }
