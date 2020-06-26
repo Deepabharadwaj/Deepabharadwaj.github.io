@@ -584,7 +584,9 @@ textarea {
         top: 44px;
         right: 4px;
     }
-
+    .nav-hold {
+        top: -10px;
+    }
     .navbar-expand-lg .navbar-nav .tm-nav-link {
         /* color: white; */
         font-size: 1.1rem;
