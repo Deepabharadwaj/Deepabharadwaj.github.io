@@ -581,7 +581,6 @@ textarea {
     .tm-nav {
         position: absolute;
         background: rgba(0, 0, 0, 0.8);
-        color: white;
         top: 44px;
         right: 4px;
     }
@@ -627,8 +626,7 @@ textarea {
     }
 
     #tm-main-nav {
-        position: fixed;
-        top: 50px;
+        top: 10px;
         right: 40px;
         padding-bottom: 0;
     }  
