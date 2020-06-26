@@ -86,13 +86,15 @@ p { line-height: 1.9; }
     /* padding: 8px 15px; */
     /* border: 0;
     border-radius: 0; */
-    transform: scale(1.5);
+    transform: scale(1.25);
     /* background-color: rgba(0,0,0,0.5); */
     color: darkslategray;    
 }
 
 /* .navbar-toggler i { transform: skewX(15deg); } */
-
+.navbar-toggler-icon {
+    background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=303030');
+}
 .navbar-expand-lg {
     padding-left: 0;
     padding-right: 0;
@@ -589,16 +591,16 @@ textarea {
     }
     .navbar-expand-lg .navbar-nav .tm-nav-link {
         /* color: white; */
-        font-size: 1.1rem;
-        padding: 13px 20px;
+        font-size: 1.8rem;
+        padding: 13px 0px;
     }
 
     .navbar-collapse , .nav-item{
         display: inline;
-        align-items: center;
+        align-items: left;
     }
     .nav-link{
-        text-align: center;
+        text-align: left;
         margin-right: 0;
     }
 
@@ -637,6 +639,7 @@ textarea {
     #tm-main-nav {
         top: 10px;
         padding-bottom: 0;
+        height: 100vh;
     }  
 
     .tm-bg { flex-direction: column; }
