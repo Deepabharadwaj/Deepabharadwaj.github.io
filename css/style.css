@@ -51,9 +51,15 @@ p { line-height: 1.9; }
 .landing-page{
     background-image: url('../img/landing-page.gif'); 
     background-repeat: no-repeat;
-    background-position: center top 20px;
+    background-position: center top 0px;
+}
+.projects-top{
+    padding: 0 15% ;
 }
 
+.read-more-spacer{
+    margin: 2rem;
+}
 .top-section-splitter{
     display: flex;
     flex-direction: row;
@@ -571,10 +577,8 @@ textarea {
 
 @media (max-width: 1200px) {
     .nav-item { margin-right: 30px; }
-
-    .tm-page-right {
-        padding-left: 30px;
-        padding-right: 30px;
+    .read-more-spacer{
+        margin: 0.5rem;
     }
 }
 
@@ -612,6 +616,9 @@ textarea {
         display: none;
     }
 
+    .project-title{
+        margin-top: 1rem;
+    }
     .tm-content { margin-top: 20px; }
     .tm-site-footer { padding-top: 40px; }
     .tm-col-left { width: 40%; }
@@ -653,6 +660,9 @@ textarea {
 
     .tm-bg-right { height: calc(100% - 200px); }
 
+    .projects-top{
+        padding: 0 0 ;
+    }
     .tm-bg-controls-wrapper {
         margin-left: 0;
         margin-top: 50px;
