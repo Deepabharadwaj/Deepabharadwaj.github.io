@@ -386,8 +386,6 @@ p { line-height: 1.9; }
 .interest-content4{grid-area:learning;}
 .interest-content5{grid-area: books;}
 
-tools-img
-
 .interest-padding{
     padding-bottom: 50px;
 }
@@ -396,6 +394,13 @@ tools-img
     /* font-size: 18px; */
     padding-top: 10px;
     padding-right: 10px;
+}
+
+.interest-heading{
+    font-family: 'minion-pro', serif;
+    font-weight: 600;
+    font-size: 26px;
+    padding-bottom: 10px;
 }
 
 .interest-content1{
