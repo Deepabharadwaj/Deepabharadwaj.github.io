@@ -36,6 +36,7 @@ p { line-height: 1.9; }
 }
 .central-image {
     width: 100%;
+    max-width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -148,6 +149,9 @@ p { line-height: 1.9; }
     flex-direction: row-reverse;
 }
 
+.user-text{
+    padding-right: 5%;
+}
 .nav-item:last-child { margin-right: 0; }
 
 .nav-item.active .tm-nav-link,
@@ -670,6 +674,10 @@ textarea {
 
     .projects-top{
         padding: 0 0 ;
+    }
+
+    .user-text{
+        padding-right: 0;
     }
     .tm-bg-controls-wrapper {
         margin-left: 0;
