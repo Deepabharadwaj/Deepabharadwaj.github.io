@@ -20,96 +20,89 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-   
+
+    <!-- bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
-    <section class="tm-container">
-        <section class="tm-row pt-4 nav-hold">
-            <div class="left">
-            <div class="tm-site-header media">
-                <div class="tm-logo">  </div>
-            </div>
-            </div>
-            <div class="right">
-            <nav class="navbar navbar-expand-lg" id="tm-main-nav">
-                <button
-                class="navbar-toggler toggler-example mr-0 ml-auto"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbar-nav"
-                aria-controls="navbar-nav"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                >
-                <span><i class="fas fa-bars"></i></span>
-                </button>
-                <div class="collapse navbar-collapse tm-nav" id="navbar-nav">
-                <ul class="navbar-nav text-uppercase">
-                    <li class="nav-item  active">
-                    <a class="nav-link tm-nav-link" href="projects.html" onmouseover="init('myCanvas0');" onmouseout="kill('myCanvas0')">PROJECTS</a>
-                    <canvas id="myCanvas0" width="50" height="40"></canvas>
-                    </li>
-                    <li class="nav-item">         
-                    <a class="nav-link tm-nav-link" href="index.html" onmouseover="init('myCanvas1');" onmouseout="kill('myCanvas1')"
-                        >ABOUT <span class="sr-only">(current)</span></a
-                    >
-                    <canvas id="myCanvas1" width="50" height="40" > </canvas>
-                    </li>
-                <li class="nav-item">
-                    <a class="nav-link tm-nav-link" href="resume.html"  onmouseover="init('myCanvas2');" onmouseout="kill('myCanvas2')"
-                        >RESUME</a
-                    >
-                    <canvas id="myCanvas2" width="50" height="40"> </canvas>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link tm-nav-link" href="architecture.html" onmouseover="init('myCanvas3');" onmouseout="kill('myCanvas3')">ARCHITECTURE</a>
-                    <canvas id="myCanvas3" width="50" height="40"> </canvas>
-                    </li>
-                </ul>
-                </div>
-            </nav>
-            </div>
-        </section>
+    <section class="container">
+        <nav class="navbar navbar-expand-lg nav-hold">
+          <a class="navbar-brand" href="#">
+            <img src="img/Logo/Logo_Normal.png" width="50" height="50" alt="">
+          </a>
+          <button
+            class="navbar-toggler collapsed"
+            type="button"
+            data-toggle="collapse"
+            data-target="#tm-main-nav"
+            aria-controls="tm-main-nav"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span><i class="navbar-toggler-icon"></i></span>
+          </button>
+          <div class="navbar collapse navbar-collapse" id="tm-main-nav">
+            <ul class="navbar-nav mr-0 ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link tm-nav-link" href="projects.html" onmouseover="init('myCanvas0');" onmouseout="kill('myCanvas0')">PROJECTS</a>
+                <canvas class = "ball-canvas" id="myCanvas0" width="50" height="40"></canvas>
+              </li>
+              <li class="nav-item">         
+                <a class="nav-link tm-nav-link" href="index.html" onmouseover="init('myCanvas1');" onmouseout="kill('myCanvas1')">ABOUT</a>
+                <canvas class = "ball-canvas" id="myCanvas1" width="50" height="40" > </canvas>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link tm-nav-link" href="resume.html"  onmouseover="init('myCanvas2');" onmouseout="kill('myCanvas2')">RESUME</a>
+                <canvas class = "ball-canvas" id="myCanvas2" width="50" height="40"> </canvas>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link tm-nav-link" href="architecture.html" onmouseover="init('myCanvas3');" onmouseout="kill('myCanvas3')">ARCHITECTURE</a>
+                <canvas class = "ball-canvas" id="myCanvas3" width="50" height="40"> </canvas>
+              </li>
+            </ul>
+          </div>
+        </nav>
 
-        <section class="tm-row central-heading ">
-            <section class="top-section  central-heading landing-page">  <!-- this should have the svg image-->
-                <div class = "signature" style="color: black; text-align: center;"> deepabharadwaj</div>
-                <div>
-                    <h2 class="mb-5 tm-content-title" style="text-align: center;">Designing <br>human experiences</h2>
+        <div class="container projects-top">
+            <div class="row mx-auto" style="display: block;">
+                <div class = "signature" style="color: black; text-align: center; font-size: 1.5rem; padding-bottom: 0;"> deepabharadwaj</div>
+            </div>
+            <div class="row mx-auto landing-page" style="display: block; padding-top: 70px;">
+                <h2 class="mb-5 tm-content-title" style="text-align: center;">Designing <br>human experiences</h2>
+            </div>
+            <div class="row">
+                <div class="col-6" style="display: flex; flex-direction: row-reverse;">
+                    <div class="yellow-box" >  </div>
                 </div>
-                <div class="top-section-splitter">
-                    <div style="width: 100%;  display: flex; flex-direction: row-reverse; margin-right: 6%;">
-                        <div class="yellow-box" >  </div>
-                    </div>
-                    <div style="width: 100%">
-                        <div style= "margin-right: 40%;">
-                        I’m Deepa, a UX designer based in San Francisco. Having an architectural background, I love solving design problems through research & user centered solutions.
-                        </div>
-                        <hr class="mb-2">
-                        <span class="text-uppercase yellow-underline"> Resume  
-                            <img class="icon" src="img/right-arrow.svg">
-                        </span>
-                    </div>
+                <div class="col-6">
+                    I’m Deepa, a UX designer based in San Francisco. Having an architectural background, I love solving design problems through research & user centered solutions.
+                    <hr class="mb-2">
+                    <span class="text-uppercase highlight"> Resume  
+                        <img class="icon" src="img/right-arrow.svg">
+                    </span>
                 </div>
-            </section>
-        </section>
-
-        <section class="tm-row pt-4">
+            </div>   
+        </div>
 
         <div class="container">
             <!-- Aduld-it  -->
             <hr class="mb-5">
-            <div class="row">
-                <div class="col-4" style="text-align: center;">
+            <div class="row ">
+                <div class="col-lg-8 order-lg-12 px-0" style="float: left;">
+                    <img class = "img-fluid" src="img/Homepage/adult-it.png"  onmouseover="replace(this, 'img/Homepage/adult-itOverlay.png')" onmouseout="replace(this, 'img/Homepage/adult-it.png')">
+                </div>
+                <div class="col-lg-4 order-lg-1" style="text-align: center;">
                     <div class="row">
-                        <h2 class="mb-5 tm-content-title" style="text-align: center;">Mentorship App</h2>
+                        <h2 class="mb-5 tm-content-title project-title" style="text-align: left;">Mentorship App</h2>
                     </div>
                     <div class="row">
                         <div class="col-2 yellow-box-bootstrap" > </div>
                         <div class="col-10" style="text-align: left;">
                             <strong>Adult-it </strong> connects young adults to credible and empathetic mentors for guidance as they transition into adulthood, giving them the crucial support that they need to succeed and thrive as adults.
-                            <hr class="mb-5">
+                            <hr class="read-more-spacer">
                             <span class="text-uppercase highlight"> Read More  
                                 <img class="icon" src="img/right-arrow.svg">
                             </span>
@@ -117,26 +110,23 @@
                     </div>
                     
                 </div>
-                <div class="col-8" style="float: left;">
-                    <img src="img/Homepage/adult-it.png"  onmouseover="replace(this, 'img/Homepage/adult-itOverlay.png')" onmouseout="replace(this, 'img/Homepage/adult-it.png')">
-                </div>
             </div>
 
             <!-- Government website -->
             <hr class="mb-5">
             <div class="row">
-                <div class="col-8" >
-                    <img src="img/Homepage/dea.png" style="float: right;" onmouseover="replace(this, 'img/Homepage/gwrOverlay.png')" onmouseout="replace(this, 'img/Homepage/dea.png')">
+                <div class="col-lg-8 px-0" >
+                    <img class = "img-fluid" src="img/Homepage/dea.png" style="float: right;" onmouseover="replace(this, 'img/Homepage/gwrOverlay.png')" onmouseout="replace(this, 'img/Homepage/dea.png')">
                 </div>
-                <div class="col-4" style="text-align: center;">
-                    <div class="row">
-                        <h2 class="mb-5 tm-content-title" style="text-align: left;">Government Website</h2>
+                <div class="col-lg-4" style="text-align: center;">
+                    <div class="row" style="padding-left: 15px;">
+                        <h2 class="mb-5 tm-content-title project-title" style="text-align: left;">Government Website</h2>
                     </div>
-                    <div class="row">
+                    <div class="row px-3" style="padding-left: 15px;">
                         <div class="col-2 yellow-box-bootstrap" > </div>
                         <div class="col-10" style="text-align: left;">
                             Based on user feedback, we restructured the information architecture, conducted responsive and interactive design testing, and designed a better experience for users navigating the dea.gov website.
-                            <hr class="mb-5">
+                            <hr class="read-more-spacer">
                             <span class="text-uppercase highlight"> Read More  
                                 <img class="icon" src="img/right-arrow.svg">
                             </span>
@@ -148,15 +138,18 @@
             <!-- Amigas  -->
             <hr class="mb-5">
             <div class="row">
-                <div class="col-4" style="text-align: center;">
+                <div class="col-lg-8 order-lg-12 px-0" style="float: left;">
+                    <img class = "img-fluid" src="img/Homepage/amigas.png" onmouseover="replace(this, 'img/Homepage/amigasOverlay.png')" onmouseout="replace(this, 'img/Homepage/amigas.png')">
+                </div>
+               <div class="col-lg-4 order-lg-1" style="text-align: center;">
                     <div class="row">
-                        <h2 class="mb-5 tm-content-title" style="text-align: center;">Travel App</h2>
+                        <h2 class="mb-5 tm-content-title project-title" style="text-align: left;">Travel App</h2>
                     </div>
                     <div class="row">
                         <div class="col-2 yellow-box-bootstrap" > </div>
                         <div class="col-10" style="text-align: left;">
                             <strong>Amigas  </strong>is a travel app that aims to hone in and address specific pain points related to women, thus making the travel experience pleasurable by providing a virtual travel companion for solo women travelers.
-                            <hr class="mb-5">
+                            <hr class="read-more-spacer">
                             <span class="text-uppercase highlight"> Read More  
                                 <img class="icon" src="img/right-arrow.svg">
                             </span>
@@ -164,26 +157,23 @@
                     </div>
                     
                 </div>
-                <div class="col-8" style="float: left;">
-                    <img src="img/Homepage/amigas.png" onmouseover="replace(this, 'img/Homepage/amigasOverlay.png')" onmouseout="replace(this, 'img/Homepage/amigas.png')">
-                </div>
             </div>
 
             <!-- Non profit website -->
             <hr class="mb-5">
             <div class="row">
-                <div class="col-8" >
-                    <img src="img/Homepage/nonprofit.png" style="float: right;" onmouseover="replace(this, 'img/Homepage/nprOverlay.png')" onmouseout="replace(this, 'img/Homepage/nonprofit.png')">
+                <div class="col-lg-8 px-0" >
+                    <img class ="img-fluid" src="img/Homepage/nonprofit.png" style="float: right;" onmouseover="replace(this, 'img/Homepage/nprOverlay.png')" onmouseout="replace(this, 'img/Homepage/nonprofit.png')">
                 </div>
-                <div class="col-4" style="text-align: center;">
-                    <div class="row">
-                        <h2 class="mb-5 tm-content-title" style="text-align: center;">Nonprofit Website</h2>
+                <div class="col-lg-4" style="text-align: center;">
+                    <div class="row" style="padding-left: 15px;">
+                        <h2 class="mb-5 tm-content-title project-title" style="text-align: left;">Nonprofit Website</h2>
                     </div>
-                    <div class="row">
+                    <div class="row" style="padding-left: 15px;">
                         <div class="col-2 yellow-box-bootstrap" > </div>
                         <div class="col-10" style="text-align: left;">
                             The original website uses a structured blogging framework, which constrains the site from optimizing user engagement and donations. We see an opportunity to expand the website’s target users to both donors and beneficiaries of the organization.
-                            <hr class="mb-5">
+                            <hr class="read-more-spacer">
                             <span class="text-uppercase highlight"> Read More  
                                 <img class="icon" src="img/right-arrow.svg">
                             </span>
@@ -198,140 +188,145 @@
                 <h2 class="mb-2 tm-content-subtitle" style="text-align: center;">My Skills</h2>
             </div>
             <div class="row">
-                <div class="col-1 yellow-box-bootstrap" > </div>
+                <div class="yellow-box-bootstrap" > </div>
             </div>
             <hr class="mb-5">
             <div class="row"  style="justify-content: space-around; margin: 2%;">
-                <div class="col-3" style="float: center;">
-                    <div class="row  central-image" >
-                        <img src="img/Homepage/ur.png">
+                <div class="col-lg-4 col-md-12 col-sm-12" style="float: center;">
+                    <div class="row" >
+                        <div class="col-lg-12 col-md-3 col-sm-12 pl-0">
+                            <div>
+                                <img class= "img-fluid" src="img/Homepage/ur.png">
+                            <hr class="mb-3">
+                        </div>
+                        </div>
+                        <div class="col-lg-12 col-md-9 col-sm-12 pl-0 user-text" style="display: block;">
+                            <h2 class="mb-2 tm-content-subtitle" style="text-align: left;">User Research</h2>
+                            Before starting any project, I do an extensive amount of research on the target users, using tools such as Google Surveys, User Interviews, etc.   
+                        </div>    
                     </div>
-                    <hr class="mb-3">
-                    <div class="row">
-                        <h2 class="mb-2 tm-content-subtitle" style="text-align: center;">User Research</h2>
-                        <hr class="mb-3">
-                        Before starting any project, I do an extensive amount of research on the target users, using tools such as Google Surveys, User Interviews, etc.   
-                    </div>
+                    <hr class="mb-5">
                 </div>
 
-                <div class="col-3">
-                    <div class="row central-image">
-                        <img src="img/Homepage/ue.png">
+                <div class="col-lg-4 col-md-12 col-sm-12" style="float: center;">
+                    <div class="row" >
+                        <div class="col-lg-12 col-md-3 col-sm-12 pl-0">
+                            <div>
+                                <img class= "img-fluid" src="img/Homepage/ue.png">
+                            <hr class="mb-3">
+                        </div>
+                        </div>
+                        <div class="col-lg-12 col-md-9 col-sm-12 pl-0user-text" style="display: block;">
+                            <h2 class="mb-2 tm-content-subtitle" style="text-align: left;">User Empathy</h2>
+                            Being a designer for over 10 years has instilled a deep sense of empathizing with the user, which is key to designing experiences. 
+                        </div>    
                     </div>
-                    <hr class="mb-3">
-                    <div class="row">
-                        <h2 class="mb-2 tm-content-subtitle" style="text-align: center;">User Empathy</h2>
-                        <hr class="mb-3">
-                        Being a designer for over 10 years has instilled a deep sense of empathizing with the user, which is key to designing experiences. 
-                    </div>
+                    <hr class="mb-5">
                 </div>
 
-                <div class="col-3">
-                    <div class="row  central-image">
-                        <img src="img/Homepage/ui.png">
+                <div class="col-lg-4 col-md-12 col-sm-12" style="float: center;">
+                    <div class="row" >
+                        <div class="col-lg-12 col-md-3 col-sm-12 pl-0">
+                            <div>
+                                <img class= "img-fluid" src="img/Homepage/ui.png">
+                            <hr class="mb-3">
+                        </div>
+                        </div>
+                        <div class="col-lg-12 col-md-9 col-sm-12 pl-0 user-text" style="display: block;">
+                            <h2 class="mb-2 tm-content-subtitle" style="text-align: left;">User Interviews</h2>
+                            Before starting any project, I always do extensive research before selecting my key user group, and an interview question list prepared to develop key user insights.
+                        </div>    
                     </div>
-                    <hr class="mb-3">
-                    <div class="row">
-                        <h2 class="mb-2 tm-content-subtitle" style="text-align: center;">User Interviews</h2>
-                        <hr class="mb-3">
-                        Before starting any project, I always do extensive research before selecting my key user group, and an interview question list prepared to develop key user insights.
-                    </div>
+                    <hr class="mb-5">
                 </div>
             </div>
 
             <!-- Tools -->
-            <hr class="mb-5">
-            <hr class="mb-5">
-            <div class="row-reverse">
+            <div class="row tools">
                 <h2 class="mb-2 tm-content-subtitle" style="text-align: right;">Tools I Use</h2>
-            </div>
-            <div class="row">
-                <div class="col-11" > </div>
-                <div class="col-1 yellow-box-bootstrap" > </div>
+                <div class="w-100"></div>
+                <div class="yellow-box-bootstrap"></div>
             </div>
             <hr class="mb-5">
 
             <div class="row">
-                <div class="col-5 central-image">
-                    <img src="img/Homepage/tools.png">
+                <div class="col-lg-6 central-image tools-img">
+                    <img class="img-fluid" src="img/Homepage/tools.png">
                 </div>
-                <div class="col-1"> </div>
-                <div class="col-6">
+                <div class="col-md-12 col-lg-6">
                     <div class="row">
-                        <div class="col"> 
+                        <div class="col-md-6"> 
                             <div class="row" style="align-items: center;">
                                 <img src="img/Homepage/figma.png">
                                 <div class="tools-name" style="padding-left: 10px;"> Figma</div>
                             </div>
+                            <hr class="mb-3">
                         </div>
-                        <div class="col"> 
+                        <div class="col-md-6"> 
                             <div class="row" style="align-items: center;">
                                 <img src="img/Homepage/ai.png">
                                 <div class="tools-name" style="padding-left: 10px;"> Adobe Illustrator</div>
                             </div>
+                            <hr class="mb-3">
                         </div>                        
                         <div class="w-100"></div>
-                        <hr class="mb-3">
-                        <div class="col"> 
+                        <div class="col-md-6"> 
                             <div class="row" style="align-items: center;">
                                 <img src="img/Homepage/in.png">
                                 <div class="tools-name" style="padding-left: 10px;"> Invision</div>
                             </div>
+                            <hr class="mb-3">
                         </div>                        
-                        <div class="col"> 
+                        <div class="col-md-6"> 
                             <div class="row" style="align-items: center;">
                                 <img src="img/Homepage/ps.png">
                                 <div class="tools-name" style="padding-left: 10px;"> Photoshop</div>
                             </div>
+                            <hr class="mb-3">
                         </div>                        
                         <div class="w-100"></div>
-                        <hr class="mb-3">
-                        <div class="col"> 
+                        <div class="col-md-6"> 
                             <div class="row" style="align-items: center;">
                                 <img src="img/Homepage/id.png">
                                 <div class="tools-name" style="padding-left: 10px;"> Adobe Indesign</div>
                             </div>
+                            <hr class="mb-3">
                         </div>
-                        <div class="col"> 
+                        <div class="col-md-6"> 
                             <div class="row" style="align-items: center;">
                                 <img src="img/Homepage/ae.png">
                                 <div class="tools-name" style="padding-left: 10px;"> Adobe After Effects</div>
                             </div>
+                            <hr class="mb-3">
                         </div>
                     </div>
                 </div>
             </div>
-
-            <hr class="mb-5">
-            <hr class="mb-3">
-            <footer>
-                <section class="flex-container">
-                    <div class="flex-links " id="email0" >
-                        <div> <img class= "fancy-image" src="img/Email.png" onmouseover="replace(this, 'img/Email-hover.png')" onmouseout="replace(this, 'img/Email.png')"> </div>
-                        <div> <span class="text-uppercase yellow-underline"> Email  <img class="icon" src="img/right-arrow.svg"> </span> </div>
-                    </div>
-                    <div class="flex-links">
-                        <div> <img class= "fancy-image" src="img/Linkedin.png" onmouseover="replace(this, 'img/Linkedin-hover.png')" onmouseout="replace(this, 'img/Linkedin.png')"> </div>
-                        <div> <span class="text-uppercase yellow-underline"> LinkedIn  <img class="icon" src="img/right-arrow.svg"> </span> </div>
-        
-                    </div>
-                    <div class="flex-links">
-                        <div> <img class= "fancy-image" src="img/Medium.png" onmouseover="replace(this, 'img/Medium-hover.png')" onmouseout="replace(this, 'img/Medium.png')"> </div>
-                        <div> <span class="text-uppercase yellow-underline"> Medium  <img class="icon" src="img/right-arrow.svg"> </span> </div>
-                </div>
-                </section>
-                <hr class="mb-5">
-                <div class="footer">
-                <div > deepb@umich.edu </div>   
-                <div > Designed and coded by </div>
-                <hr class = "mb-2">
-                <div class = "signature"> deepabharadwaj</div>         
-                </div>
-            </footer>
-            
         </div>
-    </section>
-
+        <hr class="mb-5">
+        <section class="row justify-content-md-center">
+          <div class="col-4 flex-links" >
+            <div> <img class= "fancy-image" src="img/Email.png" onmouseover="replace(this, 'img/Email-hover.png')" onmouseout="replace(this, 'img/Email.png')"> </div>
+            <div> <span class="text-uppercase yellow-underline contact-text"> Email  <img class="icon" src="img/right-arrow.svg"> </span> </div>
+          </div>
+          <div class="col-4 flex-links">
+             <div> <img class= "fancy-image" src="img/Linkedin.png" onmouseover="replace(this, 'img/Linkedin-hover.png')" onmouseout="replace(this, 'img/Linkedin.png')"> </div>
+             <div> <span class="text-uppercase yellow-underline contact-text"> LinkedIn  <img class="icon" src="img/right-arrow.svg"> </span> </div>
+          </div>
+          <div class="col-4 flex-links">
+              <div> <img class= "fancy-image" src="img/Medium.png" onmouseover="replace(this, 'img/Medium-hover.png')" onmouseout="replace(this, 'img/Medium.png')"> </div>
+              <div> <span class="text-uppercase yellow-underline  contact-text"> Medium  <img class="icon" src="img/right-arrow.svg"> </span> </div>
+          </div>
+        </section>
+    
+        <hr class="mb-5">
+        <footer class = "footer">
+          <div > deepb@umich.edu </div>   
+          <div > Designed and coded by </div>
+          <hr class = "mb-2">
+          <div class = "signature"> deepabharadwaj</div>         
+        </footer>
+        
     </section>
   </body>
 </html>
