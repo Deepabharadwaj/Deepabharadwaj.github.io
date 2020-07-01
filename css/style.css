@@ -141,6 +141,7 @@ p { line-height: 1.9; }
     background-size: 200% 200%;
     background-image: linear-gradient(90deg, #ffffff00 50%,#ffc3008a 50%);
     background-position: 0% 0;
+    color: black;
     /* background: linear-gradient(to right, white 55%, #FEE0A0 10%) transparent 80%; */
 }
 
