@@ -455,6 +455,17 @@ p { line-height: 1.9; }
     
 }
 
+.project-img {
+    transition: ease-out-in 0.3s;
+    transform: scale(0.95);
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project-img:hover{
+    transition: ease-in-out 0.3s;
+    transform: scale(1);
+}
 ::-webkit-scrollbar {
     -webkit-appearance: none;
     width: 10px;
