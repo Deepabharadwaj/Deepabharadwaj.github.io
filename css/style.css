@@ -70,6 +70,7 @@ p { line-height: 1.9; }
 }
 
 .tm-logo { 
+    padding-top: 0%;
     margin-right: 20px; 
     width: 80px;
     height: 80px;
@@ -111,7 +112,7 @@ p { line-height: 1.9; }
     padding: 0; 
     font-family: 'minion-pro', serif;
     font-weight: regular;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: darkgrey;
 }
 
@@ -122,7 +123,7 @@ p { line-height: 1.9; }
 }
 
 .nav-item { 
-    padding-top: 15px;
+    padding-top: 0px;
     margin-right: 60px;
     display: flex;
     flex-direction: column;
@@ -584,13 +585,14 @@ textarea {
     padding-right: 0;
     box-sizing: content-box;
     background-color: white;
+    opacity: 0.95;
 
 }
 
 .nav-hold {
     position: -webkit-sticky;
     position: sticky;
-    top: -15px;
+    top: -0px;
     z-index: 100;
     max-width: 100%;
     width: 100%;
@@ -640,7 +642,9 @@ textarea {
         color: #9CC;
     }
     .ball-canvas{
-        display: none;
+        display: flex;
+        position: absolute;
+        z-index: 100;
     }
 
     .project-title{

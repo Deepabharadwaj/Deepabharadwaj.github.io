@@ -1,3 +1,41 @@
+.sticky-hero__media {
+    position: sticky;
+    top: 0;
+    height: 60vh;
+    max-width: 100%;
+    background: url(../img/heroimgmockup.jpg) no-repeat center center;
+    background-size: cover;
+    z-index: -1;
+}
+.sticky-hero__content {
+    position: relative;
+    z-index: 2;
+  
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color:white;
+    opacity: 0.95;
+  }
+
+.sticky-hero--overlay-layer .sticky-hero__media::after { 
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    /* background-color: var(--color-bg); */
+    transition: opacity 1s;
+  }
+  
+.sticky-hero--media-is-fixed .sticky-hero__media {
+    transform: scale(0.9);
+  }
+
 .rounded-box {
     background: rgba(245, 244, 244, 0.3);
     border: 0.5px solid #B5B5B5;

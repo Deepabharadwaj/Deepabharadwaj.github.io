@@ -37,8 +37,8 @@
   <body>
     <section class="container">
       <nav class="navbar navbar-expand-lg nav-hold">
-        <a class="navbar-brand" href="#">
-          <img src="../../img/Logo/Logo_Normal.png" width="50" height="50" alt="">
+        <a class="navbar-brand align-self-start" href="#">
+          <img src="../../img/Logo/Logo_Normal.png" width="40" height="40" alt="" onmouseover="replace(this, '../../img/Logo/Logo_Hover.png')" onmouseout="replace(this, '../../img/Logo/Logo_Normal.png')">
         </a>
         <button
           class="navbar-toggler collapsed"
@@ -56,7 +56,7 @@
               <a class="nav-link tm-nav-link" href="../../projects.html" onmouseover="init('myCanvas0');" onmouseout="kill('myCanvas0')">PROJECTS</a>
               <canvas class = "ball-canvas" id="myCanvas0" width="50" height="40"></canvas>
             </li>
-            <li class="nav-item active">         
+            <li class="nav-item tm-nav-link">         
               <a class="nav-link tm-nav-link" href="../../index.html" onmouseover="init('myCanvas1');" onmouseout="kill('myCanvas1')">ABOUT</a>
               <canvas class = "ball-canvas" id="myCanvas1" width="50" height="40" > </canvas>
             </li>
@@ -71,10 +71,62 @@
           </ul>
         </div>
       </nav>
-      <hr class="mb-4">
+      <!-- <hr class="mb-4"> -->
 
-      <section class="container">
-        <div class="row">
+      <section class="sticky-hero js-sticky-hero">
+        <div class="sticky-hero__media" aria-hidden="true"></div>
+      
+        <div class="sticky-hero__content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9 pr-5">
+                <h2 class="row tm-content-title align-items-center"> Bark App <span class="ml-2" style="font-size: smaller;"> - smart collar app for dogs </span></h2>
+                <div class="row mb-4">
+                  <div>
+                    <em>Our proposal was selected to be in the Top 10 Finalists out of 137 teams worldwide</em>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div> The hackathon challenge brief was to design the onboarding process for a smart collar solution for dog owners–how to set up collar and how to set up both the dog and the user’s profile.</div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-6 pl-0">
+                    <strong>My Role:</strong>
+                  </div>
+                  <div class="col-6">
+                    <strong>Skills:</strong>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-6 pl-0">
+                    Lead project management & UX research. Collaborated on lo-fidelity & hi-fidelity wireframes, created UI style tile guide
+                  </div>
+                  <div class="col-6">
+                    Project Management, UX/ Research, Wire Frames, Hi-Fi Mocks, Prototyping
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-6 pl-0">
+                    <strong>Project Team</strong>
+                  </div>
+                  <div class="col-6">
+                    <strong>Project Duration</strong>
+                  </div>
+                </div>
+                <div class="row mb-4">
+                  <div class="col-6 pl-0">
+                    Deepa,Adriana, Hattie, Tanya, Daria
+                  </div>
+                  <div class="col-6">
+                    1 day
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+        <!-- <div class="row">
           <div class="col-md-5 pr-5">
             <div class="yellow-box row"> </div>
             <hr class="mb-3">
@@ -106,9 +158,10 @@
           <div class="col-md-7 px-0">
             <img class="img-fluid" src="img/hero.png">
           </div>
-        </div>
+        </div> -->
 
         <hr class="mb-5">
+      <section class="container">
 
         <div class="row yellow-box"> </div>
         <hr class="mb-3">
@@ -117,7 +170,7 @@
             <h2 class="row tm-content-title row"> The Challenge</h2>
           </div>
           <div class="col-md-8 px-0">
-            <div class="row mb-4">
+            <div class="row mb-4 mr-0">
               Dog parents need peace of mind that their pets can be found quickly and efficiently if they wander away from home. The American Humane Association estimates that 1 out of 3 pets become lost at some point in their lifetime and according to the Coalition for Reuniting Pets and Families, less than 23% of lost pets in the U.S. are reunited with their owners. 
             </div>
             <div class="row mb-4">
@@ -137,7 +190,7 @@
 
         <hr class="mb-5">
 
-        <div class="row" >
+        <div class="row mr-0" >
           <div class="col-12 ">
             <div class="row yellow-box mb-4"> 
             </div>
@@ -244,7 +297,6 @@
               </div>
             </div>
           </div>
-        </div>
   
         <hr class="mb-5">      
         <div class="row yellow-box mb-4"> </div>
@@ -316,7 +368,7 @@
           <div class="row mb-4">
             We researched the UI style of Leverege, and drew inspiration from their simple, bright, playful colors to design and brand the Bark app interface.
           </div>
-          <div class="row mb-4">
+          <div class="row mb-4 mr-0">
             <img class="img-fluid" src = "img/styletile.png">
           </div>
         </div>
@@ -348,7 +400,7 @@
           <h2 class="row tm-content-title row">Hi-Fidelity Prototype</h2>
         </div>
         <div class="col-md-8 px-0">
-          <div class="row mb-4">
+          <div class="row mb-4 mr-0">
             We fixed the minor UI and visual design issues discovered through usability testing and spent most of our time ideating a better way to convey the value of integrating Prime Video with social accounts since this was such a critical piece of our value proposition
           </div>
           <div class="row mb-4">
@@ -359,7 +411,7 @@
               </span>
             </a>
           </div>
-          <div class="row mb-4">
+          <div class="row mb-4 mr-0">
             <video width="100%" controls autoplay>
               <source src="img/prototype.mp4" type="video/mp4">
               Video not supported in this browser.
@@ -451,11 +503,11 @@
                     <div class="col-3"  style="display: flex; flex-direction: row-reverse;">
                       <div class="row yellow-box mt-3"></div>
                     </div>
-                    <div class="col-7 ml-4 ">
+                    <div class="col-8 ml-4 ">
                       <div class="row " style="font-size: 2rem !important; font-family: 'minion-pro', serif;">
-                        <strong> Adult-it good one </strong>
+                        <strong> Adult-it Mentorship App</strong>
                       </div>
-                      <div class="row" style="text-align: left;">
+                      <div class="row mr-2" style="text-align: left;">
                         Increasing workplace readiness for Underprivileged Young Adults looking for guidance transitioning into adulthood
                       </div>
                     </div>
