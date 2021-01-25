@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../../js/index.js"></script>
-    <script src="js/index.js"></script>
+    <script src="../common/js/index.js"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
     <!-- bootstrap -->
@@ -73,9 +73,8 @@
         </div>
       </nav>
 
-      <section class="sticky-hero js-sticky-hero">
-    <div class="sticky-hero__media" aria-hidden="true"></div>
-      
+    <section class="sticky-hero js-sticky-hero">
+      <div class="sticky-hero__media" aria-hidden="true"></div>
         <div class="sticky-hero__content">
           <div class="container">
             <div class="row">
@@ -125,7 +124,8 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <hr class="mb-5">
       <section class="container">
@@ -464,58 +464,61 @@
               </ol>
               <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active" >
-                  
-                  <img class="d-block w-100 car-img" src="../common/adultit.png" class="d-block w-100" id="holder1" alt="...">
-                  <div class="row carousel-caption carousel-banner" style="z-index: 1;" onmouseover="BlurCarouselImg('holder1')"  onmouseout="ResetCarouselImg('holder1')">
-                    <div class="col-3"  style="display: flex; flex-direction: row-reverse;">
-                      <div class="row yellow-box mt-3"></div>
-                    </div>
-                    <div class="col-8 ml-4 ">
-                      <div class="row " style="font-size: 2rem !important; font-family: 'minion-pro', serif;">
-                        <strong> Adult-it</strong>
-                      </div>
-                      <div class="row mr-2" style="text-align: left;">
-                        Increasing workplace readiness for Underprivileged Young Adults looking for guidance transitioning into adulthood
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-                <div class="carousel-item">
-                  
-                    <img class="d-block w-100 car-img" src="../common/amigas.png" class="d-block w-100" id="holder2" alt="...">
-                    <div class="row carousel-caption carousel-banner" style="z-index: 1;" onmouseover="BlurCarouselImg('holder2')"  onmouseout="ResetCarouselImg('holder2')">
+                  <a href="../adultit/index.html">
+                    <img class="d-block w-100 car-img" src="../common/adultit.png" class="d-block w-100" id="holder1" alt="...">
+                    <div class="row carousel-caption carousel-banner" style="z-index: 1;" onmouseover="BlurCarouselImg('holder1')"  onmouseout="ResetCarouselImg('holder1')">
                       <div class="col-3"  style="display: flex; flex-direction: row-reverse;">
                         <div class="row yellow-box mt-3"></div>
                       </div>
-                      <div class="col-7 ml-4 ">
+                      <div class="col-8 ml-4 ">
                         <div class="row " style="font-size: 2rem !important; font-family: 'minion-pro', serif;">
-                          <strong> Adult-it good one </strong>
+                          <strong> Adult-it</strong>
                         </div>
-                        <div class="row" style="text-align: left;">
+                        <div class="row mr-2" style="text-align: left;">
                           Increasing workplace readiness for Underprivileged Young Adults looking for guidance transitioning into adulthood
                         </div>
                       </div>
                     </div>
-                  
+                  </a>
+
                 </div>
                 <div class="carousel-item">
-                  
-                  <img class="d-block w-100 car-img" src="../common/amazon.png" class="d-block w-100" id="holder3" alt="...">
+                      
+                  <img class="d-block w-100 car-img" src="../common/amazon.png" class="d-block w-100" id="holder2" alt="...">
+                  <div class="row carousel-caption carousel-banner" style="z-index: 1;" onmouseover="BlurCarouselImg('holder2')"  onmouseout="ResetCarouselImg('holder2')">
+                    <div class="col-3"  style="display: flex; flex-direction: row-reverse;">
+                      <div class="row yellow-box mt-3"></div>
+                    </div>
+                    <div class="col-7 ml-4 ">
+                      <div class="row " style="font-size: 2rem !important; font-family: 'minion-pro', serif;">
+                        <strong>Prime Video Redesign</strong>
+                      </div>
+                      <div class="row" style="text-align: left;">
+                        Our aim was to enhance the user experience and value proposition of an existing video streaming platform on desktop
+                      </div>
+                    </div>
+                  </div>
+                
+                </div>
+
+                <div class="carousel-item">
+                      
+                  <img class="d-block w-100 car-img" src="../common/amigas.png" class="d-block w-100" id="holder3" alt="...">
                   <div class="row carousel-caption carousel-banner" style="z-index: 1;" onmouseover="BlurCarouselImg('holder3')"  onmouseout="ResetCarouselImg('holder3')">
                     <div class="col-3"  style="display: flex; flex-direction: row-reverse;">
                       <div class="row yellow-box mt-3"></div>
                     </div>
                     <div class="col-7 ml-4 ">
                       <div class="row " style="font-size: 2rem !important; font-family: 'minion-pro', serif;">
-                        <strong> Adult-it good one </strong>
+                        <strong>Amigas Travel App</strong>
                       </div>
                       <div class="row" style="text-align: left;">
-                        Increasing workplace readiness for Underprivileged Young Adults looking for guidance transitioning into adulthood
+                        A travel app that addresses specific pain points related to women by providing a virtual travel companion for solo women travelers.
                       </div>
                     </div>
                   </div>
-              </div>
+                </div>
+
               </div>
               <a class="carousel-control-prev" href="#carousel-two" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
