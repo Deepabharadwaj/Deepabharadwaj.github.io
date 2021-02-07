@@ -626,16 +626,16 @@ textarea {
     background-color: #FEDE9C;
 }
 .c2 {
-    background-color: #C3DAE0;
+    background-color: #D7EDF1;
 }
 .c3 {
-    background-color: #E1E2FA;
+    background-color: #DBDCF5;
 }
 .c4 {
-    background-color: #FFF1F1;
+    background-color:#D3FAE7
 }
 .c5 {
-    background-color: #FEDE9C;
+    background-color: #F6E4E4;
 }
 .form-control::-webkit-input-placeholder { color: white; } /* Edge */  
 .form-control:-ms-input-placeholder { color: white; } /* Internet Explorer 10-11 */  
