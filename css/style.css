@@ -617,6 +617,45 @@ textarea {
     width: 100%;
 }
 
+.footer-connected{
+    font-family: 'minion-pro', serif;
+    font-weight: semi-bold;
+    font-size: 24px;
+}
+
+.footer-city {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: regular;
+    font-size: 14px;
+    color: #777777;
+}
+
+.footer-email {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: regular;
+    font-size: 18px;
+}
+
+.footer-design{
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: regular;
+    font-size: 14px;
+    color: #666666;
+}
+
+.footer-coding {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-weight: light;
+    font-size: 14px;
+    color: #777777;
+}
+
+.contact-text{
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 14px;
+    color: #3d3d3d;
+}
+
 .bottom-line-box{
     height: 16px;
     width: 20%;
