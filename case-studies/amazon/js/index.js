@@ -23,6 +23,7 @@ function typeWriter() {
 }
 
 var reset = false;
+var dispayed = false;
 const updatebox3 = async () => {
     if(reset === false)
     {
@@ -30,6 +31,7 @@ const updatebox3 = async () => {
         first.style.display = "none";
         var second = document.getElementById("chat2_new");
         second.style.display = "block";
+        dispayed = true;
     }
 }
 
@@ -54,8 +56,11 @@ const updatebox1 = async () => {
 }
 
 function chatupdate() {
-    reset = false;
-    setTimeout(updatebox1, 2000);
+    if(dispayed === false)
+    {
+        reset = false;
+        setTimeout(updatebox1, 2000);
+    }
 }
 
 function chatreset() {
@@ -68,6 +73,19 @@ function chatreset() {
     var fourth = document.getElementById("chat2_new");
     fourth.style.display = "none";
     reset = true;
+    dispayed = false;
+}
+
+var observer = new IntersectionObserver(function(entries) {
+    if(entries[0].isIntersecting === true && entries[0]['intersectionRatio'] > 0.5){
+      chatupdate();
+    } else {
+      chatreset();
+    }
+}, { threshold: [0.1, 1] });
+
+window.onload=function() {
+    observer.observe(document.querySelector("#chatwindow"));
 }
 
 

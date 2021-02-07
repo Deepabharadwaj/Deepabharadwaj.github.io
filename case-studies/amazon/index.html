@@ -273,20 +273,6 @@
           </div>  
         </div>
 
-        <script>
-          var observer = new IntersectionObserver(function(entries) {
-            if(entries[0].isIntersecting === true && entries[0]['intersectionRatio'] > 0.5){
-              console.log('Element is fully visible in screen');
-              chatupdate();
-            } else {
-              console.log('Element is not visible');
-              chatreset();
-            }
-          }, { threshold: [0.1, 1] });
-
-          observer.observe(document.querySelector("#chatwindow"));
-        </script>
-
         <hr class="mb-5">
         <hr class="mb-5">
 
