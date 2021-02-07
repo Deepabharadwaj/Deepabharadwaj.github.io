@@ -1,11 +1,3 @@
-/*
-
-TemplateMo 550 Diagoona
-
-https://templatemo.com/tm-550-diagoona
-
-*/
-
 body {
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 1.0rem;
@@ -13,6 +5,20 @@ body {
     overflow-x: hidden;
     color: #303030;
     background-color:white;
+
+    /* Fade in part */
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+     }
 }
 
 a { 
