@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../../js/index.js"></script>
+    <script src="js/index.js"></script>
     <script src="../common/js/index.js"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
@@ -49,7 +50,7 @@
         </button>
         <div class="navbar collapse navbar-collapse" id="tm-main-nav">
           <ul class="navbar-nav mr-0 ml-auto">
-            <li class="nav-item">
+            <li class="nav-item  active">
               <a class="nav-link tm-nav-link" href="../../projects.html" onmouseover="init('myCanvas0');" onmouseout="kill('myCanvas0')">PROJECTS</a>
               <canvas class = "ball-canvas" id="myCanvas0" width="50" height="40"></canvas>
             </li>
@@ -172,8 +173,19 @@
                   We collaborated on Zoom, to brainstorm potential features for the app- performing affinity mapping & voting on prioritizing the features to be implemented.</p>
                 </div>
                 <div class="row mb-4">
-                  <img class="img-fluid" src = "img/collab.png">
+                  <img class="img-fluid" src = "img/collab.png" id="myImg">
                 </div>
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                  <!-- The Close Button -->
+                  <span class="close">&times;</span>
+
+                  <!-- Modal Content (The Image) -->
+                  <img class="modal-content" id="img01">
+
+                </div>
+
                 <hr class="mb-5">
                 <div class="row mb-4">
                   Based on our Affinity Mapping and Feature Prioritization Matrix, we honed in on these key features to be implemented in the Bark App:
@@ -540,16 +552,16 @@
       <hr class="mb-5">
             
       <hr class="mb-5">
-      <section class="row justify-content-lg-around">
-        <div class="col-2 flex-links" >
+      <section class="row justify-content-around">
+        <div class="col-lg-2 col-md-3 col-sm-2 flex-links" >
           <div> <img class= "fancy-image" src="../../img/Email.png" onmouseover="replace(this, '../../img/Email-hover.png')" onmouseout="replace(this, '../../img/Email.png')"> </div>
           <div> <span class="text-uppercase yellow-underline contact-text"> Email  <img class="icon" src="../../img/right-arrow.svg"> </span> </div>
         </div>
-        <div class="col-2 flex-links">
+        <div class="col-lg-2  col-md-3  col-sm-2 flex-links">
            <div> <img class= "fancy-image" src="../../img/Linkedin.png" onmouseover="replace(this, '../../img/Linkedin-hover.png')" onmouseout="replace(this, '../../img/Linkedin.png')"> </div>
            <div> <span class="text-uppercase yellow-underline contact-text"> LinkedIn  <img class="icon" src="../../img/right-arrow.svg"> </span> </div>
         </div>
-        <div class="col-2 flex-links">
+        <div class="col-lg-2 col-md-3 col-sm-2 flex-links">
             <div> <img class= "fancy-image" src="../../img/Medium.png" onmouseover="replace(this, '../../img/Medium-hover.png')" onmouseout="replace(this, '../../img/Medium.png')"> </div>
             <div> <span class="text-uppercase yellow-underline  contact-text"> Medium  <img class="icon" src="../../img/right-arrow.svg"> </span> </div>
         </div>
