@@ -105,3 +105,7 @@ window.onload=function() {
     });
   });
 }
+
+$(function(){
+      $("#footer").load("common/footer.html"); 
+    });
