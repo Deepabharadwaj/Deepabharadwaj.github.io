@@ -37,7 +37,7 @@
 
 .rounded-box {
     background: rgba(245, 244, 244, 0.3);
-    border: 0.5px solid #B5B5B5;
+    border: 0.5px solid #dedede;
     box-sizing: border-box;
     border-radius: 10px;
     padding: 10px;
@@ -139,4 +139,67 @@
 
 .car-img {
     transition: all 2.5s;
+}
+
+.myul {
+  list-style: none; /* Remove default bullets */
+}
+
+.myul .myli::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: #b5b5b5; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.myul .myli-big::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  font-size: 2rem;
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 0.9em; /* Also needed for space (tweak if needed) */
+  position: relative;
+  top: 5px;
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.myul .sp1::before {
+  color: #DBEDF1; /* Change the color */
+}
+
+.myul .sp2::before {
+  color: #ADC9CF; /* Change the color */
+}
+.myul .sp3::before {
+  color: #6A9CA7; /* Change the color */
+}
+.myul .sp4::before {
+  color: #377482; /* Change the color */
+}
+
+
+.myol {
+  list-style: none; /* Remove default bullets */
+  counter-reset: my-awesome-counter;
+}
+
+.myol .myli {
+  /* margin: 0 1rem 0.5rem 0; */
+  counter-increment: my-awesome-counter;
+  position: relative;
+
+}
+.myol .myli::before {
+  /* list-style-type: decimal; */
+  content: counter(my-awesome-counter)  ;
+  color: #FDB92D; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  font-size: 1.25rem;
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  position: relative;
+  left: -5px;
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
