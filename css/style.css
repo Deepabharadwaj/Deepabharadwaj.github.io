@@ -633,6 +633,26 @@ textarea {
     width: 100%;
 }
 
+.reco-container {
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+
+.carousel .carousel-control-next-icon {
+    width: 100%;
+    padding: 10px;
+    background-image: url("../img/recoarrow.svg");
+    position: absolute;
+    transform: scale(2.5);
+    top: 100px;
+}
+
+.carousel .carousel-control-next{
+    right: -20%;
+}
+
+
 .footer-connected{
     font-family: 'minion-pro', serif;
     font-weight: semi-bold;
