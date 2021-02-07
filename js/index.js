@@ -82,6 +82,7 @@ function allInView() {
 		}
 	}
 }
+var nav_active_id = "nav-about";
 
 window.onload=function() {
   var arrows = document.querySelectorAll('.read-more');
@@ -104,6 +105,10 @@ window.onload=function() {
       animation.pause();
     });
   });
+
+  var nav_active = document.getElementById(nav_active_id);
+  console.log(nav_active);
+  nav_active.classList.add("active");
 }
 
 $(function(){
