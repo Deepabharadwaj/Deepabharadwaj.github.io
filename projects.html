@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://use.typekit.net/ikz0csl.css" />
     <link rel="stylesheet" href="css/stylesheet.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <script src="js/index.js"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
@@ -79,22 +80,45 @@
                 </div>
                 <div class="col-6">
                     I’m Deepa, a UX designer based in San Francisco. Having an architectural background, I love solving design problems through research & user centered solutions.
-                    <hr class="mb-2">
-                    <span class="text-uppercase highlight"> Resume  
-                        <img class="icon" src="img/right-arrow.svg">
-                    </span>
-                </div>
+                    <hr class="read-more-spacer">
+                    <a href="docs/deepa-bharadwaj-resume.pdf">
+                        <button type="button" class="btn rounded read-more">Resume <img class="read-more-arrow" src="img/right-arrow.svg"></button>
+                    </a>
+            </div>
             </div>   
         </div>
 
+        <!-- Non profit website -->
+        <hr class="mb-5">
+        <div class="row">
+            <div class="col-lg-8 px-0" >
+                <img class ="img-fluid project-img" src="case-studies/amazon/img/hero.jpg">
+            </div>
+            <div class="col-lg-4" style="text-align: center; position: relative; align-self: center;">
+                <div class="row" style="padding-left: 15px;">
+                    <h2 class="mb-5 tm-content-title project-title" style="text-align: left;">Amazon Prime Video</h2>
+                </div>
+                <div class="row" style="padding-left: 15px;">
+                    <div class="col-2 yellow-box-bootstrap" > </div>
+                    <div class="col-10" style="text-align: left;">
+                        Enhancing the user experience and value proposition of an existing video streaming platform on desktop, adding personalization as well as a social component to Amazon Prime Video
+                        <hr class="read-more-spacer">
+                        <a href="case-studies/amazon/index.html">
+                            <button type="button" class="btn rounded read-more">Read More <img class="read-more-arrow" src="img/right-arrow.svg"></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div class="container">
             <!-- Aduld-it  -->
             <hr class="mb-5">
             <div class="row ">
                 <div class="col-lg-8 order-lg-12 px-0" style="float: left;">
-                    <img class = "img-fluid project-img" src="img/Homepage/adult-it.png"  onmouseover="replace(this, 'img/Homepage/adult-itOverlay.png')" onmouseout="replace(this, 'img/Homepage/adult-it.png')">
+                    <img class = "img-fluid project-img" src="case-studies/adultit/img/hero.png">
                 </div>
-                <div class="col-lg-4 order-lg-1" style="text-align: center;">
+                <div class="col-lg-4 order-lg-1" style="text-align: center; position: relative; align-self: center;">
                     <div class="row">
                         <h2 class="mb-5 tm-content-title project-title" style="text-align: left;">Mentorship App</h2>
                     </div>
@@ -104,9 +128,9 @@
                             <strong>Adult-it </strong> connects young adults to credible and empathetic mentors for guidance as they transition into adulthood, giving them the crucial support that they need to succeed and thrive as adults.
                             <hr class="read-more-spacer">
                             <a href="case-studies/adultit/index.html">
-                                <span class="text-uppercase highlight"> Read More  
-                                    <img class="icon" src="img/right-arrow.svg">
-                                </span>
+                                <button type="button" class="btn rounded read-more">
+                                    Read More <img class="read-more-arrow" src="img/right-arrow.svg">
+                                </button>
                             </a>
                         </div>
                     </div>
@@ -114,24 +138,24 @@
                 </div>
             </div>
 
-            <!-- Government website -->
+            <!-- Bark -->
             <hr class="mb-5">
             <div class="row">
                 <div class="col-lg-8 px-0" >
-                    <img class = "img-fluid project-img" src="img/Homepage/dea.png" style="float: right;" onmouseover="replace(this, 'img/Homepage/gwrOverlay.png')" onmouseout="replace(this, 'img/Homepage/dea.png')">
+                    <img class = "img-fluid project-img" src="case-studies/bark/img/hero.png" style="float: right;">
                 </div>
-                <div class="col-lg-4" style="text-align: center;">
+                <div class="col-lg-4" style="text-align: center; position: relative; align-self: center;">
                     <div class="row" style="padding-left: 15px;">
-                        <h2 class="mb-5 tm-content-title project-title" style="text-align: left;">Government Website</h2>
+                        <h2 class="mb-5 tm-content-title project-title" style="text-align: left;">UX Hackathon 2020</h2>
                     </div>
                     <div class="row px-3" style="padding-left: 15px;">
                         <div class="col-2 yellow-box-bootstrap" > </div>
                         <div class="col-10" style="text-align: left;">
-                            Based on user feedback, we restructured the information architecture, conducted responsive and interactive design testing, and designed a better experience for users navigating the dea.gov website.
+                            An onboarding process for a smart collar solution for dog owners, as well as showcasing the power of IoT to track pets' health stats.
                             <hr class="read-more-spacer">
-                            <span class="text-uppercase highlight"> Read More  
-                                <img class="icon" src="img/right-arrow.svg">
-                            </span>
+                            <a href="case-studies/bark/index.html">
+                                <button type="button" class="btn rounded read-more">Read More <img class="read-more-arrow" src="img/right-arrow.svg"></button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -141,9 +165,9 @@
             <hr class="mb-5">
             <div class="row">
                 <div class="col-lg-8 order-lg-12 px-0" style="float: left;">
-                    <img class = "img-fluid project-img" src="img/Homepage/amigas.png" onmouseover="replace(this, 'img/Homepage/amigasOverlay.png')" onmouseout="replace(this, 'img/Homepage/amigas.png')">
+                    <img class = "img-fluid project-img" src="case-studies/amigas/img/hero.jpg">
                 </div>
-               <div class="col-lg-4 order-lg-1" style="text-align: center;">
+               <div class="col-lg-4 order-lg-1" style="text-align: center; position: relative; align-self: center;">
                     <div class="row">
                         <h2 class="mb-5 tm-content-title project-title" style="text-align: left;">Travel App</h2>
                     </div>
@@ -152,35 +176,12 @@
                         <div class="col-10" style="text-align: left;">
                             <strong>Amigas  </strong>is a travel app that aims to hone in and address specific pain points related to women, thus making the travel experience pleasurable by providing a virtual travel companion for solo women travelers.
                             <hr class="read-more-spacer">
-                            <span class="text-uppercase highlight"> Read More  
-                                <img class="icon" src="img/right-arrow.svg">
-                            </span>
+                            <a href="case-studies/amigas/index.html">
+                                <button type="button" class="btn rounded read-more">Read More <img class="read-more-arrow" src="img/right-arrow.svg"></button>
+                            </a>
                         </div>
                     </div>
                     
-                </div>
-            </div>
-
-            <!-- Non profit website -->
-            <hr class="mb-5">
-            <div class="row">
-                <div class="col-lg-8 px-0" >
-                    <img class ="img-fluid project-img" src="img/Homepage/nonprofit.png" style="float: right;" onmouseover="replace(this, 'img/Homepage/nprOverlay.png')" onmouseout="replace(this, 'img/Homepage/nonprofit.png')">
-                </div>
-                <div class="col-lg-4" style="text-align: center;">
-                    <div class="row" style="padding-left: 15px;">
-                        <h2 class="mb-5 tm-content-title project-title" style="text-align: left;">Nonprofit Website</h2>
-                    </div>
-                    <div class="row" style="padding-left: 15px;">
-                        <div class="col-2 yellow-box-bootstrap" > </div>
-                        <div class="col-10" style="text-align: left;">
-                            The original website uses a structured blogging framework, which constrains the site from optimizing user engagement and donations. We see an opportunity to expand the website’s target users to both donors and beneficiaries of the organization.
-                            <hr class="read-more-spacer">
-                            <span class="text-uppercase highlight"> Read More  
-                                <img class="icon" src="img/right-arrow.svg">
-                            </span>
-                        </div>
-                    </div>
                 </div>
             </div>
 
