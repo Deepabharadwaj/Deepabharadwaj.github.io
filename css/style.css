@@ -617,6 +617,22 @@ textarea {
     width: 100%;
 }
 
+.reco-name{
+    font-family: 'minion-pro', serif;
+    font-weight: regular;
+    font-size: 18px;
+    color: #383833;
+    width: 100%;
+}
+
+.reco-title{
+    font-family: 'minion-pro', serif;
+    font-weight: regular;
+    font-size: 18px;
+    color: #777777;
+    width: 100%;
+}
+
 .footer-connected{
     font-family: 'minion-pro', serif;
     font-weight: semi-bold;
@@ -634,6 +650,9 @@ textarea {
     font-family: 'Open Sans', Arial, sans-serif;
     font-weight: regular;
     font-size: 18px;
+}
+.footer-email:hover{
+    cursor: pointer;
 }
 
 .footer-design{
@@ -654,6 +673,9 @@ textarea {
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 14px;
     color: #3d3d3d;
+}
+.contact-text:hover{
+    cursor: pointer;
 }
 
 .bottom-line-box{
