@@ -639,7 +639,7 @@ textarea {
     top: 20px;
 }
 
-.carousel .carousel-control-next-icon {
+.carousel .reco-next-icon {
     width: 100%;
     padding: 10px;
     background-image: url("../img/recoarrow.svg");
