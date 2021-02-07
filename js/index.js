@@ -82,3 +82,26 @@ function allInView() {
 		}
 	}
 }
+
+window.onload=function() {
+  var arrows = document.querySelectorAll('.read-more');
+  arrows.forEach(function(arrow) {
+    let animation = anime({
+      targets: arrow.children,
+      translateX: 20,
+      duration: 500,
+      direction: 'alternate',
+      easing: 'linear',
+      loop: true
+    });
+    animation.pause();
+
+    arrow.addEventListener ('mouseover', function hover(){
+      animation.play();
+    });
+    arrow.addEventListener ('mouseleave', function leave(){
+      animation.restart();
+      animation.pause();
+    });
+  });
+}
