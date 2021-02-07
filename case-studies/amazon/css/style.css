@@ -1,0 +1,39 @@
+.sticky-hero__media {
+    background: url('../img/heroimgmockup.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+#chat1 {
+    transition: all 1s;
+}
+#chat1_new{
+    transition: all 1s;
+}
+
+#img_holder_1 {
+    -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+    filter: blur(2px);
+}
+#img_holder_3 {
+    -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+    filter: blur(2px);
+}
+
+#img_holder_2_2 {
+    -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+    filter: blur(2px);
+}
+
+.img_holder_inactive {
+    -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+    filter: blur(2px);
+}
+
+.img_holder_active_2 {
+    transform: scale(1.25) translateX(15%);
+    z-index: 100;
+}
+.img_holder_active_3 {
+    transform: scale(1.7);
+    z-index: 100;
+}

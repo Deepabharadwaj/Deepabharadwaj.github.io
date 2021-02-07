@@ -1,0 +1,79 @@
+svg {
+    width: 1em;
+    height: 1em;
+    font-size: 10em;
+    fill: white;
+  }
+  
+  @mixin fadeHelper($delay) {
+    opacity: 0.35;
+    animation: fade 0.7s cubic-bezier(.39,.58,.57,1) $delay infinite alternate-reverse;
+  }
+  
+  #loader {
+    circle {
+      &:nth-of-type(1) {
+        @include fadeHelper(0s);
+      }
+      
+      &:nth-of-type(2) {
+        @include fadeHelper(0.4s);
+      }
+      
+      &:nth-of-type(3) {
+        @include fadeHelper(0.8s);
+      }
+      
+      &:nth-of-type(4) {
+        animation: expandBigger 0.5s infinite alternate 0.4s;
+      }
+      
+      &:nth-of-type(5) {
+        animation: expandTiny 0.5s infinite alternate;
+      }
+    }
+    
+    path {
+      animation: expandBiggest 1s linear infinite alternate;
+    }
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.45;
+    }
+  }
+  
+  @mixin scaleCircle($factor, $cx, $cy) {  
+    transform: translate((1 - $factor) * $cx + px, (1 - $factor) * $cy + px) scale($factor);
+  }
+  
+  @keyframes expandTiny {
+    from {
+      transform: scale(1);
+    }
+    to {
+      @include scaleCircle(1.1, -41, 74.8);
+    }
+  }
+  
+  @keyframes expandBigger {
+    from {
+      transform: scale(1);
+    }
+    to {
+      @include scaleCircle(1.1, -25.2, 62.6);
+    }
+  }
+  
+  @keyframes expandBiggest {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: translate(-0.525px, -0.9487500190734863px) scale(1.025);
+    }
+  }
