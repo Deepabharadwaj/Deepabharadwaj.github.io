@@ -612,14 +612,9 @@ textarea {
     position: -webkit-sticky;
     position: sticky;
     top: -0px;
-    z-index: 100;
+    z-index: 1000;
     max-width: 100%;
     width: 100%;
-}
-
-.bottom-line{
-    flex-direction: row;
-    flex-wrap: nowrap;
 }
 
 .bottom-line-box{
@@ -688,7 +683,7 @@ textarea {
     .ball-canvas{
         display: flex;
         position: absolute;
-        z-index: 100;
+        z-index: 1000;
     }
 
     .project-title{
