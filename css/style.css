@@ -633,6 +633,28 @@ textarea {
     width: 100%;
 }
 
+.reco-container {
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+
+.carousel .carousel-control-next-icon {
+    height: 30px;
+    width: 18px;
+    padding: 10px;
+    background-color: #F1F5F8;
+    background-image: url("../case-studies/common/img/carousel_right.svg");
+    position: absolute;
+    /* align-self: center; */
+    top: 120px;
+}
+
+.carousel .carousel-control-next{
+    right: -20%;
+}
+
+
 .footer-connected{
     font-family: 'minion-pro', serif;
     font-weight: semi-bold;
