@@ -808,6 +808,15 @@ textarea {
     }
 
     .tm-col-footer { padding-left: 0; }
+
+    .carousel-control-next{
+        display: none;
+    }
+
+    .reco-container {
+        height: 320px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -884,9 +893,7 @@ textarea {
     #footer-banner-mobile{
         display: flex;
     }
-    .carousel-control-next{
-        display: none;
-    }
+
     .reco-container {
         height: 430px;
     }
