@@ -763,6 +763,7 @@ textarea {
     .navbar-collapse , .nav-item{
         display: inline;
         align-items: left;
+        margin-left:  10px;
     }
     .nav-link{
         text-align: left;
@@ -772,6 +773,13 @@ textarea {
     .nav-item.active .tm-nav-link,
     .nav-item:hover .tm-nav-link {
         color: #9CC;
+    }
+
+    .navbar-brand {
+        margin-left:  15px;
+    }
+    .navbar-toggler, .collapsed{
+        margin-right: 15px;
     }
     .ball-canvas{
         display: flex;
@@ -803,7 +811,7 @@ textarea {
 }
 
 @media (max-width: 768px) {
-    .tm-container {    padding-left: 5%;  padding-right: 5%; }
+    .tm-container {    padding-left: 0%;  padding-right: 0%; }
     .tm-row { flex-direction: column; }
 
     .tm-col-left,
@@ -856,6 +864,16 @@ textarea {
         flex-direction: row;
     }
 
+    .container {
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    .row {
+        padding-left: 0%;
+        padding-right: 0%;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
     .tm-col-footer {
         padding-left: 10px;
         padding-right: 10px;
@@ -865,6 +883,9 @@ textarea {
     }
     #footer-banner-mobile{
         display: flex;
+    }
+    .carousel-control-next{
+        display: none;
     }
 }
 
