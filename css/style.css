@@ -770,6 +770,12 @@ textarea {
         font-size: 1.8rem;
         padding: 13px 0px;
     }
+    #header {
+        padding-bottom: 8px;
+    }
+    .signature {
+        padding-top: 30px;
+    }
 
     .navbar-collapse , .nav-item{
         display: inline;

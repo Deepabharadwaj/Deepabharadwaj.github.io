@@ -54,6 +54,12 @@ function kill(myCanvas) {
   curr_ball.dx *=3;
 }
 
+function is_touch_enabled() { 
+  return ( 'ontouchstart' in window ) ||  
+         ( navigator.maxTouchPoints > 0 ) ||  
+         ( navigator.msMaxTouchPoints > 0 ); 
+}
+
 $(allInView);
 $(window).scroll(allInView);
 
@@ -68,6 +74,17 @@ function isScrolledIntoView(elem) {
     return ((elemTop <= docViewTop) && (elemTop > $(window).scrollTop()+100));
 }
 
+function isScrolledIntoView2(elem) {
+  var $window = $(window),
+      docViewTop = $window.scrollTop(),
+      docViewBottom = docViewTop + $window.height(),
+      elemTop = $(elem).offset().top - 100,
+      elemBottom = elemTop + $(elem).outerHeight() + 125;
+  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+var anime_dict = {};
+
 function allInView() {
 
 	var elements = document.getElementsByClassName("highlight");
@@ -80,13 +97,29 @@ function allInView() {
 		else {
 			elements[i].style.backgroundPosition = "0% 0";
 		}
-	}
+  }
+ 
+  if(is_touch_enabled()){
+    var arrows = document.querySelectorAll('.read-more');
+    for (i = 0; i < arrows.length; i++) {
+      if (isScrolledIntoView2(arrows[i])) {
+        anime_dict[i].play();
+      }
+      else {
+        anime_dict[i].restart();
+        anime_dict[i].pause();
+      }
+    }
+  }
 }
+
 var nav_active_id = "nav-about";
 
 window.onload=function() {
   var arrows = document.querySelectorAll('.read-more');
-  arrows.forEach(function(arrow) {
+  var i;
+	for (i = 0; i < arrows.length; i++) {
+    var arrow = arrows[i];
     let animation = anime({
       targets: arrow.children,
       translateX: 20,
@@ -95,6 +128,7 @@ window.onload=function() {
       easing: 'linear',
       loop: true
     });
+    anime_dict[i] = animation;
     animation.pause();
 
     arrow.addEventListener ('mouseover', function hover(){
@@ -104,10 +138,9 @@ window.onload=function() {
       animation.restart();
       animation.pause();
     });
-  });
+  }
 
   var nav_active = document.getElementById(nav_active_id);
-  console.log(nav_active);
   nav_active.classList.add("active");
 }
 
