@@ -112,6 +112,17 @@ p { line-height: 1.9; }
     background-image: url("../img/Logo/Logo_Hover.png");
 }
 
+.nav-logo {
+    position:absolute;
+    opacity:1;
+    transition:opacity 0.5s linear;
+    z-index: 1000;
+}
+
+.nav-logo-active:hover {
+    opacity:0;
+}
+
 /* padding-left: 200px; */
 .tm-slogan { font-size: 0.8rem; }
 
