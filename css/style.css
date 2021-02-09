@@ -887,6 +887,9 @@ textarea {
     .carousel-control-next{
         display: none;
     }
+    .reco-container {
+        height: 430px;
+    }
 }
 
 @media (max-width: 460px) {
