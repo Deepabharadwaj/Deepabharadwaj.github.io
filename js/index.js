@@ -117,7 +117,7 @@ var headings = ["While we wait &#x1F605; , Deepa's Fun Fact #1",
                 "While we wait &#x1F605; , Deepa’s Fun Fact #2",
                 "While we wait &#x1F605; , Deepa’s Fun Fact #3",];
 var contents = ["I’m obsessed with corgis, and adopted a 6 month old corgi puppy called Strippaw. Check out his instagram page @strippawthecorgi, don’t forget to follow! &#128054; &#128248;",
-                "I’m currently learning kickboxing, hope to become a weekend kickboxing instructor  soon. Gotta keep practicing my jabs & crosses though!",
+                "I’m currently learning kickboxing, hope to become a weekend kickboxing instructor  soon. Gotta keep practicing my jabs & crosses though! ",
                 "I’m an adrenaline junkie, gone skydiving, rock climbing, skiing, paragliding & ziplining. Post Covid, bungee jumping off the Grand Canyon is next!"];
 
 var nav_active_id = "nav-about";
