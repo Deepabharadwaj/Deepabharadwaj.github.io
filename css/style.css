@@ -881,6 +881,17 @@ textarea {
         height: 320px;
     }
 
+    .loader > div {
+        width: 100%;
+        padding: 0.25% 5%;
+    }
+
+    #fun-heading {
+        font-size: 1.25rem;
+    }
+    #fun-content{
+        font-size: 1rem;
+    }
 }
 
 @media (max-width: 768px) {
