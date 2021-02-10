@@ -124,7 +124,7 @@ var contents = ["I’m currently learning kickboxing, hope to become a part-time
                 "I’m an adrenaline junkie, gone skydiving, rock climbing, skiing, paragliding & ziplining. Post Covid, bungee jumping off the Grand Canyon is next! &#127938;&#127964;&#65039;&#128170;",
                 "Been designing buildings for a couple of years across India & the USA, one of my competition entries for an Eco Park Gateway in India was actually built! &#129304; &#128119;&#8205;&#9792;&#65039; &#127959;&#65039;",
                 "My partner is a robotics engineer, we both absolutely love collaborating on our projects. It’s an epic combination of design + tech! &#129302; &#129299; &#128591; ",
-                "I love learning about different technologies and how to use them to design more creatively and efficiently. Currently learning how to code in Javascript, and animate in After Effects! &#128187; &#128587;&#8205;&#9792;&#65039; "
+                "I love learning about different technologies and how to use them to design more creatively and efficiently. Currently learning how to code in Javascript, and animate in After Effects! &#128187; &#128588; &#128587;&#8205;&#9792;&#65039; "
               ];
 
 var nav_active_id = "nav-about";
