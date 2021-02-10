@@ -113,9 +113,31 @@ function allInView() {
   }
 }
 
+var headings = ["While we wait &#x1F605; , Deepa's Fun Fact #1",
+                "While we wait &#x1F605; , Deepa’s Fun Fact #2",
+                "While we wait &#x1F605; , Deepa’s Fun Fact #3",];
+var contents = ["I’m obsessed with corgis, and adopted a 6 month old corgi puppy called Strippaw. Check out his instagram page @strippawthecorgi, don’t forget to follow! &#128054; &#128248;",
+                "I’m currently learning kickboxing, hope to become a weekend kickboxing instructor  soon. Gotta keep practicing my jabs & crosses though!",
+                "I’m an adrenaline junkie, gone skydiving, rock climbing, skiing, paragliding & ziplining. Post Covid, bungee jumping off the Grand Canyon is next!"];
+
 var nav_active_id = "nav-about";
 
+$(document).ready (function() {
+
+  var num = Math.floor((Math.random() * headings.length));
+  $("#fun-heading").fadeIn("3000");
+  $("#fun-content").fadeIn("slow");
+  $("#fun-heading").html(headings[num]);
+  $("#fun-content").html(contents[num]);
+});
+
+const hide_fun = async () => {
+  const loader = document.querySelector(".loader");
+  loader.className += " hidden"; // class "loader hidden"  
+}
+
 window.onload=function() {
+  setTimeout(hide_fun, 2000);
   var arrows = document.querySelectorAll('.read-more');
   var i;
 	for (i = 0; i < arrows.length; i++) {
@@ -139,7 +161,7 @@ window.onload=function() {
       animation.pause();
     });
   }
-
+  
   var nav_active = document.getElementById(nav_active_id);
   nav_active.classList.add("active");
 }
