@@ -84,7 +84,11 @@ var observer = new IntersectionObserver(function(entries) {
     }
 }, { threshold: [0.1, 1] });
 
+var prev_handler = window.onload;
 window.onload=function() {
+    if (prev_handler) {
+        prev_handler();
+    }
     observer.observe(document.querySelector("#chatwindow"));
 }
 

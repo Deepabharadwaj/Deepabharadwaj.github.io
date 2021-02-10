@@ -1,4 +1,5 @@
 
+var prev_handler = window.onload;
 window.onload=function() { // or window.addEventListener("load",function() {
     // Get the modal
   var modal = document.getElementById("myModal");
@@ -25,6 +26,9 @@ window.onload=function() { // or window.addEventListener("load",function() {
     {
       modal.style.display = "none";
     }
+  }
+  if (prev_handler) {
+    prev_handler();
   }
 }
 
