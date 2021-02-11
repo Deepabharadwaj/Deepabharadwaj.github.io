@@ -129,6 +129,7 @@ var contents = ["I’m currently learning kickboxing, hope to become a part-time
 
 var nav_active_id = "nav-about";
 
+var time_ready = Date.now();
 $(document).ready (function() {
 
   var num = Math.floor((Math.random() * headings.length));
@@ -136,6 +137,7 @@ $(document).ready (function() {
   $("#fun-content").fadeIn("slow");
   $("#fun-heading").html(headings[num]);
   $("#fun-content").html(contents[num]);
+  time_ready = Date.now();
 });
 
 const hide_fun = async () => {
@@ -144,7 +146,8 @@ const hide_fun = async () => {
 }
 
 window.onload=function() {
-  setTimeout(hide_fun, 2000);
+  var time_left = 2000 - Date.now() + time_ready;
+  setTimeout(hide_fun, time_left);
   var arrows = document.querySelectorAll('.read-more');
   var i;
 	for (i = 0; i < arrows.length; i++) {
