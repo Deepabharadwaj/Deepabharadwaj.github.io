@@ -145,6 +145,7 @@ const hide_fun = async () => {
   loader.className += " hidden"; // class "loader hidden"  
 }
 
+var prev_handler = window.onload;
 window.onload=function() {
   var time_left = 2000 - Date.now() + time_ready;
   setTimeout(hide_fun, time_left);
@@ -174,6 +175,9 @@ window.onload=function() {
   
   var nav_active = document.getElementById(nav_active_id);
   nav_active.classList.add("active");
+  if(prev_handler) {
+    prev_handler();
+  }
 }
 
 $(function(){

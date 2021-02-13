@@ -1,0 +1,159 @@
+.modal-img:hover{
+    opacity: 0.8;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+    
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    z-index: 1003;
+    align-items: center;
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    align-self: center;
+    position:absolute;
+    top: 0;
+    bottom: 0;    
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0); /* Use background of parent */
+    transition: ease 0.5s;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: fixed;
+    top: 10px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 1005;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+.zoom-icon {
+    top: 10px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    z-index: 1005;
+    opacity: 0.5;
+    /* pointer-events: none; uncomment this once the zoom buttons are implemented */
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+/* uncomment this once the zoom buttons are implemented */
+.zoom-icon:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#bar-wrap {
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+    /* border-top: 1px solid #444; */
+    /* background: #111; */
+    background-color: rgba(10,10,10,0.7); /* Black w/ opacity */
+    height: 60px;
+    z-index: 1005;
+    display: flex;
+    flex-direction: row;
+}
+  
+#zoom-bar-cont {
+    height: 2px;
+    width: 10%;
+    background: #777;
+    margin: 30px 10px;
+    position: relative;
+    border-radius: 1px;
+}
+  
+#slider {
+    height: 20px;
+    width: 7px;
+    background: #fafafa;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateY(50%) translateX(-50%);
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width:  992px){
+    .modal-content {
+        width: 100%;
+    }
+    #zoom-bar-cont {
+        width: 40%;
+    }
+    .close {
+        right: 10px;
+    }
+}
+  
