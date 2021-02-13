@@ -518,12 +518,17 @@ p { line-height: 1.9; }
 .tm-content-title { 
     font-family: 'minion-pro', serif;
     font-weight: regular;
-    font-size: 3rem; }
+    font-size: 3rem; 
+}
 
 .tm-content-subtitle { 
     font-family: 'minion-pro', serif;
     font-weight: regular;
     font-size: 2rem; 
+}
+.tm-content-subheading
+{
+    font-size: 1.5rem !important;  
 }
     
 hr { border-top: 1px solid white; }
