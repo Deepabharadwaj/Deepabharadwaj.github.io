@@ -1,27 +1,3 @@
-$('#myModal').on('shown.bs.modal', function () {
-    $('#myInput').trigger('focus')
-  })
-
-
-var i = 0;
-var txt = 'I like to watch the shows and movies that all of my friends are watching. Shows like Game of Thrones and The Last Dance. I trust my friends recommendations more than an algorithm. Plus I like knowing what everyone is talking about!';
-var speed = 1;
-
-function typeWriter() {
-    console.log("typewritter called")
-    var box = document.getElementById("demo");
-    setTimeout(typeWriter, 1000);
-    var loading = document.getElementById("loading");
-    loading.style.display = "none";
-    var tb1 = document.getElementById("tb1");
-    tb1.style.display = "block";
-    if (i < txt.length) {
-        box.innerHTML += txt.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed);
-    }
-}
-
 var reset = false;
 var dispayed = false;
 const updatebox3 = async () => {
@@ -84,12 +60,4 @@ var observer = new IntersectionObserver(function(entries) {
     }
 }, { threshold: [0.1, 1] });
 
-var prev_handler = window.onload;
-window.onload=function() {
-    if (prev_handler) {
-        prev_handler();
-    }
-    observer.observe(document.querySelector("#chatwindow"));
-}
-
-
+observer.observe(document.querySelector("#chatwindow"));
