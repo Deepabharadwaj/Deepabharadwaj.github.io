@@ -22,9 +22,9 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/test.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../common/js/index.js"></script>
-    <script src="../../js/index.js"></script>
     <script src="js/index.js"></script>
+    <script src="../../js/index.js"></script>
+    <script src="../common/js/index.js"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 
     <!-- bootstrap -->
@@ -38,8 +38,14 @@
     <div class="loader main-loadertext">
       <div id="fun-heading" ></div>
       <div class ="sub-loadertext" id="fun-content"></div>
+    </div>
+
+    <!-- Image Modal -->
+  <div id="myModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="img01">
   </div>
-  
+
     <section class="container">
       <nav id="header-cs" class="navbar navbar-expand-lg nav-hold"> </nav>
       <script> nav_active_id = 'nav-projects'</script>
@@ -130,7 +136,7 @@
               We started this project with an assumption, which we compiled in our proto-persona: in times of social isolation and beyond, <span class="highlight"> Prime Video users lack personalization and integrated tools to socialize and connect with others</span> through this platform. 
             </div>
             <div class="row">
-              <img class="img-fluid" src = "img/protopersona.png">
+              <img class="img-fluid modal-img" src = "img/protopersona.png">
             </div>
           </div>
         </div>
@@ -177,7 +183,7 @@
 
         <hr class="mb-5">
         <div class="row">
-          <img class="img-fluid" src = "img/heuristicanalysis.svg">
+          <img class="img-fluid modal-img" src = "img/heuristicanalysis.svg">
         </div>
 
         <hr class="mb-5">
@@ -396,10 +402,10 @@
         <hr class="mb-5">
         <div class="row px-0 justify-content-center align-content-center">
           <div class="col-8 pl-0" style="z-index: 100;" >
-            <img class="img-fluid" src="img/likewishwhatif.png">
+            <img class="img-fluid modal-img" src="img/likewishwhatif.png">
           </div>
           <div class="col-4 pr-0 my-auto" >
-            <img class="img-fluid" src="img/fpm.png">
+            <img class="img-fluid modal-img" src="img/fpm.png">
           </div>
         </div>  
 
@@ -478,13 +484,13 @@
               Our team created low fidelity wireframes to facilitate collaboration, feedback, and design decisions
             </div>
             <div class="row">
-              <img class="img-fluid" src = "img/lofi1.png">
+              <img class="img-fluid modal-img" src = "img/lofi1.png">
             </div>    
             <div class="row mb-4">
               We sketched a homepage to ideate this page's information architecture and rhythm. Likewise, this sketch above served to conceive iconography and interactions
             </div>
             <div class="row">
-              <img class="img-fluid" src = "img/searchstore.png">
+              <img class="img-fluid modal-img" src = "img/searchstore.png">
             </div>
             <div class="row mb-2">
               <div style="font-size: 1.5rem !important;">
@@ -510,7 +516,7 @@
               </div>
             </div>
             <div class="row mb-4 pr-0 mr-0">
-              <img class="img-fluid" src = "img/styletile.png">
+              <img class="img-fluid modal-img" src = "img/styletile.png">
             </div>
             <hr class="mb-5">
             <div class="row">
@@ -522,7 +528,7 @@
         </div>
 
         <div class="row mb-4">
-          <img class="img-fluid" src = "img/hifi.png">
+          <img class="img-fluid modal-img" src = "img/hifi.png">
         </div>
 
         <hr class="mb-3">
@@ -537,7 +543,7 @@
         </div>
 
         <div class="row">
-          <img class="img-fluid" src = "img/homepagebf.png">
+          <img class="img-fluid modal-img" src = "img/homepagebf.png">
         </div>
 
         <hr class="mb-5">
@@ -640,7 +646,7 @@
               Based on users' feedback, we iterated on our card design, social connection screens, Watch Party features, homepage layout, and search flow
             </div>
             <div class="row mb-4">
-              <img class="img-fluid" src = "img/cardui.png">
+              <img class="img-fluid modal-img" src = "img/cardui.png">
             </div>
             <hr class="mb-3">
             <div class="row mb-2">
