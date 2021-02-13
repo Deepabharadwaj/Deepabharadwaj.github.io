@@ -91,7 +91,7 @@ window.onload=function() { // or window.addEventListener("load",function() {
       let bar_width = bar.offsetWidth;
       let slider_pos = slider.offsetLeft;
       let curr_per = slider_pos / bar_width;
-      let new_per = valBetween(curr_per + delta, 0.1, 0.9);
+      let new_per = valBetween(curr_per + delta, 0.0, 1.0);
       console.log("bar_width", bar_width, "slider_pos", slider_pos,"curr_per", curr_per, "new_per", new_per);
       // let sliderOff = valBetween(slider.offsetLeft - 2.5 + dPercent * 100, 0, 100);
 
