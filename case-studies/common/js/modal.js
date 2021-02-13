@@ -84,7 +84,6 @@ window.onload=function() { // or window.addEventListener("load",function() {
     }
     function reset(){
       setTimeout(reset_zoom, 500);
-      console.log(img.style.transform);
     }
 
     function update_zoom(delta){
@@ -92,8 +91,6 @@ window.onload=function() { // or window.addEventListener("load",function() {
       let slider_pos = slider.offsetLeft;
       let curr_per = slider_pos / bar_width;
       let new_per = valBetween(curr_per + delta, 0.0, 1.0);
-      console.log("bar_width", bar_width, "slider_pos", slider_pos,"curr_per", curr_per, "new_per", new_per);
-      // let sliderOff = valBetween(slider.offsetLeft - 2.5 + dPercent * 100, 0, 100);
 
       slider.style.left = new_per * 100  + "%";
       var img_scale = new_per;
@@ -118,8 +115,6 @@ window.onload=function() { // or window.addEventListener("load",function() {
     let close_btn = document.getElementsByClassName("close")[0];
     let zoom_in_btn = document.getElementById("zoom-in");
     let zoom_out_btn = document.getElementById("zoom-out");
-    console.log(zoom_in_btn);
-    console.log(zoom_out_btn);
     close_btn.addEventListener("mousedown", reset);
     zoom_in_btn.addEventListener("mousedown", zoom_in);
     zoom_out_btn.addEventListener("mousedown", zoom_out);
