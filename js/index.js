@@ -150,7 +150,7 @@ const hide_fun = async () => {
 var prev_handler = window.onload;
 var prev_handled = false;
 window.onload=function() {
-  var time_left = 2000 - Date.now() + time_ready;
+  var time_left = 0;//2000 - Date.now() + time_ready;
   setTimeout(hide_fun, time_left);
   var arrows = document.querySelectorAll('.read-more');
   var i;
