@@ -4,6 +4,7 @@ $(function(){
 
 // Modal handling
 var prev_handler = window.onload; // in case we override window.onload
+var prev_handled = false;
 window.onload=function() { // or window.addEventListener("load",function() {
     // Get the modal
     var modal = document.getElementById("myModal");
@@ -120,7 +121,8 @@ window.onload=function() { // or window.addEventListener("load",function() {
     zoom_out_btn.addEventListener("mousedown", zoom_out);
 
     // in case we override window.onload
-    if (prev_handler) {
+    if(prev_handler && !prev_handled) {
+      prev_handled = true;
       prev_handler();
     }
-}
+  }

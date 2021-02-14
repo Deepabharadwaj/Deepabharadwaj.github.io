@@ -142,10 +142,13 @@ $(document).ready (function() {
 
 const hide_fun = async () => {
   const loader = document.querySelector(".loader");
-  loader.className += " hidden"; // class "loader hidden"  
+  if(loader && !loader.classList.contains("hidden") ){
+    loader.className += " hidden"; // class "loader hidden"  
+  }
 }
 
 var prev_handler = window.onload;
+var prev_handled = false;
 window.onload=function() {
   var time_left = 2000 - Date.now() + time_ready;
   setTimeout(hide_fun, time_left);
@@ -175,7 +178,8 @@ window.onload=function() {
   
   var nav_active = document.getElementById(nav_active_id);
   nav_active.classList.add("active");
-  if(prev_handler) {
+  if(prev_handler && !prev_handled) {
+    prev_handled = true;
     prev_handler();
   }
 }
