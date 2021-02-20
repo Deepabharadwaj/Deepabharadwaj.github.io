@@ -30,6 +30,8 @@ function init(myCanvas)
 
 function draw(myCanvas)
 {
+  if (is_touch_enabled())
+    return;
   var curr_ball = ball[myCanvas];
   curr_ball.context.clearRect(0,0, 300,300);
   curr_ball.context.beginPath();
@@ -182,6 +184,10 @@ window.onload=function() {
     prev_handled = true;
     prev_handler();
   }
+  $('#toggle').click(function() {
+    $(this).toggleClass('active');
+    $('#overlay').toggleClass('open');
+   });
 }
 
 $(function(){
