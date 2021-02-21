@@ -104,10 +104,13 @@
 
         <hr class="mb-5">
         <div class="row mb-4 mr-0 px-5">
-          <video width="100%" controls autoplay muted>
-            <source src="img/prototype.mp4" type="video/mp4">
-            Video not supported in this browser.
-          </video>
+          <div class="img-container">
+            <video class="d-block w-100" controls autoplay muted loop>
+              <source src="img/prototype.mp4" type="video/mp4">
+              Video not supported in this browser.
+            </video>
+            <img class="overlay-img d-block w-100" src="img/desktopmockupoption.png"> 
+          </div>
         </div>
         <div class="row mb-4 mr-0 px-5 justify-content-center">
           <a class = "click-link font-dark" href="https://deepabharadwaj.github.io/amazon-prime-video-redesign/index.html">
@@ -281,13 +284,24 @@
           <div class="col-4">
             <img class="img-fluid img_holder_inactive" src="img/storyboard.jpg" id="img_holder_1_1" loading=lazy>
           </div>
-          <div class="col-4" style="margin-left: -5%; z-index: 100;" >
-            <img class="img-fluid img_holder_active_3" src="img/userpersona.jpg" id="img_holder_1_2" loading=lazy>
+          <div class="col-4" >  <!--style="margin-left: -5%;" -->
+            <img class="img-fluid img_holder_inactive" src="img/userpersona.jpg" id="img_holder_1_2" loading=lazy>
           </div>
           <div class="col-4" >
             <img class="img-fluid img_holder_inactive" src="img/userjourneymap.jpg" id="img_holder_1_3" loading=lazy>
           </div>
-        </div>  
+        </div>
+        <hr class="mb-5">
+        <hr class="mb-5">
+        <div class="row">
+          <div class="col-1 ml-auto text-lg-left arrow-hover" id="img_holder_1_left">
+            <img src="../common/left_arrow.svg" >
+          </div>
+          <div class="col-8 text-center" id="img_holder_1_caption"></div>
+          <div class="col-1 mr-auto text-lg-right arrow-hover"  id="img_holder_1_right">
+            <img src="../common/right_arrow.svg">
+          </div>
+        </div>
 
         <hr class="mb-5">
         <hr class="mb-5">
@@ -459,13 +473,13 @@
         <hr class="mb-5">
         <div class="row px-0 justify-content-center">
           <div class="col-4">
-            <img class="img-fluid img_holder_inactive" src="img/sharecontentflow.jpg" id="img_holder_3_1" loading=lazy>
-          </div>
-          <div class="col-4" style="margin-left: -5%; z-index: 100;" >
-            <img class="img-fluid img_holder_active_3" src="img/searchflow.jpg" id="img_holder_3_2" loading=lazy>
+            <img class="img-fluid img_holder_pos_1" src="img/sharecontentflow.jpg" id="img_holder_3_1" loading=lazy>
           </div>
           <div class="col-4" >
-            <img class="img-fluid img_holder_inactive" src="img/watchpartyflow.jpg" id="img_holder_3_3" loading=lazy>
+            <img class="img-fluid img_holder_pos_2" src="img/searchflow.jpg" id="img_holder_3_2" loading=lazy>
+          </div>
+          <div class="col-4" >
+            <img class="img-fluid img_holder_pos_3" src="img/watchpartyflow.jpg" id="img_holder_3_3" loading=lazy>
           </div>
         </div>  
 
@@ -687,10 +701,10 @@
                 </a>
               </div>
               <div class="row mb-4 mr-0">
-                <video width="100%" controls autoplay>
+                <video class="d-block w-100" controls autoplay loop muted>
                   <source src="img/prototype.mp4" type="video/mp4">
                   Video not supported in this browser.
-                </video> 
+                </video>   
               </div>
             </div>
           </div>

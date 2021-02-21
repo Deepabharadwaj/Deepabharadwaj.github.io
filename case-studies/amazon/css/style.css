@@ -27,13 +27,56 @@
 .img_holder_inactive {
     -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
     filter: blur(2px);
+    transition: ease 0.5s;
+    z-index: 1;
+    cursor: pointer;
 }
 
 .img_holder_active_2 {
     transform: scale(1.25) translateX(15%);
     z-index: 100;
+    transition: ease 0.5s;
 }
+.img_holder_active_2:hover{
+    opacity: 1.0;
+    cursor: pointer;
+}
+
 .img_holder_active_3 {
     transform: scale(1.7);
     z-index: 100;
+    transition: ease 0.5s;
+}
+.img_holder_active_3:hover{
+    opacity: 1.0;
+    cursor: pointer;
+}
+
+.img_holder_active_3#img_holder_1_1 {
+    transform: scale(1.7) translateX(18%);
+}
+.img_holder_active_3#img_holder_1_3 {
+    transform: scale(1.7) translateX(-16%);
+}
+
+.img-container{
+    position:relative;
+    display:inline-block;
+}
+
+.img-container .overlay-img{
+    position:absolute;
+    top:-3%;
+    left:0;
+    width:100%;
+    height:100%;
+    opacity:1.0;
+    color: white;
+    transition:opacity 500ms ease-in-out;
+}
+
+.arrow-hover:hover{
+    opacity: 0.5;
+    cursor: pointer;
+    transition: ease 0.5s;
 }
