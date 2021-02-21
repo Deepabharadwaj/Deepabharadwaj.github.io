@@ -506,12 +506,12 @@ p { line-height: 1.9; }
 
 ::-webkit-scrollbar {
     -webkit-appearance: none;
-    width: 10px;
+    width: 9px;
 }
   
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    background-color: #c4c4c4;
+    background-color: #E5E4E4;
     box-shadow: 0px 4px 10px rgba(169, 168, 168, 0.25);;
 }
 
@@ -797,6 +797,63 @@ textarea {
     color: #3d3d3d;
 }
 
+.button_container {
+    position: fixed;
+    top: 5%;
+    right: -5px;
+    height: 27px;
+    width: 35px;
+    cursor: pointer;
+    z-index: 100;
+    transition: opacity 0.25s ease;
+}
+.button_container:hover {
+    opacity: 0.7;
+}
+.button_container.active .top {
+    transform: translateY(8px) translateX(0) rotate(45deg);
+    background: #666;
+}
+.button_container.active .middle {
+    opacity: 0;
+    background: #666;
+}
+.button_container.active .bottom {
+    transform: translateY(-8px) translateX(0) rotate(-45deg);
+    background: #666;
+}
+.button_container span {
+    background: #666;
+    border: none;
+    height: 3px;
+    width: 80%;
+    border-radius: 2px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+.button_container span:nth-of-type(2) {
+    top: 18px;
+}
+.button_container span:nth-of-type(3) {
+    top: 26px;
+}
+.overlay {
+    position: fixed;
+    background: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s, visibility 0.35s, height 0.35s;
+    overflow: hidden;
+}
+
+
 @media (max-width: 1200px) {
     .nav-item { margin-right: 30px; }
     .read-more-spacer{
@@ -820,27 +877,38 @@ textarea {
     .navbar-expand-lg .navbar-nav .tm-nav-link {
         /* color: white; */
         font-size: 1.8rem;
-        padding: 13px 0px;
+        padding: 26px 0px 0px 0px;
     }
     #header {
-        padding-bottom: 8px;
+        padding-bottom: 40px;
     }
     .signature {
         padding-top: 30px;
     }
 
+    .navbar-collapse {
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        height: 100vh;
+    }
+    .navbar{
+        opacity: 1.0;
+        transition: 0.15s ease;
+    }
     .navbar-collapse , .nav-item{
         display: inline;
         align-items: left;
-        margin-left:  10px;
     }
     .nav-link{
         text-align: left;
+        margin-left:  20px;
         margin-right: 0;
     }
 
     .nav-item.active .tm-nav-link,
-    .nav-item:hover .tm-nav-link {
+    .nav-item:hover .tm-nav-link,
+    .nav-item:focus .tm-nav-link {
         color: #9CC;
     }
 
@@ -849,6 +917,10 @@ textarea {
     }
     .navbar-toggler, .collapsed{
         margin-right: 15px;
+        z-index: 100;
+    }
+    .navbar-nav{
+        margin-top: 80px;
     }
     .ball-canvas{
         display: flex;

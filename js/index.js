@@ -30,6 +30,8 @@ function init(myCanvas)
 
 function draw(myCanvas)
 {
+  if (is_touch_enabled())
+    return;
   var curr_ball = ball[myCanvas];
   curr_ball.context.clearRect(0,0, 300,300);
   curr_ball.context.beginPath();
@@ -142,10 +144,13 @@ $(document).ready (function() {
 
 const hide_fun = async () => {
   const loader = document.querySelector(".loader");
-  loader.className += " hidden"; // class "loader hidden"  
+  if(loader && !loader.classList.contains("hidden") ){
+    loader.className += " hidden"; // class "loader hidden"  
+  }
 }
 
 var prev_handler = window.onload;
+var prev_handled = false;
 window.onload=function() {
   var time_left = 0;//2000 - Date.now() + time_ready;
   setTimeout(hide_fun, time_left);
@@ -175,9 +180,14 @@ window.onload=function() {
   
   var nav_active = document.getElementById(nav_active_id);
   nav_active.classList.add("active");
-  if(prev_handler) {
+  if(prev_handler && !prev_handled) {
+    prev_handled = true;
     prev_handler();
   }
+  $('#toggle').click(function() {
+    $(this).toggleClass('active');
+    $('#overlay').toggleClass('open');
+   });
 }
 
 $(function(){
