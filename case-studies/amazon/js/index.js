@@ -72,17 +72,17 @@ function toggle_state(){
     switch(img_holder_1_state){
         case 0:
             first_click(img2, img1, img3, 2, 1);
-            caption.innerHTML = "Image 1"
+            caption.innerHTML = "Storyboard mapping Katrina's experience with Redesigned Prime Video interface"
             img_holder_1_state = 1;
             break;
         case 1:
             first_click(img1, img3, img2, 0, 2);
-            caption.innerHTML = "Image 3"
+            caption.innerHTML = "User Journey Map identifying critical moments using Peak-End Rule"
             img_holder_1_state = 2;
             break;
         case 2:
             first_click(img3, img2, img1, 1, 0);
-            caption.innerHTML = "Image 2"
+            caption.innerHTML = "User Persona for Katrina Juma illustrating key insights and common attributes"
             img_holder_1_state = 0;
             break;
         default:
