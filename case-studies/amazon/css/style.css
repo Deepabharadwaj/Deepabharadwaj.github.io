@@ -72,11 +72,37 @@
     height:100%;
     opacity:1.0;
     color: white;
-    transition:opacity 500ms ease-in-out;
+    /* transition:opacity 500ms ease-in-out; */
 }
 
 .arrow-hover:hover{
     opacity: 0.5;
     cursor: pointer;
     transition: ease 0.5s;
+}
+
+.img_holder_dummy{
+    opacity: 0;
+}
+.img_holder_pos_1
+{
+    transform: translateX(0);
+    -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+    filter: blur(2px);  
+    z-index: 1;
+    transition: transform ease 1s;
+}
+.img_holder_pos_2
+{
+    transform: translateX(100%) scale(1.7);
+    z-index: 2;
+    transition: transform ease 0.75s;
+}
+.img_holder_pos_3
+{
+    transform: translateX(220%);
+    -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+    filter: blur(2px);  
+    z-index: 1;
+    transition: transform ease 0.25s;
 }
