@@ -17,6 +17,7 @@
 
     background-color:white;
     opacity: 0.95;
+    padding-top: 10px;
 }
 
 .sticky-hero--overlay-layer .sticky-hero__media::after { 
@@ -208,13 +209,23 @@
   display: none;
 }
 
+.mockup_container{
+  position:relative;
+  display:inline-block;
+}
+.mockup_container .mockup_overlay{
+  position:absolute;
+  top: 6.65%;
+  left: 7.98%;
+  width: 69%;
+  height: 80.8%;
+  color: white;
+  border-radius: 8px;
+}
+
 @media (max-width: 992px) {
   .sticky-hero__media {
     height: 40vh;
-  }
-
-  .sticky-hero__content {
-    padding-top: 10px;
   }
 
   .tm-content-title{
