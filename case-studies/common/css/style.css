@@ -253,12 +253,6 @@
     margin-bottom: 0!important;
   }
 
-  .mobile-invisible {
-    display: none;
-  }
-  .desktop-invisible {
-    display: block;
-  } 
   ul li{
     margin-left: 1.5rem;
   }
@@ -278,4 +272,13 @@
   .mockup_right{
     text-align: right;
   }
+}
+
+@media (max-width: 500px) {
+  .mobile-invisible {
+    display: none;
+  }
+  .desktop-invisible {
+    display: block;
+  } 
 }
