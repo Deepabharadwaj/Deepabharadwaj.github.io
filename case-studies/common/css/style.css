@@ -10,7 +10,7 @@
     position: relative;
     z-index: 2;
   
-    height: 50vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -202,4 +202,53 @@
   position: relative;
   left: -5px;
   margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.desktop-invisible {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .sticky-hero__media {
+    height: 40vh;
+  }
+
+  .sticky-hero__content {
+    padding-top: 10px;
+  }
+
+  .tm-content-title{
+    font-size: 2rem;
+  }
+
+  #page-title{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .mobile-left{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .mobile-no-padding-bottom{
+    margin-bottom: 0!important;
+  }
+
+  .mobile-invisible {
+    display: none;
+  }
+  .desktop-invisible {
+    display: block;
+  } 
+  ul li{
+    margin-left: 1.5rem;
+  }
+  .yellow-box{
+    margin-bottom: 1.5rem!important;
+  }
+  .img-fluid {
+    max-height: 100%;
+    width: auto;
+  }
 }

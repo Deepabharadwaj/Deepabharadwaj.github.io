@@ -63,42 +63,42 @@ var observer = new IntersectionObserver(function(entries) {
 observer.observe(document.querySelector("#chatwindow"));
 
 
-var state = 2;
-function test_func(){
+var img_holder_1_state = 2;
+function toggle_state(){
     var img1 = document.getElementById("img_holder_1_1");
     var img2 = document.getElementById("img_holder_1_2");
     var img3 = document.getElementById("img_holder_1_3");
     var caption = document.getElementById("img_holder_1_caption");
-    switch(state){
+    switch(img_holder_1_state){
         case 0:
             first_click(img2, img1, img3, 2, 1);
             caption.innerHTML = "Storyboard mapping Katrina's experience with Redesigned Prime Video interface"
-            state = 1;
+            img_holder_1_state = 1;
             break;
         case 1:
             first_click(img1, img3, img2, 0, 2);
             caption.innerHTML = "User Journey Map identifying critical moments using Peak-End Rule"
-            state = 2;
+            img_holder_1_state = 2;
             break;
         case 2:
             first_click(img3, img2, img1, 1, 0);
             caption.innerHTML = "User Persona for Katrina Juma illustrating key insights and common attributes"
-            state = 0;
+            img_holder_1_state = 0;
             break;
         default:
             break;
     }
 }
 function right_click(){
-    state +=1;
-    state %=3;
-    test_func();
+    img_holder_1_state +=1;
+    img_holder_1_state %=3;
+    toggle_state();
 }
-let l_btn = document.getElementById("img_holder_1_left");
-l_btn.addEventListener("mousedown", test_func);
+let ih_1_l_btn = document.getElementById("img_holder_1_left");
+ih_1_l_btn.addEventListener("mousedown", toggle_state);
 
-let r_btn = document.getElementById("img_holder_1_right");
-r_btn.addEventListener("mousedown", right_click);
+let ih_1_r_btn = document.getElementById("img_holder_1_right");
+ih_1_r_btn.addEventListener("mousedown", right_click);
 
 
 function first_click(elem1, elem2, elem3, click_state1, click_state3){
@@ -106,16 +106,16 @@ function first_click(elem1, elem2, elem3, click_state1, click_state3){
     elem1.classList.add("img_holder_inactive");
     elem1.parentElement.style.zIndex ="1";
     elem1.onclick = function(){
-        state = click_state1;
-        test_func();
+        img_holder_1_state = click_state1;
+        toggle_state();
     }
 
     elem3.classList.remove("img_holder_active_3");
     elem3.classList.add("img_holder_inactive");
     elem3.parentElement.style.zIndex ="1";
     elem3.onclick = function(){
-        state = click_state3;
-        test_func();
+        img_holder_1_state = click_state3;
+        toggle_state();
     }
 
     elem2.classList.remove("img_holder_inactive");
@@ -131,4 +131,44 @@ function second_click(){
     modalImg.src = this.src;
 }
 
-test_func()
+toggle_state();
+
+function update_clicks(){
+    let img3_1 = document.getElementsByClassName("img_holder_pos_1")[0];
+    let img3_2 = document.getElementsByClassName("img_holder_pos_2")[0];
+    let img3_3 = document.getElementsByClassName("img_holder_pos_3")[0];
+    img3_1.onclick = rotate_cw;
+    img3_2.onclick = second_click;
+    img3_3.onclick = rotate_cw;
+}
+
+function rotate_cw(){
+    let img3_1 = document.getElementsByClassName("img_holder_pos_1")[0];
+    let img3_2 = document.getElementsByClassName("img_holder_pos_2")[0];
+    let img3_3 = document.getElementsByClassName("img_holder_pos_3")[0];
+    img3_1.style.zIndex = "2";    
+    img3_2.style.zIndex = "1";    
+    img3_3.style.zIndex = "0";    
+    $(img3_1).switchClass( "img_holder_pos_1", "img_holder_pos_2");
+    $(img3_2).switchClass( "img_holder_pos_2", "img_holder_pos_3");
+    $(img3_3).switchClass( "img_holder_pos_3", "img_holder_pos_1");
+    update_clicks();
+}
+
+function rotate_ccw(){
+    let img3_1 = document.getElementsByClassName("img_holder_pos_1")[0];
+    let img3_2 = document.getElementsByClassName("img_holder_pos_2")[0];
+    let img3_3 = document.getElementsByClassName("img_holder_pos_3")[0];
+    $(img3_1).switchClass( "img_holder_pos_1", "img_holder_pos_3");
+    $(img3_2).switchClass( "img_holder_pos_2", "img_holder_pos_1");
+    $(img3_3).switchClass( "img_holder_pos_3", "img_holder_pos_2");
+    update_clicks();
+}
+
+
+let img3_11 = document.getElementsByClassName("img_holder_pos_1")[0];
+let img3_22 = document.getElementsByClassName("img_holder_pos_2")[0];
+let img3_33 = document.getElementsByClassName("img_holder_pos_3")[0];
+img3_11.addEventListener("mousedown", rotate_cw);
+img3_22.addEventListener("mousedown", rotate_cw);
+img3_33.addEventListener("mousedown", rotate_cw);

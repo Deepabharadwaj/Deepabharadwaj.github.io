@@ -879,7 +879,7 @@ textarea {
         font-size: 1.8rem;
         padding: 26px 0px 0px 0px;
     }
-    #header {
+    #header, #header-cs {
         padding-bottom: 40px;
     }
     .signature {
@@ -969,6 +969,11 @@ textarea {
     #fun-content{
         font-size: 1rem;
     }
+    .tm-content-subheading
+    {
+        font-size: 1.3rem !important;  
+    }
+
 }
 
 @media (max-width: 768px) {

@@ -148,6 +148,8 @@
 @media only screen and (max-width:  992px){
     .modal-content {
         width: 100%;
+        max-width: 95%;
+        max-height: 95%;
     }
     #zoom-bar-cont {
         width: 40%;

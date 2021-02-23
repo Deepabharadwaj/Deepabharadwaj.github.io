@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/test.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../../js/index.js"></script>
     <script src="../common/js/index.js"></script>
     <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
@@ -471,15 +473,14 @@
 
         <hr class="mb-5">
         <hr class="mb-5">
-        <div class="row px-0 justify-content-center">
+        <div class="row px-0">
           <div class="col-4">
-            <img class="img-fluid img_holder_pos_1" src="img/sharecontentflow.jpg" id="img_holder_3_1" loading=lazy>
-          </div>
-          <div class="col-4" >
-            <img class="img-fluid img_holder_pos_2" src="img/searchflow.jpg" id="img_holder_3_2" loading=lazy>
-          </div>
-          <div class="col-4" >
-            <img class="img-fluid img_holder_pos_3" src="img/watchpartyflow.jpg" id="img_holder_3_3" loading=lazy>
+            <div class="img-container mr-auto">
+              <img class="img-fluid d-block w-100 img_holder_dummy" src="img/sharecontentflow.jpg" loading=lazy>
+              <img class="img-fluid d-block w-100 overlay-img img_holder_pos_1" src="img/sharecontentflow.jpg" id="img_holder_3_1" loading=lazy>
+              <img class="img-fluid d-block w-100 overlay-img img_holder_pos_2" src="img/searchflow.jpg" id="img_holder_3_2" loading=lazy>
+              <img class="img-fluid d-block w-100 overlay-img img_holder_pos_3" src="img/watchpartyflow.jpg" id="img_holder_3_3" loading=lazy>
+            </div> 
           </div>
         </div>  
 
