@@ -223,6 +223,13 @@
   border-radius: 8px;
 }
 
+.mockup_right{
+  text-align: right;
+}
+.mockup_left{
+  text-align: left;
+}
+
 @media (max-width: 992px) {
   .sticky-hero__media {
     height: 40vh;
@@ -261,5 +268,14 @@
   .img-fluid {
     max-height: 100%;
     width: auto;
+  }
+
+  .mockup_image_right{
+    text-align: right;
+    padding-right: 0!important;
+    left: 15px;
+  }
+  .mockup_right{
+    text-align: right;
   }
 }
