@@ -333,10 +333,12 @@ p { line-height: 1.9; }
 
 .info-heading{
     margin-top: 50px;
+    margin-left: 0px!important; 
 }
 
 .info-content{
     margin-top: 20px;
+    margin-left: 0px!important; 
 }
 
 .click-link {
