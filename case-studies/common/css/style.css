@@ -230,6 +230,14 @@
   text-align: left;
 }
 
+.corgi-box{
+  flex-flow: row nowrap;
+}
+
+p{
+  line-height: 1.5;
+}
+
 @media (max-width: 992px) {
   .sticky-hero__media {
     height: 40vh;
@@ -281,4 +289,16 @@
   .desktop-invisible {
     display: block;
   } 
+  .rounded-box{
+    padding: 0!important;
+  }
+  .corgi-box{
+    display: none!important;
+  }
+  .branding-lofi {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+  
 }
