@@ -143,6 +143,11 @@
     transition: all 2.5s;
 }
 
+.carousel-title {
+  font-family: 'minion-pro', serif;
+  font-size: 2rem!important;
+}
+
 .myul {
   list-style: none; /* Remove default bullets */
 }
@@ -316,5 +321,15 @@ p{
   }
   .amigas-inline{
     display: inline-block;
+  }
+  .car-yel{
+    margin-top: auto!important;
+    margin-bottom: auto!important;
+  }
+  .car-cap {
+    margin: auto!important;
+  }
+  .carousel-title{
+    font-size: 1.25rem!important;
   }
 }
