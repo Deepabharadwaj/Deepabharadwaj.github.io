@@ -211,6 +211,28 @@
   margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
 
+.ul-3 {
+  list-style: none; /* Remove default bullets */
+}
+
+.ul-3 .li-yes::before{
+  content: "\2713"  ;
+  font-size: 1rem;
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  position: relative;
+  width: 1.9em; /* Also needed for space (tweak if needed) */
+  margin-left: -1.9em;
+}
+
+.ul-3 .li-no::before{
+  content: "\2717"  ;
+  font-size: 1rem;
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  position: relative;
+  width: 1.9em; /* Also needed for space (tweak if needed) */
+  margin-left: -1.9em;
+}
+
 .ol-2 .li-2{
   position: relative;
   left: -1rem;
