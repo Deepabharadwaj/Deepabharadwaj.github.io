@@ -855,6 +855,9 @@ textarea {
     overflow: hidden;
 }
 
+.desktop-invisible {
+    display: none;
+  }
 
 @media (max-width: 1200px) {
     .nav-item { margin-right: 30px; }
@@ -1058,6 +1061,14 @@ textarea {
     }
 }
 
+@media (max-width: 500px) {
+    .mobile-invisible {
+      display: none;
+    }
+    .desktop-invisible {
+      display: block;
+    } 
+  }
 @media (max-width: 460px) {
     .tm-container {    padding-left: 5%;  padding-right: 5%; }
     .tm-logo { margin-right: 15px; }
