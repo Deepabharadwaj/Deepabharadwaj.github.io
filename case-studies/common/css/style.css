@@ -205,6 +205,12 @@
   margin-left: -1em; /* Also needed for space (tweak if needed) */
 }
 
+.ol-2 .li-2{
+  position: relative;
+  left: -1rem;
+}
+
+
 .desktop-invisible {
   display: none;
 }
@@ -238,6 +244,10 @@ p{
   line-height: 1.5;
 }
 
+.uii_text{
+  margin-top: 1.5rem!important;
+}
+
 @media (max-width: 992px) {
   .sticky-hero__media {
     height: 40vh;
@@ -261,7 +271,7 @@ p{
     margin-bottom: 0!important;
   }
 
-  ul li{
+  .corgi-ul .corgi-li{
     margin-left: 1.5rem;
   }
   .yellow-box{
@@ -280,6 +290,10 @@ p{
   .mockup_right{
     text-align: right;
   }
+  .carousel-banner {
+    background: rgba(247, 247, 247, 0.7);
+    backdrop-filter: blur(20px);
+  }
 }
 
 @media (max-width: 500px) {
@@ -289,9 +303,9 @@ p{
   .desktop-invisible {
     display: block;
   } 
-  .rounded-box{
+  /* .rounded-box{
     padding: 0!important;
-  }
+  } */
   .corgi-box{
     display: none!important;
   }
@@ -299,5 +313,15 @@ p{
     display: flex;
     align-items: center;
     width: 100%;
-  } 
+  }
+  .uii_text{
+    margin-top: 0rem!important;
+  }
+  .amigas-inline{
+    display: inline-block;
+  }
 }
+
+/* @media (pointer:coarse) {
+
+} */
