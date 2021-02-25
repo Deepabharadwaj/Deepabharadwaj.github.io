@@ -90,6 +90,7 @@
 
 .carousel-banner {
     background: rgba(247, 247, 247, 0.7);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     transition: all 0.5s;
     padding: 5% 0%;
@@ -290,10 +291,6 @@ p{
   .mockup_right{
     text-align: right;
   }
-  .carousel-banner {
-    background: rgba(247, 247, 247, 0.7);
-    backdrop-filter: blur(20px);
-  }
 }
 
 @media (max-width: 500px) {
@@ -321,7 +318,3 @@ p{
     display: inline-block;
   }
 }
-
-/* @media (pointer:coarse) {
-
-} */
