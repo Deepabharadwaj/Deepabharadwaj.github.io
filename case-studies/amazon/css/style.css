@@ -109,7 +109,8 @@
 
 @media (max-width: 500px) {
     .sticky-hero__media {
-        background: url('../img/heroimgmockup-mobile.jpg') no-repeat center center;
+        background: url('../img/heroimgmockup_mobile.jpg') no-repeat center center;
+        background-size: cover
     }
 
     .goals-container{
