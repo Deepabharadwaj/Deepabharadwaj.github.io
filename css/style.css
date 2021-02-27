@@ -677,6 +677,21 @@ textarea {
     right: -20%;
 }
 
+.reco-indicators{
+    position: relative;
+    margin: auto;
+    top: 25px;
+    display: none;
+}
+.reco-indicators li {
+    width: 8px;
+    height: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: #C4C4C4;
+    border-radius: 50%;
+
+}
 
 .footer-connected{
     font-family: 'minion-pro', serif;
@@ -1065,9 +1080,14 @@ textarea {
     .mobile-invisible {
       display: none;
     }
+
     .desktop-invisible {
       display: block;
     } 
+
+    .reco-indicators{
+        display: flex;
+    }
   }
 @media (max-width: 460px) {
     .tm-container {    padding-left: 5%;  padding-right: 5%; }
