@@ -106,3 +106,21 @@
     z-index: 1;
     transition: transform ease 0.25s;
 }
+
+@media (max-width: 500px) {
+    .sticky-hero__media {
+        background: url('../img/heroimgmockup-mobile.jpg') no-repeat center center;
+    }
+
+    .goals-container{
+        background: #f7f7f7;
+        margin-left: -5%;
+        margin-right: -5%;
+        padding-top: 5%;
+        width: 109%;
+    }
+    .goals-container ol{
+        margin-left: 3rem!important;
+        margin-right: 1.5rem!important;
+    }
+}

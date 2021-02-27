@@ -331,7 +331,7 @@ p{
 
 @media (max-width: 500px) {
   .mobile-invisible {
-    display: none;
+    display: none!important;
   }
   .desktop-invisible {
     display: block;
@@ -362,5 +362,9 @@ p{
   }
   .carousel-title{
     font-size: 1.25rem!important;
+  }
+
+  .mobile-full-width{
+    padding: 0!important;
   }
 }
