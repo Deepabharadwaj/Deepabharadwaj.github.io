@@ -1,7 +1,3 @@
-$(function(){
-  $("#Modal").load("../common/modal.html");
-});
-
 set_onclick = function(elem , func) {
   if(elem)
     elem.onclick = func
