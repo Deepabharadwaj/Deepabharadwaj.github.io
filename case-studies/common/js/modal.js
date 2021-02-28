@@ -2,36 +2,44 @@ $(function(){
   $("#Modal").load("../common/modal.html");
 });
 
+set_onclick = function(elem , func) {
+  if(elem)
+    elem.onclick = func
+  else
+    setTimeout(set_onclick, 200, elem, func);
+}
 // Modal handling
-var prev_handler = window.onload; // in case we override window.onload
-var prev_handled = false;
-window.onload=function() { // or window.addEventListener("load",function() {
+window.addEventListener('load', function() {
     // Get the modal
     var modal = document.getElementById("myModal");
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
 
     // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
     // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
+    
+    set_onclick(span, function() {
+      var modal = document.getElementById("myModal");
       modal.style.display = "none";
-    }
-    modal.onclick = function(event) {
+    });
+    set_onclick(modal, function(event) {
       if (!$(event.target).closest("#img01").length)
       {
         if (!$(event.target).closest("#bar-wrap").length){
+            var modal = document.getElementById("myModal");
             modal.style.display = "none";
             reset_zoom();
         }
       }
-    }
+    });
 
     // set up on click model-img class
     var imgs = document.getElementsByClassName('modal-img');
     Array.from(imgs).forEach(function (img) {
       img.onclick = function(){
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
         modal.style.display = "block";
         modalImg.src = this.src;
       // captionText.innerHTML = this.alt;
@@ -119,10 +127,4 @@ window.onload=function() { // or window.addEventListener("load",function() {
     close_btn.addEventListener("mousedown", reset);
     zoom_in_btn.addEventListener("mousedown", zoom_in);
     zoom_out_btn.addEventListener("mousedown", zoom_out);
-
-    // in case we override window.onload
-    if(prev_handler && !prev_handled) {
-      prev_handled = true;
-      prev_handler();
-    }
-  }
+});
