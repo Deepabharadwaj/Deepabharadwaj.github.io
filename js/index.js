@@ -132,15 +132,12 @@ var contents = ["I’m currently learning kickboxing, hope to become a part-time
 var nav_active_id = "nav-about";
 
 var time_ready = Date.now();
-$(document).ready (function() {
-
+function wait_loader() {
   var num = Math.floor((Math.random() * headings.length));
-  $("#fun-heading").fadeIn("3000");
-  $("#fun-content").fadeIn("slow");
   $("#fun-heading").html(headings[num]);
   $("#fun-content").html(contents[num]);
   time_ready = Date.now();
-});
+}
 
 const hide_fun = async () => {
   const loader = document.querySelector(".loader");
@@ -152,7 +149,7 @@ const hide_fun = async () => {
 var prev_handler = window.onload;
 var prev_handled = false;
 window.onload=function() {
-  var time_left = 0;//2000 - Date.now() + time_ready;
+  var time_left = 2000 - Date.now() + time_ready;
   setTimeout(hide_fun, time_left);
   var arrows = document.querySelectorAll('.read-more');
   var i;
