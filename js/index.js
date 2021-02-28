@@ -1,3 +1,19 @@
+$(function(){
+  $("#footer").load("common/footer.html"); 
+});
+
+$(function(){
+  $("#header").load("common/header.html"); 
+});
+
+$(function(){
+  $("#footer-cs").load("../common/footer-cs.html");
+});
+
+$(function(){
+  $("#header-cs").load("../common/header-cs.html");
+});
+
 function replace(location, image){ 
   $(location).attr("src", image);
 }
@@ -62,10 +78,6 @@ function is_touch_enabled() {
          ( navigator.msMaxTouchPoints > 0 ); 
 }
 
-$(allInView);
-$(window).scroll(allInView);
-
-
 function isScrolledIntoView(elem) {
     var docViewTop = $(window).scrollTop()+800;
     var docViewBottom = docViewTop + $(window).height()-200;
@@ -87,7 +99,7 @@ function isScrolledIntoView2(elem) {
 
 var anime_dict = {};
 
-function allInView() {
+allInView = function () {
 
 	var elements = document.getElementsByClassName("highlight");
 
@@ -114,6 +126,8 @@ function allInView() {
     }
   }
 }
+
+// $(window).scroll(allInView);
 
 var headings = ["While we wait &#x1F605; , Deepa's Fun Fact #1",
                 "While we wait &#x1F605; , Deepa’s Fun Fact #2",
@@ -146,9 +160,15 @@ const hide_fun = async () => {
   }
 }
 
-var prev_handler = window.onload;
-var prev_handled = false;
-window.onload=function() {
+set_active = function() {
+  var nav_active = document.getElementById(nav_active_id);
+  if(nav_active)
+    nav_active.classList.add("active");
+  else
+    setTimeout(set_active, 200);
+}
+
+window.addEventListener('load', function() {
   var time_left = 2000 - Date.now() + time_ready;
   if(time_left > 0)
     setTimeout(hide_fun, time_left);
@@ -178,22 +198,11 @@ window.onload=function() {
     });
   }
   
-  var nav_active = document.getElementById(nav_active_id);
-  nav_active.classList.add("active");
-  if(prev_handler && !prev_handled) {
-    prev_handled = true;
-    prev_handler();
-  }
+  set_active();
   $('#toggle').click(function() {
     $(this).toggleClass('active');
     $('#overlay').toggleClass('open');
    });
-}
-
-$(function(){
-      $("#footer").load("common/footer.html"); 
-});
-
-$(function(){
-      $("#header").load("common/header.html"); 
+  $(allInView);
+  window.addEventListener('scroll', allInView);
 });
