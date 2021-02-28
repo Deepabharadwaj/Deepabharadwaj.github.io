@@ -150,7 +150,10 @@ var prev_handler = window.onload;
 var prev_handled = false;
 window.onload=function() {
   var time_left = 2000 - Date.now() + time_ready;
-  setTimeout(hide_fun, time_left);
+  if(time_left > 0)
+    setTimeout(hide_fun, time_left);
+  else
+    hide_fun();
   var arrows = document.querySelectorAll('.read-more');
   var i;
 	for (i = 0; i < arrows.length; i++) {
