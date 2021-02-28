@@ -168,6 +168,17 @@ set_active = function() {
     setTimeout(set_active, 200);
 }
 
+set_nav_toggle = function() {
+  var toggle = document.getElementById("toggle");
+  if(toggle) {
+    $('#toggle').click(function() {
+      $(this).toggleClass('active');
+    });
+  } else {
+    setTimeout(set_nav_toggle, 200);
+  }
+}
+
 window.addEventListener('load', function() {
   var time_left = 2000 - Date.now() + time_ready;
   if(time_left > 0)
@@ -199,10 +210,7 @@ window.addEventListener('load', function() {
   }
   
   set_active();
-  $('#toggle').click(function() {
-    $(this).toggleClass('active');
-    $('#overlay').toggleClass('open');
-   });
+  set_nav_toggle();
   $(allInView);
   window.addEventListener('scroll', allInView);
 });

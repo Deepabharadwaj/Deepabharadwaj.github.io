@@ -21,3 +21,8 @@ function initStickyHero(hero) {
     var bool = entries[0].intersectionRatio > 0;
     Util.toggleClass(this.element, 'sticky-hero--media-is-fixed', bool);
   };
+
+  $(function(){
+    $("#Modal").load("../common/modal.html");
+  });
+  
