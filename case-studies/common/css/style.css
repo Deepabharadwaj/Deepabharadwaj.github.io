@@ -114,8 +114,25 @@
     background-color: #C4C4C4;
 
     border-radius: 50%;
+    pointer-events: none;
 }
-     
+
+.carousel-custom-caption {
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  margin: auto;
+}
+
+.arrow-hover{
+  opacity: 0.7;
+  cursor: pointer;
+  transition: ease 0.5s;
+  transform: scale(0.5);
+}
+.arrow-hover:hover{
+  opacity: 0.5;
+}
 
 .next-project-box {
     background:  rgba(253, 185, 45, 0.1);
