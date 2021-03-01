@@ -125,4 +125,18 @@
         margin-left: 3rem!important;
         margin-right: 1.5rem!important;
     }
+
+    .pages-container{
+        background: #f7f7f7;
+        margin-left: -5%;
+        margin-right: -5%;
+        padding-top: 5%;
+        padding-bottom: 2%;
+        width: 109%;
+    }
+
+    .pages-container div{
+        margin-left: 2.5%!important;
+        margin-right: 2.5%!important;
+    }
 }
