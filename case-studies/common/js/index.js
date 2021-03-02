@@ -26,3 +26,18 @@ function initStickyHero(hero) {
     $("#Modal").load("../common/modal.html");
   });
   
+window.addEventListener('scroll', function() {
+    if(window.innerWidth > 500)
+      return;
+    var top = $(window).scrollTop();
+    var height = window.innerHeight;
+    if(top < height)
+    {
+      $('.gtt-button').addClass("d-none");
+      $('.gtt-button').removeClass("d-flex");
+    } else {
+      $('.gtt-button').addClass("d-flex");
+      $('.gtt-button').removeClass("d-none");
+    }
+});
+  
