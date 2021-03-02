@@ -745,18 +745,18 @@ textarea {
 }
 .button_container.active .top {
     transform: translateY(8px) translateX(0) rotate(45deg);
-    background: #666;
+    background: #303030;
 }
 .button_container.active .middle {
     opacity: 0;
-    background: #666;
+    background: #303030;
 }
 .button_container.active .bottom {
     transform: translateY(-8px) translateX(0) rotate(-45deg);
-    background: #666;
+    background: #303030;
 }
 .button_container span {
-    background: #666;
+    background: #303030;
     border: none;
     height: 3px;
     width: 80%;
@@ -840,6 +840,9 @@ textarea {
         text-align: left;
         margin-left:  20px;
         margin-right: 0;
+    }
+    .navbar-expand-lg .navbar-nav .nav-link { 
+        color: #303030AA;
     }
 
     .nav-item.active .tm-nav-link,
