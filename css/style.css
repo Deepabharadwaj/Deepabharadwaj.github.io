@@ -756,8 +756,8 @@ textarea {
 .button_container span {
     background: #303030;
     border: none;
-    height: 3px;
-    width: 80%;
+    height: 2px;
+    width: 70%;
     border-radius: 2px;
     position: absolute;
     top: 10px;
