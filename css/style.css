@@ -740,9 +740,7 @@ textarea {
     z-index: 100;
     transition: opacity 0.25s ease;
 }
-.button_container:hover {
-    opacity: 0.7;
-}
+
 .button_container.active .top {
     transform: translateY(8px) translateX(0) rotate(45deg);
     background: #303030;
