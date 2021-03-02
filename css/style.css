@@ -546,7 +546,7 @@ textarea {
     box-sizing: content-box;
     background-color: white;
     opacity: 0.95;
-
+    z-index: 10;
 }
 
 .nav-hold {
