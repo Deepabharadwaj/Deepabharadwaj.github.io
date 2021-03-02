@@ -27,17 +27,23 @@ function initStickyHero(hero) {
   });
   
 window.addEventListener('scroll', function() {
-    if(window.innerWidth > 500)
-      return;
-    var top = $(window).scrollTop();
-    var height = window.innerHeight;
-    if(top < height)
-    {
-      $('.gtt-button').addClass("d-none");
-      $('.gtt-button').removeClass("d-flex");
-    } else {
-      $('.gtt-button').addClass("d-flex");
-      $('.gtt-button').removeClass("d-none");
-    }
+  var top = $(window).scrollTop();
+  var height = window.innerHeight;
+  var total  = document.body.offsetHeight;
+  var progress = (top + height*0.1)  * 100.0 / (total - height*0.9);
+  var w =  progress + '%';
+  $('.pbar-overlay').css({"width": w});
+
+  console.log(top, height, total, progress);
+  // if(window.innerWidth > 500)
+  //   return;
+  if(top < height)
+  {
+    $('.gtt-button').addClass("invisible");
+    $('.gtt-button').removeClass("visible");
+  } else {
+    $('.gtt-button').addClass("visible");
+    $('.gtt-button').removeClass("invisible");
+  }
 });
   
