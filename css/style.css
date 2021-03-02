@@ -583,9 +583,9 @@ textarea {
 .carousel .reco-next-icon {
     width: 100%;
     padding: 10px;
-    background-image: url("../img/recoarrow.svg");
+    background-image: url("../img/recoarrow1.svg");
     position: absolute;
-    transform: scale(2.5);
+    transform: scale(1.5);
     top: 100px;
 }
 

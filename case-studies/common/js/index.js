@@ -34,9 +34,6 @@ window.addEventListener('scroll', function() {
   var w =  progress + '%';
   $('.pbar-overlay').css({"width": w});
 
-  console.log(top, height, total, progress);
-  // if(window.innerWidth > 500)
-  //   return;
   if(top < height)
   {
     $('.gtt-button').addClass("invisible");
