@@ -5,39 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Deepa Bharadwaj | About</title>
-    <link rel="icon" href="img/Logo/Logo_Normal.png">
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400"
-      rel="stylesheet"
-    />
-    <!-- https://fonts.google.com/ -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <!-- https://getbootstrap.com/ -->
-    <link href="fontawesome/css/all.min.css" rel="stylesheet" />
-    <!-- https://fontawesome.com/ -->
-    <link href="css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.typekit.net/ikz0csl.css" />
-    <link rel="stylesheet" href="css/stylesheet.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
-    <script src="js/index.js"></script>
-    <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
-
-    <!-- bootstrap -->
-    <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+    <link rel="preload" href="/webfontkit-heatwood/heatwood-webfont.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preconnect" href="https://use.typekit.net">
     
   </head>
 
-  <body>
+  <body class="hidden_body">
 
-    <div class="loader main-loadertext">
+    <!-- <div class="loader main-loadertext">
       <div id="fun-heading" ></div>
       <div class ="sub-loadertext" id="fun-content"></div>
-    </div>
-    <script> wait_loader();</script>
+    </div> -->
 
     <section class="container">
       <nav id="header" class="navbar navbar-expand-lg nav-hold"> </nav>
@@ -100,7 +78,11 @@
        
         <div class="col-md-4 ml-auto col-sm-12">
           <div>
-            <img class="img-fluid" src="img/about-me.jpg" style="height: auto;" loading=lazy>
+            <picture>
+                <source srcset="img/about-me.jpg.webp" type="image/webp">
+                <img src="img/about-me.jpg" class="img-fluid" alt=""> 
+           </picture>
+            <!-- <img class="img-fluid" src="img/about-me.jpg" style="height: auto;" loading=lazy> -->
           </div>
           <div class="row info-heading text-uppercase"> CONTACT</div>
           <div class="row info-content"> 
@@ -130,17 +112,38 @@
         <hr class='mb-5'>
         <div class="row mb-5">
           <div class="col-4 mt-auto mb-5 p-md-3 p-2">
-            <img class="img-fluid my-md-3 my-2" src="img/about-me/photo3.jpg" loading=lazy>
-            <img class="img-fluid my-md-3 my-2" src="img/about-me/photo6.jpg" loading=lazy>
+            <picture>
+              <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/about-me/photo3.jpg.webp" type="image/webp">
+              <img srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/about-me/photo3.jpg" class="img-fluid my-md-3 my-2 lazyload" alt=""> 
+         </picture>
+         <picture>
+          <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/about-me/photo6.jpg.webp" type="image/webp">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/about-me/photo6.jpg" class="img-fluid my-md-3 my-2 lazyload" alt=""> 
+        </picture>
           </div>
           <div class="col-4 mb-auto  p-md-3 p-2">
-            <img class="img-fluid my-md-3 my-2" src="img/about-me/photo1.jpg" loading=lazy>
-            <img class="img-fluid my-md-3 my-2" src="img/about-me/photo5.jpg" loading=lazy>
+            <picture>
+              <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/about-me/photo1.jpg.webp" type="image/webp">
+              <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/about-me/photo1.jpg" class="img-fluid my-md-3 my-2 lazyload" alt=""> 
+            </picture>
+            <picture>
+              <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/about-me/photo5.jpg.webp" type="image/webp">
+              <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/about-me/photo5.jpg" class="img-fluid my-md-3 my-2 lazyload" alt=""> 
+            </picture>
           </div>
           <div class="col-4 mt-5 p-md-3 p-2">
-            <img class="img-fluid my-md-3 my-2" src="img/about-me/photo8.jpg" loading=lazy>
-            <img class="img-fluid my-md-3 my-2" src="img/about-me/photo4.jpg" loading=lazy>
-            <img class="img-fluid my-md-3 my-2" src="img/about-me/photo7.jpg" loading=lazy>
+            <picture>
+              <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/about-me/photo8.jpg.webp" type="image/webp">
+              <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/about-me/photo8.jpg" class="img-fluid my-md-3 my-2 lazyload" alt=""> 
+            </picture>
+            <picture>
+              <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/about-me/photo4.jpg.webp" type="image/webp">
+              <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/about-me/photo4.jpg" class="img-fluid my-md-3 my-2 lazyload" alt=""> 
+            </picture>
+            <picture>
+              <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/about-me/photo7.jpg.webp" type="image/webp">
+              <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/about-me/photo7.jpg" class="img-fluid my-md-3 my-2 lazyload" alt=""> 
+            </picture>
           </div>
         </div>
       </section>
@@ -197,5 +200,17 @@
       <div class="bottom-line-box c4"></div>
       <div class="bottom-line-box c5"></div>
     </div>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&font-display=swap"/>
+    <!--     <link rel="stylesheet" href="https://use.typekit.net/ikz0csl.css" /> -->
+    
+        <link rel="stylesheet" href="css/bootstrap.min.css" rel="stylesheet" />
+    <!--     <link rel="stylesheet" href="fontawesome/css/all.min.css"/> -->
+        <!-- <link rel="stylesheet" href="css/stylesheet.css" /> -->
+        <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="js/index.min.js"></script>
   </body>
 </html>
