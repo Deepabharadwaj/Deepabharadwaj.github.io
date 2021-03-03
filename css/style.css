@@ -128,11 +128,8 @@ p { line-height: 1.9; }
 
 /* Navigation */
 .navbar-toggler {
-    /* padding: 8px 15px; */
-    /* border: 0;
     border-radius: 0; */
     transform: scale(1.25);
-    /* background-color: rgba(0,0,0,0.5); */
     color: darkslategray;    
 }
 
