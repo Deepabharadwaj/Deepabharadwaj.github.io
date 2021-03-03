@@ -128,7 +128,6 @@ p { line-height: 1.9; }
 
 /* Navigation */
 .navbar-toggler {
-    border-radius: 0; */
     transform: scale(1.25);
     color: darkslategray;    
 }
