@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Deepa Bharadwaj | Projects | Adult-it</title>
     <link rel="preload" href="/webfontkit-heatwood/heatwood-webfont.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preconnect" href="/case-studies/common/css/modal.css">
+    <link rel="preload" href="/case-studies/common/css/modal.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   </head>
 
   <body class="hidden_body">
@@ -765,19 +765,27 @@
     </div>
 
     <link
+    rel="preload"
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&font-display=swap"
-    rel="stylesheet"
+    as="style"
+    onload="this.onload=null;this.rel='stylesheet'"
   />
   <!-- https://fonts.google.com/ -->
-  <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="preload" href="../../css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
   <!-- https://getbootstrap.com/ -->
-  <link href="../../fontawesome/css/all.min.css" rel="stylesheet" />
+  <link rel="preload" href="../../fontawesome/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
   <!-- https://fontawesome.com/ -->
-  <link href="../../css/style.css" rel="stylesheet" />
+  <link rel="preload" href="../../css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <!--   <link rel="stylesheet" href="https://use.typekit.net/ikz0csl.css" /> -->
-  <link rel="stylesheet" href="../../css/style.css" />
-  <link rel="stylesheet" href="../common/css/style.css" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preload" href="../common/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<!--   <link rel="stylesheet" href="css/style.css" /> -->
+
+  <style>
+    .sticky-hero__media {
+    background: url('../img/heroimgmockup.jpg') no-repeat center center;
+    background-size: cover;
+}
+  </style>
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
