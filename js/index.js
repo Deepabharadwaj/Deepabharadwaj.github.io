@@ -796,12 +796,12 @@ function wait_loader() {
   time_ready = Date.now();
 }
 
-/* const hide_fun = async () => {
+const hide_fun = async () => {
   const loader = document.querySelector('.loader');
   if (loader && !loader.classList.contains('hidden')) {
     loader.className += ' hidden'; // class "loader hidden"
   }
-}; */
+};
 
 set_active = function () {
   var nav_active = document.getElementById(nav_active_id);
@@ -822,8 +822,8 @@ set_nav_toggle = function () {
 
 window.addEventListener('load', function () {
   var time_left = 2000 - Date.now() + time_ready;
-  /*   if (time_left > 0) setTimeout(hide_fun, time_left);
-  else hide_fun(); */
+    if (time_left > 0) setTimeout(hide_fun, time_left);
+  else hide_fun();
   var arrows = document.querySelectorAll('.read-more');
   var i;
   for (i = 0; i < arrows.length; i++) {
