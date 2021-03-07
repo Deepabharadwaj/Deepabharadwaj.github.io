@@ -205,7 +205,7 @@
 
                 <div class="row mb-4">
                   <picture><video width="100%" controls autoplay muted loop playsinline>
-                    <source src="img/video.mp4" type="video/mp4">
+                    <source src="img/video.mp4" type="video/mp4" loading=lazy>
                     Video not supported in this browser.
                   </video></picture> 
                 </div>
@@ -366,7 +366,11 @@
                   <!-- <img class="img-fluid" style="width: 100%;" src = "img/logo.jpg" loading=lazy> -->
                 </div>
                 <div class='col-md-9 mt-1 mobile-left'>
-                  <img class="desktop-invisible amigas-inline" style="height: 1.5rem;" src = "img/logo.jpg" loading=lazy> aims at being a virtual travel companion that makes women feel safe and relaxed, by connecting and providing them with women-centered travel information from women travelers all over the globe, thus easing the pressure in both planning the trip, and during their travels.
+                  <picture>
+                    <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/logo.jpg.webp" type="image/webp">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/logo.jpg" class="desktop-invisible amigas-inline lazyload" style="height: 1.5rem;" alt=""> 
+                  </picture>
+                  <!-- <img class="desktop-invisible amigas-inline" style="height: 1.5rem;" src = "img/logo.jpg" loading=lazy> --> aims at being a virtual travel companion that makes women feel safe and relaxed, by connecting and providing them with women-centered travel information from women travelers all over the globe, thus easing the pressure in both planning the trip, and during their travels.
                 </div>
               </div>
               <div class="row">
