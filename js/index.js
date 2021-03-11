@@ -782,7 +782,7 @@ var contents = [
   'I love learning about different technologies and how to use them to design more creatively and efficiently. Currently learning how to code in Javascript, and animate in After Effects! &#128187; &#128588; &#128587;&#8205;&#9792;&#65039; ',
 ];
 
-var nav_active_id = 'nav-about';
+var nav_active_id = 'nav-projects';
 
 $(document).on('load', function () {
   $('body').removeClass('hidden_body');
