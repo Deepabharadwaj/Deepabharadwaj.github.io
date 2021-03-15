@@ -1,2 +1,8 @@
 User-agent: *
 Allow: /
+
+Disallow: /img_backup/
+Disallow: /architecture.html
+Disallow: /resume.html
+
+Sitemap: https://deepabharadwaj.com//sitemap.xml
