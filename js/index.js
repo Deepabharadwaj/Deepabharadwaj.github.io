@@ -930,8 +930,9 @@ if($('#carousel-reco').length > 0) {
 }
 
 setTimeout(function () {
-  $('.navbar-nav a').on('click', function(){
-    console.log('click');
-    $('.navbar-collapse').hide();
+  $('.navbar-nav a').each(function(i, el) {
+    $(el).on('click', function(){
+      $('.navbar-collapse').hide();
+    });
   });
 }, 200);
