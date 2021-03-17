@@ -928,3 +928,14 @@ if($('#carousel-reco').length > 0) {
   }
   
 }
+
+$( window ).on('load', function() {
+  $('.navbar-nav .nav-item').each(function(i, el) {
+    $(el).on('click touchstart', function(e){
+      console.log('click');
+      setTimeout(function () {
+        document.location.reload();
+      }, 200);
+    });
+  });
+});
