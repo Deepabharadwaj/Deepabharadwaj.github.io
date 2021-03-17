@@ -928,3 +928,10 @@ if($('#carousel-reco').length > 0) {
   }
   
 }
+
+setTimeout(function () {
+  $('.navbar-nav a').on('click', function(){
+    console.log('click');
+    $('.navbar-collapse').hide();
+  });
+}, 200);
