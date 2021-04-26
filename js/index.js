@@ -766,12 +766,12 @@ allInView = function () {
 // $(window).scroll(allInView);
 
 var headings = [
-  "While we wait &#x1F605; , Deepa's Fun Fact #1",
-  'While we wait &#x1F605; , Deepa’s Fun Fact #2',
-  'While we wait &#x1F605; , Deepa’s Fun Fact #3',
-  "While we wait &#x1F605; , Deepa's Fun Fact #4",
-  'While we wait &#x1F605; , Deepa’s Fun Fact #5',
-  'While we wait &#x1F605; , Deepa’s Fun Fact #6',
+  "While we wait &#x1F605;, Deepa's Fun Fact #1",
+  'While we wait &#x1F605;, Deepa’s Fun Fact #2',
+  'While we wait &#x1F605;, Deepa’s Fun Fact #3',
+  "While we wait &#x1F605;, Deepa's Fun Fact #4",
+  'While we wait &#x1F605;, Deepa’s Fun Fact #5',
+  'While we wait &#x1F605;, Deepa’s Fun Fact #6',
 ];
 var contents = [
   'I’m currently learning kickboxing, hope to become a part-time kickboxing instructor on the weekends soon. Gotta keep practicing my jabs & crosses though! &#129354;&#127939;&#8205;&#9792;&#65039;&#128074; ',
@@ -852,6 +852,7 @@ window.addEventListener('load', function () {
   set_nav_toggle();
   $(allInView);
   window.addEventListener('scroll', allInView);
+  // window.addEventListener('scroll', landing_scroller);
 });
 
 if($('#carousel-reco').length > 0) {
@@ -928,6 +929,15 @@ if($('#carousel-reco').length > 0) {
   }
   
 }
+
+anime({
+  targets: document.querySelectorAll('#down_arrow'),
+  translateY: 20,
+  duration: 500,
+  direction: 'alternate',
+  easing: 'linear',
+  loop: true,
+});
 
 /* $( window ).on('load', function() {
   $('.navbar-nav .nav-item').each(function(i, el) {
