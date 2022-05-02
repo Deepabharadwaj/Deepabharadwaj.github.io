@@ -100,7 +100,7 @@ p {
 }
 
 .read-more-spacer {
-  margin: 1rem;
+  margin: 0.5rem;
 }
 
 .read-more {
@@ -120,6 +120,22 @@ p {
   padding-left: 5px;
   padding-bottom: 4px;
   align-items: center;
+}
+
+.case-study-tags {
+  border-radius: 10px;
+  color: #777777;
+  border-color: #F3f3f3;
+  border-width: 2px;
+  padding: 2px 5px!important;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 0.8rem!important;
+  font-weight: 350;
+  margin: 2px;
+}
+
+.case-study-tags:hover {
+  cursor: default;
 }
 
 .top-section-splitter {
