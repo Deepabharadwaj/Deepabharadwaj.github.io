@@ -3,34 +3,270 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Amazon Prime Video reedesign where my aim was to enhance the user experience and value proposition of an existing video streaming platform on desktop.">
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <title>Deepa Bharadwaj | Projects | Prime Video</title>
-    <link rel="icon" href="../../img/Logo/Logo_Normal.png">
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400"
-      rel="stylesheet"
-    />
-    <!-- https://fonts.google.com/ -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet" />
-    <!-- https://getbootstrap.com/ -->
-    <link href="../../fontawesome/css/all.min.css" rel="stylesheet" />
-    <!-- https://fontawesome.com/ -->
-    <link href="../../css/style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://use.typekit.net/ikz0csl.css" />
-    <link rel="stylesheet" href="../../css/stylesheet.css" />
-    <link rel="stylesheet" href="../common/css/style.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/test.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="../../js/index.js"></script>
-    <script src="../common/js/index.js"></script>
-
-    <!-- bootstrap -->
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+    <link rel="manifest" href="../../site.webmanifest">
+    <link rel="mask-icon" href="../../safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="preload" href="/webfontkit-heatwood/heatwood-webfont.woff2" as="font" type="font/woff2" crossorigin>
+    <style>
+      #chat1{ transition:all 1s}#chat1_new{ transition:all 1s}#img_holder_1{ -webkit-filter:blur(2px); filter:blur(2px)}#img_holder_3{ -webkit-filter:blur(2px); filter:blur(2px)}#img_holder_2_2{ -webkit-filter:blur(2px); filter:blur(2px)}.img_holder_inactive{ -webkit-filter:blur(2px); filter:blur(2px); transition:ease 0.5s; z-index:1; cursor:pointer}.img_holder_active_2{ transform:scale(1.25) translateX(15%); z-index:100; transition:ease 0.5s}.img_holder_active_2:hover{ opacity:1.0; cursor:pointer}.img_holder_active_3{ transform:scale(1.7); z-index:100; transition:ease 0.5s}.img_holder_active_3:hover{ opacity:1.0; cursor:pointer}.img_holder_active_3#img_holder_1_1{ transform:scale(1.7) translateX(18%)}.img_holder_active_3#img_holder_1_3{ transform:scale(1.7) translateX(-16%)}.img-container{ position:relative; display:inline-block}.img-container .overlay-img{ position:absolute; top:-3%; left:0; width:100%; height:100%; opacity:1.0; color:white; pointer-events:none }.arrow-hover:hover{ opacity:0.5; cursor:pointer; transition:ease 0.5s}.img_holder_dummy{ opacity:0}.img_holder_pos_1{ transform:translateX(0); -webkit-filter:blur(2px); filter:blur(2px); z-index:1; transition:transform ease 1s}.img_holder_pos_2{ transform:translateX(100%) scale(1.7); z-index:2; transition:transform ease 0.75s}.img_holder_pos_3{ transform:translateX(220%); -webkit-filter:blur(2px); filter:blur(2px); z-index:1; transition:transform ease 0.25s}@media (max-width:500px){.goals-container{ background:#f7f7f7; margin-left:-5%; margin-right:-5%; padding-top:5%; width:109%;} .goals-container ol{ margin-left:3rem!important; margin-right:1.5rem!important;} .pages-container{ background:#f7f7f7; margin-left:-5%; margin-right:-5%; padding-top:5%; padding-bottom:2%; width:109%;} .pages-container div{ margin-left:2.5%!important; margin-right:2.5%!important;}}
+      svg{width:1em;height:1em;font-size:10em;fill:white}#loader circle:nth-of-type(1){opacity:.35;animation:fade .7s cubic-bezier(.39,.58,.57,1) 0s infinite alternate-reverse}#loader circle:nth-of-type(2){opacity:.35;animation:fade .7s cubic-bezier(.39,.58,.57,1) .4s infinite alternate-reverse}#loader circle:nth-of-type(3){opacity:.35;animation:fade .7s cubic-bezier(.39,.58,.57,1) .8s infinite alternate-reverse}#loader circle:nth-of-type(4){animation:expandBigger .5s infinite alternate .4s}#loader circle:nth-of-type(5){animation:expandTiny .5s infinite alternate}#loader path{animation:expandBiggest 1s linear infinite alternate}@keyframes fade{from{opacity:1}to{opacity:.45}}@keyframes expandTiny{from{transform:scale(1)}to{transform:translate(4.1px,-7.48px) scale(1.1)}}@keyframes expandBigger{from{transform:scale(1)}to{transform:translate(2.52px,-6.26px) scale(1.1)}}@keyframes expandBiggest{from{transform:scale(1)}to{transform:translate(-.525px,-.94875px) scale(1.025)}}
+    </style>
+        <script type="application/ld+json">
+          [{
+            "@context": "https://schema.org/",
+            "@type": "Service",
+            "serviceType": "Web / Mobile development",
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Deepa Bharadwaj",
+              "image": "https://deepabharadwaj.com/img/about-me.jpg",
+              "email": "deepa@deepabharadwaj.com",
+              "address": "San Francisco, California, USA",
+              "priceRange": "35$/hour",
+              "telephone": "(+1)734-263-4130"
+            },
+            "areaServed": {
+              "@type": "State",
+              "name": "San Francisco"
+            },
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Web / Mobile development",
+              "itemListElement": [
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Interaction Design",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Sketching"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Wire-framing"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Mock-ups"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Art & Illustration"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Visual Design"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Graphic Design"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Branding & Identity"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Web Content"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Motion Design"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Rapid Prototyping"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Hi-Fidelity Prototyping "
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@type": "OfferCatalog",
+                  "name": "User Research",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Accessibility Design"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Affinity Mapping"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Participatory Design"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Usability Testing"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "User Interviews"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Survey Design & Analysis"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Heuristic Evaluation"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Comparative Analysis"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "A-B Testing"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "User Persona"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "User Enactments"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "@type": "OfferCatalog",
+                  "name": "Product Management",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Scrum"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Agile Methodologies"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Google Analytics"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "A/B Testing"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Jira"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "CreativeWork",
+            "author": {
+              "@type": "Person",
+              "name": "Deepa Bharadwaj",
+              "image": "https://deepabharadwaj.com/img/about-me.jpg",
+              "description": "I’m Deepa, a UX Designer based in San Francisco. I incorporate my architectural design background by leveraging empathy and a deep understanding of design systems to craft user-centered solutions",
+              "awards": "Qualified as Top 10 finalist among 137 teams
+              worldwide for design of Bark Smart Collar App for
+              UX Hackathon (2020)"
+            },
+            "image": "http://deepa.loc/case-studies/amazon/img/heroimgmockup_desktop.jpg",
+            "name": "Amazon Prime Video Redesign",
+            "description": "Amazon Prime Video reedesign where my aim was to enhance the user experience and value proposition of an existing video streaming platform on desktop. We chose to focus on adding personalization as well as a social component to Amazon Prime Video."
+          }]
+          </script>
   </head>
 
   <body>
@@ -39,31 +275,35 @@
       <div id="fun-heading" ></div>
       <div class ="sub-loadertext" id="fun-content"></div>
     </div>
-    <script> wait_loader();</script>
 
     <!-- Image Modal -->
-    <section id="Modal"></section>
+    <div id="Modal"></div>
 
     <div class="progress-bar">
       <div class="pbar-overlay"></div>
     </div>
 
-    <section class="container">
+    <div class="container">
       <nav id="header-cs" class="navbar navbar-expand-lg nav-hold"> </nav>
       <script> nav_active_id = 'nav-projects'</script>
 
-      <section class="sticky-hero js-sticky-hero">
-        <div class="sticky-hero__media" aria-hidden="true"></div>
+      <div class="sticky-hero js-sticky-hero">
+        <div class="sticky-hero__media" aria-hidden="true">
+          <picture>
+            <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/heroimgmockup_desktop.jpg.webp" type="image/webp">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/heroimgmockup_desktop.jpg" class="img-fluid modal-img lazyload" alt="amazon prime video hero"> 
+          </picture>
+        </div>
           <div class="sticky-hero__content">
             <div class="container">
               <div class="row">
                 <div class="col-lg-10 col-sm-12 pr-lg-5 " id="page-title">
-                  <h2 class="row tm-content-title align-items-center" style='color:#303030';> Prime Video<span class="ml-2"> - Redesign</span></h2>
+                  <h1 class="row tm-content-title align-items-center" style="color:#303030;"> Prime Video<span class="ml-2"> - Redesign</span></h1>
                   
                   <div class="row mb-4">
                     <hr class="mb-2">
                     <div>
-                      Our aim was to enhance the user experience and value proposition of an existing video streaming platform on desktop. We chose to focus on adding personalization as well as a social component to Amazon Prime Video.
+                      A redesign of the Prime Video platform to create a better viewing experience - by shifting focus to the individual user and connecting their viewing choices with their social groups. Design decisions driven by meetings with Amazon UX lead.
                     </div>
                   </div>
   
@@ -78,7 +318,7 @@
                     <div class="col-md-6 col-sm-12 mobile-left">
                       <strong>Skills:</strong>
                       <div class="my-3">
-                      Project Management, UX/ Research, Wire Frames, Hi-Fi Mocks, Prototyping
+                      Project Management, UX Research, Competitor Analysis., Wire Frames, Hi-Fi Mocks, Prototyping
                       </div>
                     </div>
                   </div>
@@ -101,38 +341,43 @@
             </div>
           </div>
         </div>
-      </section>
   
      
-      <section class="container">
+      <div class="container">
 
         <hr class="mb-5 desktop-invisible">
         <div class="row yellow-box mb-3 desktop-invisible"> </div>
         <div class="row mr-0 desktop-invisible">
           <div class="col-md-4 pr-5 mobile-left">
-            <h2 class="row tm-content-title"> Final Prototype</h2>
+            <div class="row tm-content-title"> Final Prototype</div>
           </div>
         </div>
         <hr class="mb-5 mobile-invisible">
         <hr class="mb-3 desktop-invisible">
         <div class="row mb-4 mr-0 px-5 mobile-full-width">
           <div class="img-container">
-            <picture><video class="d-block w-100" controls autoplay muted loop playsinline>
+            <video class="d-block w-100" controls autoplay muted loop playsinline>
                 <source src="img/prototype.mp4" type="video/mp4" loading=lazy>
                 Video not supported in this browser.
-            </video></picture>
-            <img class="overlay-img d-block w-100" style= "z-index: -1" src="img/desktopmockupoption.png" loading=lazy>
+            </video>
+            <picture>
+              <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/desktopmockupoption.png.webp" type="image/webp">
+              <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/desktopmockupoption.png" class="overlay-img d-block w-100 lazyload" style= "z-index: -1" alt="safari interface border"> 
+            </picture>
+            <!-- <img class="overlay-img d-block w-100" style= "z-index: -1" src="img/desktopmockupoption.png" loading=lazy> -->
           </div>
         </div>
-        <div class="row mb-4 mr-0 px-5 justify-content-center mobile-full-width mobile-invisible">
+        <!-- <div class="row mb-4 mr-0 px-5 justify-content-center mobile-full-width mobile-invisible">
           <a class = "click-link font-dark "  target="_blank" href="https://deepabharadwaj.github.io/amazon-prime-video-redesign/index.html">
             <p class="text-center" >
-              View Interactive Redesigned Homepage   <img src="img/newwindow.png" style="padding-left: 0.5rem; height:1rem">
+              View Interactive Redesigned Homepage   <img src="img/newwindow.png" style="padding-left: 0.5rem; height:1rem" alt="new window icon">
             </p>
            
           </a>
-        </div>
+        </div> -->
 
+        <hr class="mb-5 mobile-invisible">
+        <hr class="mb-3 mobile-invisible">
         <hr class="mb-3 desktop-invisible">
 
         <hr class="mb-5 mobile-invisible">
@@ -140,12 +385,39 @@
         <div class="row yellow-box mb-4"> </div>
         <div class="row mr-0">
           <div class="col-md-4 pr-5 mobile-left">
-            <h2 class="row tm-content-title row"> Audience</h2>
+            <div class="row tm-content-title row"> The Challenge</div>
+          </div>
+          <div class="col-md-8 px-0 mobile-left">
+            
+            <!-- <div class="row mb-4">
+              <div class= "tm-content-subheading">
+                <strong>User Research to determine Redesign Goals</strong> 
+              </div>
+            </div> -->
+            <div class="row mb-4">
+              <p>We conducted a survey among 100 users, <span class='highlight'>70% preferred other streaming platforms and just 30% preferred Amazon Prime Video.</span>  Our goal was to identify user's key pain points with Prime Video, and redesign the interface to minimize friction.</p>
+              <div class='mobile-invisible'>Users feel that when they are in the Prime Video portal, they feel like they are using a generic and nondescript account. It does not allow for social sharing of user's movies & shows which prevents interaction between friends on the site. </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- <hr class="mb-5 mobile-invisible">
+        <hr class="mb-3 desktop-invisible">
+        <div class="row yellow-box mb-4"> </div>
+        <div class="row mr-0">
+          <div class="col-md-4 pr-5 mobile-left">
+            <div class="row tm-content-title row"> Audience</div>
           </div>
           <div class="col-md-8 px-0 mobile-left">
             <div class="row desktop-invisible">
-              <picture> <img class="img-fluid modal-img" src = "img/protopersona.jpg" loading=lazy> </picture>
-            </div>
+              <picture>
+                <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/protopersona.jpg.webp" type="image/webp">
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/protopersona.jpg" class="img-fluid modal-img lazyload" alt="Proto Persona"> 
+              </picture> -->
+
+              <!-- <picture> <img class="img-fluid modal-img lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src = "img/protopersona.jpg"> </picture> -->
+            <!-- </div>
             <div class="row mb-4">
               <div class= "tm-content-subheading">
                 <strong>Proto Persona</strong> 
@@ -155,25 +427,33 @@
               <p>We started this project with an assumption, which we compiled in our proto-persona: in times of social isolation and beyond, Prime Video users  <span class="highlight"> lack personalization and integrated tools to socialize and connect with others</span> through this platform. </p>
             </div>
             <div class="row mobile-invisible">
-              <picture> <img class="img-fluid modal-img" src = "img/protopersona.jpg" loading=lazy> </picture>
-            </div>
+              <picture>
+                <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/protopersona.jpg.webp" type="image/webp">
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/protopersona.jpg" class="img-fluid modal-img lazyload" alt="Proto Persona"> 
+              </picture> -->
+             <!--  <picture> <img class="img-fluid modal-img lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src = "img/protopersona.jpg"> </picture> -->
+            <!-- </div>
           </div>
-        </div>
+        </div> -->
 
         <hr class="mb-5 mobile-invisible">
         <hr class="mb-3 desktop-invisible">
         <div class="row yellow-box mb-4"> </div>
         <div class="row mr-0">
           <div class="col-md-4 pr-5 mobile-left">
-            <h2 class="row tm-content-title row"> Research</h2>
+            <div class="row tm-content-title row"> Research</div>
           </div>
             <div class="col-md-8 px-0 mobile-left">
             <div class="row mb-3 desktop-invisible">
-              <picture> <img class="img-fluid modal-img" src = "img/currentwebsite.png" loading=lazy> </picture>
+              <picture>
+                <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/currentwebsite.png.webp" type="image/webp">
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/currentwebsite.png" class="img-fluid modal-img lazyload" alt="Current Website"> 
+              </picture>
+              <!-- <picture> <img class="img-fluid modal-img" src = "img/currentwebsite.png" loading=lazy> </picture> -->
             </div>
             <div class="row mb-3">
               <div class= "tm-content-subheading">
-                <strong>Current Website</strong> 
+                <strong>Current Website not providing a streamlined experience</strong> 
               </div>
             </div>
             <div class="row mb-4 mobile-invisible">
@@ -183,21 +463,25 @@
               Prime Video was developed as an <span class="highlight">added bonus of having Prime rather than a streaming service in its own right.</span> We saw an opportunity here to redesigned the website for a better, more personable experience.
             </div>
             <div class="row mb-5 mobile-invisible">
-              <picture class="mx-auto"> <img class="img-fluid modal-img" src = "img/currentwebsite.png" loading=lazy> </picture>
+                <picture>
+                  <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/currentwebsite.png.webp" type="image/webp" class="mx-auto">
+                  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/currentwebsite.png" class="img-fluid modal-img lazyload" alt="Current Website"> 
+                </picture>
+                <!-- <img class="img-fluid modal-img" src = "img/currentwebsite.png" loading=lazy>  -->
             </div>
 
             <div class="row mb-3">
               <div class= "tm-content-subheading">
-                <strong>User Interviews</strong> 
+                <strong>Users looking for personalized content, social connectivity</strong> 
               </div>
             </div>
             <div class="row mb-4 mobile-invisible">
-              <p>To test our assumption, we performed 5 interviews with a <span class="highlight">demographic of active Prime Video users aged 22–38, who have an active Amazon Prime subscription.</span> They are looking for increased social connectivity, interactions, and personalized content on the streaming platform. <br><br> Based on information collected from the interviews, we created a survey to further refine the dataset, and gain valuable insights. 
-                We also posted an Instagram poll and questionnaire as a quick method to get statistics from a larger audience.
+              <p>To test our assumption, we performed 5 interviews with a demographic of active Prime Video users aged 22–38, who have an active Amazon Prime subscription.
+                <!-- <br> Based on information collected from the interviews, we created a survey to further refine the dataset, and gain valuable insights. 
+                We also posted an Instagram poll and questionnaire as a quick method to get statistics from a larger audience. -->
             </div>
             <div class="row mb-4 desktop-invisible">
-              <p>To test our assumption, we performed 5 interviews with a demographic of active Prime Video users aged 22–38, who have an active Amazon Prime subscription.<br><br> Based on information collected from the interviews, we created a survey to further refine the dataset, and gain valuable insights. 
-                
+              <p>To test our assumption, we performed 5 interviews with a demographic of active Prime Video users aged 22–38, who have an active Amazon Prime subscription.
             </div>
             <!-- <div class="row mb-5 text-center">
               <picture class="mx-auto"> <img class="img-fluid w-75" src = "img/userinterview.jpg" loading=lazy> </picture>
@@ -227,19 +511,22 @@
         <div class="row yellow-box mb-4"> </div>
         <div class="row mr-0">
           <div class="col-md-4 pr-5 mobile-left">
-            <h2 class="row mb-3 tm-content-title row"> Definition & Synthesis</h2>
+            <div class="row mb-3 tm-content-title row"> Definition & Synthesis</div>
           </div>
             <div class="col-md-8 px-0 mobile-left">
             <div class="row mb-3 desktop-invisible">
-              <picture> <img class="img-fluid modal-img" src = "img/ad.jpg" loading=lazy> </picture>
+              <picture> <img class="img-fluid modal-img" src = "img/ad.jpg" loading=lazy alt="amazon prime video affinity diagram"> </picture>
             </div>
             <div class="row mb-3">
               <div class= "tm-content-subheading">
-                <strong>Affinity Diagram</strong> 
+                <strong>Sorted user interview insights into multiple categories, which helped us identify common trends and confirm main pain points</strong> 
               </div>
             </div>
-            <div class="row mb-4">
+            <!-- <div class="row mb-4">
               We sorted our user interview insights into multiple categories. This helped us identify common trends and confirm main pain points.
+            </div> -->
+            <div class="row mb-5 mobile-invisible">
+              <picture> <img class="img-fluid modal-img" src = "img/ad.jpg" loading=lazy alt="amazon prime video affinity diagram"> </picture>
             </div>
             <div class="row my-4 mr-0 rounded-box">
               <ul class=" mx-4 my-3 myul">
@@ -249,21 +536,22 @@
                 <li class="mb-2 myli">Existing browse and search features lead to irrelevant results and cause user frustration</li>
               </ul>
             </div>
-            <div class="row mb-5 mobile-invisible">
-              <picture> <img class="img-fluid modal-img" src = "img/ad.jpg" loading=lazy> </picture>
-            </div>
 
             <div class="row mb-4">
               <div class= "tm-content-subheading">
-                <strong>Competitor Analysis</strong> 
+                <strong>75% of users preferred competitors over Prime Video</strong> 
               </div>
             </div>
             <div class="row mb-3">
               <p>To ideate solutions that would help the user achieve her goals, we performed a competitive analysis to figure out if/how other products were addressing the user needs. <span class="highlight">We evaluated 3 direct competitors (Hulu, Netflix and Disney+) and 1 indirect competitor (YouTube)</span> </p>
             </div>
-            <div class="desktop-invisible">
+            <!-- <div class="desktop-invisible">
+              <picture>
+                <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/companalysis.png.webp" type="image/webp">
+                <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/companalysis.png" class="img-fluid modal-img lazyload" alt="amazon prime video complex analysis"> 
+              </picture>
               <picture><img class="img-fluid modal-img" src="img/companalysis.jpg" loading=lazy> </picture>
-            </div>
+            </div> -->
 
             <div class="row px-0 d-inline-flex mobile-invisible">
               <div class="col-md-6">
@@ -296,12 +584,13 @@
         </div>
 
 
-        <hr class="mb-3 mobile-invisible">
-        <hr class="mb-2 desktop-invisible">
+        <hr class="mb-5 mobile-invisible">
+        <hr class="mb-5 mobile-invisible">
+        <hr class="mb-3 desktop-invisible">
        
         <div class="col-md-8 ml-auto px-0">
           <div class="row mb-3 tm-content-subheading">
-            <strong>User Persona, Journey Map & Storyboard</strong/div>
+            <strong>User Persona, Journey Map & Storyboard</strong>
           </div>
           <div class="row">    ​
             With a better understanding of the behavioral and cognitive processes of potential users, we created a User Persona, and also put together a storyboard to showcase our value proposition.
@@ -318,62 +607,63 @@
               <div class="carousel-inner" role="listbox">
 
                 <div class="carousel-item active">
-                  <img class="d-block w-100 modal-img" src="img/userpersona.jpg" alt="..." loading=lazy>
-                  <div class="d-none">Keeping in mind our users' main goals and pain points, we created a User Persona for Katrina Juma</div>
+                  <picture>
+                    <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/userpersona.jpg">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/userpersona.jpg" class="d-block w-100 modal-img lazyload" alt="amazon prime video user persona"> 
+                  </picture>
+                  <div class="d-none">Keeping in mind our users' main goals and pain points, we created a User Persona & Journey Map for Katrina Juma</div>
                 </div>
 
                 <div class="carousel-item">
-                  <img class="d-block w-100 modal-img" src="img/userjourneymap.jpg" alt="..." loading=lazy>
+                  <picture>
+                    <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/userjourneymap.jpg">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/userjourneymap.jpg" class="d-block w-100 modal-img lazyload" alt="amazon prime video user journey map"> 
+                  </picture>
                   <div class="d-none"> We made a User Journey Map for Katrina based on our redesigned Prime Video website </div>
                 </div>
-
                 <div class="carousel-item">
-                  <img class="d-block w-100 modal-img" src="img/storyboard.jpg" alt="..." loading=lazy>
+                  <picture>
+                    <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/storyboard.jpg.webp" type="image/webp">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/storyboard.jpg" class="img-fluid modal-img lazyload" alt="amazon prime video storyboard"> 
+                  </picture>
+                  
                   <div class="d-none"> We defined a scenario in which Katrina, our User Persona, wanted to watch a movie on her favorite streaming platform </div>
                 </div>
-
               </div>
             </div>
             <div class="row my-5 mobile-invisible">
               <div class="col-1 ml-auto text-lg-left arrow-hover"  onclick="$('#carousel-up').carousel('prev')">
-                <img src="../common/left_arrow.svg" >
+                <img src="../common/left_arrow.svg" alt="left_arrow">
               </div>
               <div class="col-10 carousel-custom-caption text-center" id="carousel-up-caption" > text 123 </div>
               <div class="col-1 mr-auto text-lg-right arrow-hover"  onclick="$('#carousel-up').carousel('next')">
-                <img src="../common/right_arrow.svg">
+                <img src="../common/right_arrow.svg" alt="right_arrow">
               </div>
             </div>
             <hr class="mb-3 desktop-invisible">
-            <script>
-              $('#carousel-up-caption').html($('#carousel-up .carousel-item.active div').html());
-              $('#carousel-up').on('slid.bs.carousel', function () {
-                $('#carousel-up-caption').html($('#carousel-up .carousel-item.active div').html());
-              });
-            </script>
           </div>
 
         </div>
 
 
-         <div class="col-md-8 ml-auto px-0">
+         <div class="col-md-12 ml-auto px-0">
           <div class="row mb-2">
+          <img class="mb-2 img-fluid project-img lazyloaded" src="img/recoquotes.svg" alt="quotes">
           <div class="row tm-content-subheading">
-            <strong>Problem Definition</strong/div>
-          </div>
-          <div class="row my-3 mr-0 rounded-box">
-            How might we help users feel familiar with Prime Video as well as delighted to use the platform so Prime Video becomes their default video streaming platform?
+            <strong>How might we help users feel familiar with Prime Video as well as delighted to use the platform so Prime Video becomes their default video streaming platform?</strong>
           </div>
           </div>
          </div>
 
-
+         <hr class="mb-5 mobile-invisible">
          <hr class="mb-5 mobile-invisible">
          <hr class="mb-3 desktop-invisible">
-         
+         <hr class="mb-3 desktop-invisible">
+
          <div class="row yellow-box mb-4"> </div>
          <div class="row mr-0">
            <div class="col-md-4 pr-5 mobile-left">
-             <h2 class="row tm-content-title row"> Redesign Goals</h2>
+             <div class="row tm-content-title row"> Redesign Goals</div>
            </div>
            <div class="col-md-8 px-0 mobile-left">
              <div class="row mb-4">
@@ -393,48 +683,40 @@
          </div>
 
 
-         <hr class="mb-5 mobile-invisible">
+         <hr class="mb-4 mobile-invisible">
         <hr class="mb-3 desktop-invisible">
         <div class="row yellow-box mb-4"> </div>
         <div class="row mr-0">
           <div class="col-md-4 pr-5 mobile-left">
-            <h2 class="row tm-content-title row">Ideation</h2>
+            <div class="row tm-content-title row">Ideation</div>
           </div>
             <div class="col-md-8 px-0 mobile-left">
             <div class="row mb-3">
               <div class= "tm-content-subheading mobile-invisible">
-                <strong>"I like, I wish, what if" method and prioritization"</strong> 
+                <strong>Identify key usability issues with Prime Video</strong> 
               </div>
             </div>
-            <div class="row mb-4">
+            <!-- <div class="row mb-4">
               We used the "I like, I wish, What if" method to ideate, followed by a prioritization matrix to identify what ideas could potentially become features based on impact to users and priority to the company.
             </div>
              <hr class="mb-5 mobile-invisible">
         <div class="row px-0 justify-content-center align-content-center">
           <div class="col-md-8 mb-3 pl-0" style="z-index: 100;" >
-            <img class="img-fluid modal-img" src="img/likewishwhatif.jpg" loading=lazy>
+            <img class="img-fluid modal-img" src="img/likewishwhatif.jpg" loading=lazy alt="amazon prime video plan">
           </div>
           <div class="col-md-4 col-8 pr-0 my-auto" >
-            <img class="img-fluid modal-img" src="img/fpm.jpg" loading=lazy>
+            <img class="img-fluid modal-img" src="img/fpm.jpg" loading=lazy alt="amazon prime video additions">
           </div>
-        </div>  
+        </div>   -->
 
-        <hr class="mb-5 mobile-invisible">
-        <hr class="mb-3 desktop-invisible">
-
-            <div class="row mb-4">
-              <div class= "tm-content-subheading">
-                <strong>Heuristic Analysis</strong> 
-              </div>
-            </div>
             <div class="row mb-4 mobile-invisible">
               We conducted a page-by-page analysis of Prime Video’s UI to identify specific usability issues. We focused on the main pages that users would use most frequently including homepage, show/movie detail page, search, and store. In addition, we analyzed the Watch Party page which was a major desirable component according to user interviews.
             </div>
-            <div class="row mb-4 desktopinvisible">
+            <!-- <div class="row mb-4 desktopinvisible">
               We conducted a page-by-page analysis of Prime Video’s UI to identify specific usability issues. We focused on the main pages that users would use most frequently including Homepage, Show/Movie detail page, Search, Store, and Watchparty.
-            </div>
+            </div> -->
             <div class="row">
-              <picture> <img class="img-fluid modal-img" src = "img/heuristicanalysis.png" loading=lazy> </picture>
+              <picture> <img class="img-fluid modal-img" src = "img/heuristicanalysis.png" loading=lazy alt="amazon prime video heuristican alysis"> </picture>
             </div>
           </div>
         </div>
@@ -444,13 +726,13 @@
        
         <div class="row mr-0">
           <div class="col-md-4 pr-5 mobile-left">
-            <h2 class="row tm-content-title row"></h2>
+            <div class="row tm-content-title row"></div>
           </div>
           <div class="col-md-8 px-0 mobile-left">
            <hr class="mb-3">
             <div class="row mb-3">
               <div class= "tm-content-subheading">
-                <strong>User Flow Diagrams</strong> 
+                <strong>Identify critical pain points by mapping user flows</strong> 
               </div>
             </div>
             <div class="row mb-4">
@@ -475,17 +757,17 @@
                 <div class="carousel-inner" role="listbox">
 
                   <div class="carousel-item active">
-                    <img class="d-block w-100 modal-img" src="img/sharecontentflow.jpg" alt="..." loading=lazy>
+                    <img class="d-block w-100 modal-img" src="img/sharecontentflow.jpg" alt="amazon prime video share content flow" loading=lazy>
                     <div class="d-none"> Sharing Content on Social Media Platforms User Flow </div>
                   </div>
 
                   <div class="carousel-item">
-                    <img class="d-block w-100 modal-img" src="img/searchflow.jpg" alt="..." loading=lazy>
+                    <img class="d-block w-100 modal-img" src="img/searchflow.jpg" alt="amazon prime video search flow" loading=lazy>
                     <div class="d-none"> Redesigned Search User Flow </div>
                   </div>
 
                   <div class="carousel-item">
-                    <img class="d-block w-100 modal-img" src="img/watchpartyflow.jpg" alt="..." loading=lazy>
+                    <img class="d-block w-100 modal-img" src="img/watchpartyflow.jpg" alt="amazon prime video watch party flow" loading=lazy>
                     <div class="d-none"> Creating a Watchparty and Sharing Link User Flow</div>
                   </div>
 
@@ -493,20 +775,15 @@
               </div>
               <div class="row my-5 mobile-invisible">
                 <div class="col-1 ml-auto text-lg-left arrow-hover"  onclick="$('#carousel-ufd').carousel('prev')">
-                  <img src="../common/left_arrow.svg" >
+                  <img src="../common/left_arrow.svg" alt="left_arrow">
                 </div>
                 <div class="col-10 carousel-custom-caption text-center" id="carousel-ufd-caption" > text 123 </div>
                 <div class="col-1 mr-auto text-lg-right arrow-hover"  onclick="$('#carousel-ufd').carousel('next')">
-                  <img src="../common/right_arrow.svg">
+                  <img src="../common/right_arrow.svg" alt="right_arrow">
                 </div>
               </div>
               <hr class="mb-3 desktop-invisible">
-              <script>
-                $('#carousel-ufd-caption').html($('#carousel-ufd .carousel-item.active div').html());
-                $('#carousel-ufd').on('slid.bs.carousel', function () {
-                  $('#carousel-ufd-caption').html($('#carousel-ufd .carousel-item.active div').html());
-                });
-              </script>
+
             </div>
  
           </div>
@@ -518,12 +795,12 @@
         
         <div class="row">
           <div class="col-md-4 pr-5 mobile-left">
-            <h2 class="row tm-content-title row"></h2>
+            <div class="row tm-content-title row"></div>
           </div>
           <div class="col-md-8 px-0 mobile-left">
             <div class="row mb-2">
               <div class= "tm-content-subheading mobile-invisible">
-                <strong>Information Architecture</strong> 
+                <strong>Restructure the Prime Video Homepage Information Architecture</strong> 
               </div>
             </div>
             <div class="row mb-2">
@@ -538,12 +815,12 @@
                 <div class="carousel-inner" role="listbox">
     
                   <div class="carousel-item active">
-                    <img class="d-block w-100 modal-img" src="img/cardsorting1.jpg" alt="..." loading=lazy>
+                    <img class="d-block w-100 modal-img" src="img/cardsorting2.jpg" alt="amazon prime video card sorting" loading=lazy>
                     <div class="d-none"> The Current Sitemap was a bit cluttered and difficult to navigate </div>
                   </div>
     
                   <div class="carousel-item">
-                    <img class="d-block w-100 modal-img" src="img/cardsorting2.jpg" alt="..." loading=lazy>
+                    <img class="d-block w-100 modal-img" src="img/cardsorting1.jpg" alt="amazon prime video card sorting" loading=lazy>
                     <div class="d-none"> The Redesigned Sitemap is more streamlined and user intuitive </div>
                   </div>
     
@@ -551,20 +828,15 @@
               </div>
               <div class="row my-5 mobile-invisible">
                 <div class="col-1 ml-auto text-lg-left arrow-hover"  onclick="$('#carousel-ia').carousel('prev')">
-                  <img src="../common/left_arrow.svg" >
+                  <img src="../common/left_arrow.svg" alt="left_arrow">
                 </div>
                 <div class="col-10 carousel-custom-caption text-center" id="carousel-ia-caption" > text 123 </div>
                 <div class="col-1 mr-auto text-lg-right arrow-hover"  onclick="$('#carousel-ia').carousel('next')">
-                  <img src="../common/right_arrow.svg">
+                  <img src="../common/right_arrow.svg" alt="right_arrow">
                 </div>
               </div>
               <hr class="mb-3 desktop-invisible">
-              <script>
-                $('#carousel-ia-caption').html($('#carousel-ia .carousel-item.active div').html());
-                $('#carousel-ia').on('slid.bs.carousel', function () {
-                  $('#carousel-ia-caption').html($('#carousel-ia .carousel-item.active div').html());
-                });
-              </script>
+
             </div>
           </div>
         </div>
@@ -576,24 +848,24 @@
           <div class="col-md-8 ml-auto px-0 mobile-left">
             <div class="row mb-2">
               <div class= "tm-content-subheading">
-                <strong>Sketches & Lo-Fi Wireframes</strong> 
+                <strong>Developed lo-fidelity wireframes to lay out user preferred content</strong> 
               </div>
             </div>
-            <div class="row mb-4">
+            <!-- <div class="row mb-4">
               Our team created low fidelity wireframes to facilitate collaboration, feedback, and design decisions
-            </div>
+            </div> -->
             <div class="row mb-3">
-              <picture> <img class="img-fluid modal-img" src = "img/lofi1.jpg" loading=lazy> </picture>
+              <picture> <img class="img-fluid modal-img" src = "img/lofi1.jpg" loading=lazy alt="amazon prime video lofi"> </picture>
             </div>    
             <div class="row mb-4">
               We sketched a homepage to ideate this page's information architecture and rhythm. Likewise, this sketch above served to conceive iconography and interactions
             </div>
             <div class="row">
-              <picture> <img class="img-fluid modal-img" src = "img/searchstore.jpg" loading=lazy> </picture>
+              <picture> <img class="img-fluid modal-img" src = "img/searchstore.jpg" loading=lazy alt="amazon prime video search store"> </picture>
             </div>
             <div class="row mb-2">
               <div class= "tm-content-subheading">
-                <strong>Our Focus</strong> 
+                <strong>Focused on restructuring layouts of key pages</strong> 
               </div>
             </div>
             <div class="row my-4 mr-0 rounded-box">
@@ -604,18 +876,18 @@
               </ul>
             </div>
             <hr class="mb-3">
-            <div class="row mb-4">
+            <div class="row mb-4 mobile-invisible">
               We collaborated effectively over Zoom during the various design stages, especially when developing mid-fi prototypes and developing the atomic components that went into building the redesigned website.
             </div>
-            <div class="row">
-              <picture> <img class="img-fluid modal-img" src = "img/teamwork.jpg" loading=lazy> </picture>
+            <div class="row mobile-invisible">
+              <picture> <img class="img-fluid modal-img" src = "img/teamwork.jpg" loading=lazy alt="amazon prime video teamwork"> </picture>
             </div>
             <hr class="mb-5 mobile-invisible">
             <hr class="mb-3 desktop-invisible">
             <div class="pages-container">
               <div class="row mb-3">
                 <div class= "tm-content-subheading">
-                  <strong>Style Tile</strong> 
+                  <strong>Lead UI redesign objectives using Amazon's existing style guide</strong> 
                 </div>
               </div>
               <div>
@@ -623,20 +895,20 @@
                   <p><span class="highlight">I lead the process of redefining our UI redesign adjectives and visual style, which I then consolidated on a style tile. </span> I made sure to reference Amazon Prime’s UI Style Guide, so as to not deviate/ make the user feel disoriented while navigating the redesigned Prime Video website</p>
                 </div>
                 <div class="row">
-                  <picture> <img class="img-fluid modal-img" src = "img/styletile.jpg" loading=lazy> </picture>
+                  <picture> <img class="img-fluid modal-img" src = "img/styletile.jpg" loading=lazy alt="amazon prime video styletile"> </picture>
                 </div>
               </div>
               <hr class="mb-5 mobile-invisible">
               <hr class="mb-2 desktop-invisible">
               <div class="row mb-3">
                 <div class= "tm-content-subheading">
-                  <strong>UI Component Library</strong> 
+                  <strong>Created a UI Component Library which secured uniformity & facilitated page assembly</strong> 
                 </div>
               </div>
               <div>
-                <div class="row mb-4">
+                <!-- <div class="row mb-4">
                   Our team’s UI component library was built on Figma, which secured uniformity, facilitated page assembly, and allowed us to make changes across the entire file with ease
-                </div>
+                </div> -->
                 <div class="row mb-4 rounded-box mobile-invisible">
                   <ul class=" mx-4 my-3 myul">
                     <li class="mb-2 myli">Create atom elements: Define text and color Figma styles, Select and convert icons into components</li>
@@ -645,7 +917,7 @@
                   </ul>
                 </div>
                 <div class="row">
-                  <picture> <img class="img-fluid modal-img" src = "img/ui1.jpg" loading=lazy> </picture>
+                  <picture> <img class="img-fluid modal-img" src = "img/ui1.jpg" loading=lazy alt="amazon prime video ui"> </picture>
                 </div>
               </div>
             </div>
@@ -661,27 +933,27 @@
         <div class="row yellow-box mb-4"> </div>
         <div class="row pr-0">
           <div class="col-md-4 px-0 mobile-left">
-            <h2 class="row tm-content-title mx-0">Usability Testing <br> & Iteration</h2>
+            <div class="row tm-content-title mx-0">Usability Testing <br> & Iteration</div>
           </div>
           <div class="col-md-8 ml-auto px-0 mobile-left">
             <div class="row my-3 pr-0 mr-0 desktop-invisible">
-              <picture> <img class="img-fluid modal-img" src = "img/usabilitytesting.jpg" loading=lazy> </picture>
+              <picture> <img class="img-fluid modal-img" src = "img/usabilitytesting.jpg" loading=lazy alt="amazon prime video usability testing"> </picture>
             </div>
             <div class="row mb-2">
               <div class= "tm-content-subheading">
-                <strong>Usability Testing</strong> 
+                <strong>Identify main user flows & performed testing</strong> 
               </div>
             </div>
-            <div class="row mb-4">
+            <!-- <div class="row mb-4">
               <div class='mx-0 px-0 col-12'>
                 With the goal to test our existent flows and visual design, we conducted 5 usability tests:
               </div>
-            </div>
-            <hr class="mb-3 mobile-invisible">
-            <hr class="mb-2 desktop-invisible">
-            <div class="row">
+            </div> -->
+            <!-- <hr class="mb-3 mobile-invisible">
+            <hr class="mb-2 desktop-invisible"> -->
+            <!-- <div class="row">
               <strong>User Tasks:</strong>
-            </div>
+            </div> -->
             <div class="row">
               <ul class=" mx-4 my-3 myul">
                 <li class="mb-2 myli">Log in and connect to Facebook</li>
@@ -691,10 +963,10 @@
               </ul>
             </div>
             <div class="row mb-4 pr-0 mr-0 mobile-invisible">
-              <picture> <img class="img-fluid modal-img" src = "img/usabilitytesting.jpg" loading=lazy> </picture>
+              <picture> <img class="img-fluid modal-img" src = "img/usabilitytesting.jpg" loading=lazy alt="amazon prime video usability testing"> </picture>
             </div>
             <div class="row mb-3 tm-content-subheading">
-              <strong>Insights</strong> 
+              <strong>Analyze user testing results to develop key insights for potential redesign issues</strong> 
             </div>
             <div class="row mb-4 mobile-invisible">
               Through our testing, we found that users generally skipped through the onboarding procedure detailing the purpose of connecting their social media account with their Prime Video account without reading it through completely. <br>
@@ -716,11 +988,11 @@
 
 
 
-            <div class="row mb-4 mobile-invisible">
+            <!-- <div class="row mb-4 mobile-invisible">
               <div class='mx-0 px-0 col-12'>
                 Although these changes were small, the cumulation of these details help shape a user overall impression and experience with the product. It is always important to pay attention to the details.
               </div>
-            </div>
+            </div> -->
           </div>
         </div>
 
@@ -730,18 +1002,18 @@
         <div class="row yellow-box mb-4"> </div>
         <div class="row pr-0">
           <div class="col-md-4 px-0 mobile-left">
-            <h2 class="row tm-content-title mx-0">Redesign Comparison</h2>
+            <div class="row tm-content-title mx-0">Redesign Comparison</div>
           </div>
           <div class="col-md-8 ml-auto px-0 mobile-left">
             <div class="row my-1 pr-0 mr-0 desktop-invisible">
-              <picture> <img class="img-fluid modal-img" src = "img/homepage.png" loading=lazy> </picture>
+              <picture> <img class="img-fluid modal-img" src = "img/homepage.png" loading=lazy alt="amazon prime video home page"> </picture>
             </div>
             <div class="row mb-2">
               <div class= "tm-content-subheading mobile-invisible">
                 <strong>Page by Page Comparison</strong> 
               </div>
               <div class="row my-3 pr-0 mr-0 mobile-invisible">
-                <picture> <img class="img-fluid modal-img" src = "img/homepage.png" loading=lazy> </picture>
+                <picture> <img class="img-fluid modal-img" src = "img/homepage.png" loading=lazy alt="amazon prime video home page"> </picture>
               </div>
               <div class= "row mb-2 desktop-invisible">
                 <strong>Homepage Redesign</strong> 
@@ -766,11 +1038,11 @@
 
             <div class="pages-container">
             <div class="row my-1 pr-0 mr-0 desktop-invisible">
-              <picture> <img class="img-fluid modal-img" src = "img/cards.png" loading=lazy> </picture>
+              <picture> <img class="img-fluid modal-img" src = "img/cards.png" loading=lazy alt="amazon prime video cards"> </picture>
             </div>
             <div class="row mb-2">
               <div class="row my-3 pr-0 mr-0 mobile-invisible">
-                <picture> <img class="img-fluid modal-img" src = "img/cards.png" loading=lazy> </picture>
+                <picture> <img class="img-fluid modal-img" src = "img/cards.png" loading=lazy alt="amazon prime video cards"> </picture>
               </div>
               <div class= "row mb-2 desktop-invisible">
                 <strong>Cards Redesign</strong> 
@@ -794,11 +1066,11 @@
           
            
             <div class="row my-1 pr-0 mr-0 desktop-invisible">
-              <picture> <img class="img-fluid modal-img" src = "img/details.png" loading=lazy> </picture>
+              <picture> <img class="img-fluid modal-img" src = "img/details.png" loading=lazy alt="amazon prime video details"> </picture>
             </div>
             <div class="row mb-2">
               <div class="row my-3 pr-0 mr-0 mobile-invisible">
-                <picture> <img class="img-fluid modal-img" src = "img/details.png" loading=lazy> </picture>
+                <picture> <img class="img-fluid modal-img" src = "img/details.png" loading=lazy alt="amazon prime video details"> </picture>
               </div>
               <div class= "row mb-2 desktop-invisible">
                 <strong>Details Modal</strong> 
@@ -820,11 +1092,11 @@
 
             <div class="pages-container">
               <div class="row my-1 pr-0 mr-0 desktop-invisible">
-                <picture> <img class="img-fluid modal-img" src = "img/watchparty.png" loading=lazy> </picture>
+                <picture> <img class="img-fluid modal-img" src = "img/watchparty.png" loading=lazy alt="amazon prime video watch party"> </picture>
               </div>
               <div class="row mb-2">
                 <div class="row my-3 pr-0 mr-0 mobile-invisible">
-                  <picture> <img class="img-fluid modal-img" src = "img/watchparty.png" loading=lazy> </picture>
+                  <picture> <img class="img-fluid modal-img" src = "img/watchparty.png" loading=lazy alt="amazon prime video watch party"> </picture>
                 </div>
                 <div class= "row mb-2 desktop-invisible">
                   <strong>Watch Party</strong> 
@@ -847,11 +1119,11 @@
            
 
             <div class="row my-1 pr-0 mr-0 desktop-invisible">
-              <picture> <img class="img-fluid modal-img" src = "img/footer.png" loading=lazy> </picture>
+              <picture> <img class="img-fluid modal-img" src = "img/footer.png" loading=lazy alt="amazon prime video footer"> </picture>
             </div>
             <div class="row mb-2">
               <div class="row my-3 pr-0 mr-0 mobile-invisible">
-                <picture> <img class="img-fluid modal-img" src = "img/footer.png" loading=lazy> </picture>
+                <picture> <img class="img-fluid modal-img" src = "img/footer.png" loading=lazy alt="amazon prime video footer"> </picture>
               </div>
               <div class= "row mb-2 desktop-invisible">
                 <strong>Footer</strong> 
@@ -880,27 +1152,27 @@
         <div class="row yellow-box mb-4"> </div>
         <div class="row pr-0">
           <div class="col-md-4 px-0 mobile-left">
-            <h2 class="row tm-content-title mx-0">High Fidelity Design</h2>
+            <div class="row tm-content-title mx-0">High Fidelity Design</div>
           </div>
           <div class="col-md-8 ml-auto px-0 mobile-left">
             <div class="row mb-2">
               <div class= "tm-content-subheading mobile-invisible">
-                <strong>High Fidelity Wireframes</strong> 
+                <strong>Fixed minor UI and visual design issues discovered through usability testing</strong> 
               </div>
             </div>
             <div class="row">
-              <picture> <img class="img-fluid modal-img" src = "img/hifi.jpg" loading=lazy> </picture>
+              <picture> <img class="img-fluid modal-img" src = "img/hifi.jpg" loading=lazy alt="amazon prime video hifi"> </picture>
             </div>
             <div class="row mb-4">
               <div class='mx-0 my-2 px-0 col-12'>
-                We fixed the minor UI and visual design issues discovered through usability testing and spent most of our time ideating a better way to convey the value of integrating Prime Video with social accounts since this was such a critical piece of our value proposition  
+                We ideated a better way to convey the value of integrating Prime Video with social accounts since this was such a critical piece of our value proposition.  
               </div>
             </div>
-            <div class="row mb-4">
-              <img height="25px" style="margin-right: 20px;" src="../common/img/figma.svg" loading=lazy>
+            <div class="mobile-invisible row mb-4">
+              <img style="height:25px; margin-right: 20px;" src="../common/img/figma.svg" loading=lazy alt="figma">
               <a href="https://www.figma.com/proto/rtXMoYzuMS2DYKOfaFAA8j/Final-Prototype-Amazon-Prime-Video-Redesign?node-id=608%3A29654&viewport=1551%2C-4984%2C0.5207793116569519&scaling=scale-down&hide-ui=1" target="_blank">
                 <span class="text-uppercase highlight"> INTERACTIVE PROTOTYPE
-                  <img class="icon" src="../common/img/right-arrow.svg">
+                  <img class="icon" src="../common/img/right-arrow.svg" alt="right-arrow">
                 </span>
               </a>
             </div>
@@ -909,11 +1181,15 @@
 
             <div class="row mr-0 mobile-full-width">
               <div class="img-container">
-                <picture><video class="d-block w-100" controls autoplay muted loop playsinline>
+                <video class="d-block w-100" controls autoplay muted loop playsinline>
                     <source src="img/prototype.mp4" type="video/mp4" loading=lazy>
                     Video not supported in this browser.
-                </video></picture>
-                <img class="overlay-img d-block w-100" style= "z-index: -1" src="img/desktopmockupoption.png" loading=lazy>
+                </video>
+                <picture>
+                  <source srcset="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="img/desktopmockupoption.png.webp" type="image/webp">
+                  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="img/desktopmockupoption.png" class="overlay-img d-block w-100 lazyload" style= "z-index: -1" alt="amazon prime video desktop mockup option"> 
+                </picture>
+               <!--  <img class="overlay-img d-block w-100" style= "z-index: -1" src="img/desktopmockupoption.png" loading=lazy> -->
               </div>
             </div>
           </div>
@@ -964,7 +1240,7 @@
           </div>  
         </div> -->
 
-        <hr class="mb-5 mobile-invisible">
+        <hr class="mb-3 mobile-invisible">
         <hr class="mb-2 desktop-invisible">
 
          
@@ -972,30 +1248,30 @@
         <div class="row yellow-box mb-4"> </div>
         <div class="row">
           <div class="col-md-4 pr-5 mobile-left">
-            <h2 class="row tm-content-title">Next Steps</h2>
+            <div class="row tm-content-title">Results</div>
           </div>
-          <div class="col-md-8 px-0 mobile-left">
+          <!-- <div class="col-md-8 px-0 mobile-left">
             <div class="row mb-4">
-              In times of social isolation, this was a very insightful project to work on- taking time to unwind and connect with close friends, family, and others in the community is more important than ever to maintain wellbeing and relieve stress. This was why we decided to incorporate a social media component to the existing Amazon Prime Video platform.
+              In times of social isolation, this was a very insightful project to work on- taking time to unwind and connect with close friends, family, and others in the community is more important than ever to maintain wellbeing and relieve stress. 
             </div>
-          </div>
+          </div> -->
         </div>
         <div class="row">
           <div class="col-md-4 px-0"  style="position: relative;">
-              <img class="img-fluid" src="img/finalthoughts.svg" style="position:absolute; bottom:10px" loading=lazy>
+              <img class="img-fluid" src="img/finalthoughts.svg" style="position:absolute; bottom:10px" width="80%" loading=lazy alt="final thoughts">
           </div>
           <div class="col-md-8 px-0">
             <div class="row mb-4 mx-0 pr-2">
               <ul class="myul ml-3">
                 <li class="mb-3 myli">
-                  <strong>Test revised hi-fi prototype </strong>
+                  <strong>Improved perception of Prime Video among users </strong>
                   <hr class="mb-2">
-                  Get feedback on the social account connection screen, and look closely at search and store filters to identify opportunities to optimize these accelerators.  
+                  We tested our hi-fi prototype on 10 users, <span class="highlight">90% of users preferred the redesigned interface. </span> 
                 </li>
                 <li class="mb-3 myli">
                   <strong> Integration of Filters</strong>
                   <hr class="mb-2">
-                  Explore the integration of filters directly on the homepage to further personalize users’ experience and suggest content based specific needs (i.e. language, subtitles, content duration, and rating/advisory).
+                  <span class="highlight">We had a 100% success rate with the redesigned prime toggle feature. </span> Further explore the integration of filters directly on the homepage to further personalize users’ experience and suggest content based specific needs (i.e. language, subtitles, content duration, and rating/advisory).
                 </li>
                 <li class="mb-3 myli">
                   <strong> Reinforce Social Media component</strong>
@@ -1024,8 +1300,8 @@
 
                     <div class="carousel-item active" >
 
-                      <a href="../adultit/index.html">
-                        <img class="d-block w-100 car-img" src="../common/adultit.png" class="d-block w-100" id="holder1" alt="..." loading=lazy>
+                      <a href="../adultit/">
+                        <img class="d-block w-100 car-img" src="../common/adultit.png" id="holder1" alt="Adult-it app" loading=lazy>
                         <div class="row carousel-caption carousel-banner" style="z-index: 1;" onmouseover="BlurCarouselImg('holder1')"  onmouseout="ResetCarouselImg('holder1')">
                           <div class="col-3 car-yel"  style="display: flex; flex-direction: row-reverse;">
                             <div class="row yellow-box mt-3"></div>
@@ -1038,7 +1314,7 @@
                               Increasing workplace readiness for Underprivileged Young Adults looking for guidance transitioning into adulthood
                             </div>
                             <div class="row desktop-invisible" style="text-align: left;">
-                              Read More <img class="read-more-arrow" src="../../img/right-arrow.svg">
+                              Read More <img class="read-more-arrow" src="../../img/right-arrow.svg" alt="right-arrow">
                             </div>
                           </div>
                         </div>
@@ -1046,9 +1322,9 @@
                     </div>  
 
                     <div class="carousel-item" >
-                      <a href="../bark/index.html">
-                        <img class="d-block w-100 car-img" src="../common/bark.png" class="d-block w-100" id="holder1" alt="..." loading=lazy>
-                        <div class="row carousel-caption carousel-banner" style="z-index: 1;" onmouseover="BlurCarouselImg('holder1')"  onmouseout="ResetCarouselImg('holder1')">
+                      <a href="../bark/">
+                        <img class="d-block w-100 car-img" src="../common/bark.png" id="holder2" alt="Bark app" loading=lazy>
+                        <div class="row carousel-caption carousel-banner" style="z-index: 1;" onmouseover="BlurCarouselImg('holder2')"  onmouseout="ResetCarouselImg('holder2')">
                           <div class="col-3 car-yel"  style="display: flex; flex-direction: row-reverse;">
                             <div class="row yellow-box mt-3"></div>
                           </div>
@@ -1060,7 +1336,7 @@
                               An onboarding process for a smart collar solution for dog owners & showcase the power of IoT to track pets' health stats.
                             </div>
                             <div class="row desktop-invisible" style="text-align: left;">
-                              Read More <img class="read-more-arrow" src="../../img/right-arrow.svg">
+                              Read More <img class="read-more-arrow" src="../../img/right-arrow.svg" alt="right-arrow">
                             </div>  
                           </div>
                         </div>
@@ -1069,8 +1345,8 @@
                     </div>
                     
                     <div class="carousel-item">
-                      <a href="../amigas/index.html">
-                      <img class="d-block w-100 car-img" src="../common/amigas.png" class="d-block w-100" id="holder3" alt="..." loading=lazy>
+                      <a href="../amigas/">
+                      <img class="d-block w-100 car-img" src="../common/amigas.png" id="holder3" alt="Amigas travel app" loading=lazy>
                       <div class="row carousel-caption carousel-banner" style="z-index: 1;" onmouseover="BlurCarouselImg('holder3')"  onmouseout="ResetCarouselImg('holder3')">
                         <div class="col-3 car-yel"  style="display: flex; flex-direction: row-reverse;">
                           <div class="row yellow-box mt-3"></div>
@@ -1083,7 +1359,7 @@
                             A travel app that addresses women's pain points by providing a virtual travel companion for solo women travelers.
                           </div>
                           <div class="row desktop-invisible" style="text-align: left;">
-                            Read More <img class="read-more-arrow" src="../../img/right-arrow.svg">
+                            Read More <img class="read-more-arrow" src="../../img/right-arrow.svg" alt="right-arrow">
                           </div>  
                         </div>
                       </div>
@@ -1105,10 +1381,9 @@
             <hr class="mb-4">
         </div>
     
-      </section>
       <hr class="mb-5 mobile-invisible">
       <footer id="footer-cs"></footer>
-    </section>
+    </div>
     <div class="row" id="footer-banner-desktop">
       <div class="bottom-line-box c1"></div>
       <div class="bottom-line-box c2"></div>
@@ -1116,6 +1391,69 @@
       <div class="bottom-line-box c4"></div>
       <div class="bottom-line-box c5"></div>
     </div>
-  </body>
-  <script src="js/index.js"></script>
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&font-display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      crossorigin
+    />
+    <link 
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+      crossorigin
+    />
+
+  <!-- https://fonts.google.com/ -->
+  <link rel="preload" href="../../css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <!-- https://getbootstrap.com/ -->
+<!--   <link href="../../fontawesome/css/all.min.css" rel="stylesheet" /> -->
+  <!-- https://fontawesome.com/ -->
+  <link rel="preload" href="../../css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <link rel="stylesheet" href="https://use.typekit.net/ikz0csl.css" />
+<!--   <link rel="stylesheet" href="../../css/stylesheet.css" /> -->
+  <link rel="preload" href="../common/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <link rel="stylesheet" href="/case-studies/common/css/modal.css">
+<!--   <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/test.css" /> -->
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script src="../../js/index.min.js"></script>
+  <script src="../common/js/index.min.js"></script>
+
+  <script>
+    $('#carousel-up-caption').html($('#carousel-up .carousel-item.active div').html());
+    $('#carousel-up').on('slid.bs.carousel', function () {
+      $('#carousel-up-caption').html($('#carousel-up .carousel-item.active div').html());
+    });
+  </script>
+
+<script>
+  $('#carousel-ufd-caption').html($('#carousel-ufd .carousel-item.active div').html());
+  $('#carousel-ufd').on('slid.bs.carousel', function () {
+    $('#carousel-ufd-caption').html($('#carousel-ufd .carousel-item.active div').html());
+  });
+</script>
+
+<script>
+  $('#carousel-ia-caption').html($('#carousel-ia .carousel-item.active div').html());
+  $('#carousel-ia').on('slid.bs.carousel', function () {
+    $('#carousel-ia-caption').html($('#carousel-ia .carousel-item.active div').html());
+  });
+</script>
+
+<script src="js/index.min.js"></script>
+
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin></script>
+  <!-- <script>
+    wait_loader();
+  </script> -->
+</body>
 </html>

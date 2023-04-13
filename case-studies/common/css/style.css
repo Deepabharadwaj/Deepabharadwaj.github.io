@@ -1,335 +1,347 @@
-html{
-  scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth
 }
 
-.progress-bar{
-  position:-webkit-sticky;
+.navbar {
+  background-color: white;
+}
+
+.sticky-hero__media {
+  position: relative
+}
+
+.sticky-hero__media picture{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.sticky-hero__media img {
+  object-fit: cover;
+  height: auto;
+  width: 100%;
+}
+
+.progress-bar {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   height: 4px;
   background-color: #D4D4D466;
   border-radius: 4px;
   z-index: 10002;
-  width: 100%;
+  width: 100%
 }
 
-.progress-bar .pbar-overlay{
+.progress-bar .pbar-overlay {
   height: 4px;
   width: 2%;
   background-color: #FDB92D;
-  border-radius: 10px;
-  /* backdrop-filter: 0px 0px 4px yellow; */
+  border-radius: 10px
 }
 
 .sticky-hero__media {
-    position: sticky;
-    top: 0;
-    height: 60vh;
-    max-width: 100%;
-    background-size: cover;
-    z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  height: 60vh;
+  max-width: 100%;
+  background-size: cover;
+  z-index: -1;
+  overflow: hidden
 }
+
 .sticky-hero__content {
-    position: relative;
-    z-index: 2;
-  
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color:white;
-    opacity: 0.95;
-    padding-top: 10px;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  opacity: .95;
+  padding-top: 10px
 }
 
-.sticky-hero--overlay-layer .sticky-hero__media::after { 
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    opacity: 1;
-    /* background-color: var(--color-bg); */
-    transition: opacity 1s;
+.sticky-hero--overlay-layer .sticky-hero__media::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 1s
 }
-  
+
 .sticky-hero--media-is-fixed .sticky-hero__media {
-    transform: scale(0.9);
+  transform: scale(.9)
 }
 
 .rounded-box {
-    background: rgba(245, 244, 244, 0.3);
-    border: 0.5px solid #dedede;
-    box-sizing: border-box;
-    border-radius: 10px;
-    padding: 10px;
+  background: rgba(245, 244, 244, .3);
+  border: .5px solid #dedede;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 10px
 }
 
-
 .carousel-img {
-    background-color: rgba(253, 185, 45, 0.4);
-    height:100%;
-    min-height:400px;
-        /* Center and scale the image nicely */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-  }
-  
-.carousel-h100, .carousel-h100 .carousel-item, .carousel-h100 .carousel-inner {
-    height:100%;
+  background-color: rgba(253, 185, 45, .4);
+  height: 100%;
+  min-height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover
+}
+
+.carousel-h100,
+.carousel-h100 .carousel-item,
+.carousel-h100 .carousel-inner {
+  height: 100%
 }
 
 .carousel-indicators {
-    bottom:-50px;
+  bottom: -50px
 }
 
 .carousel .carousel-indicators li {
-    background-color: #fff;
-    background-color: rgba(20, 20, 20, 0.25);
+  background-color: #fff;
+  background-color: rgba(20, 20, 20, .25)
 }
 
-.carousel .carousel-control-prev{
-    left: -20%;
+.carousel .carousel-control-prev {
+  left: -20%
 }
 
 .carousel .carousel-control-prev-icon {
-    height: 24px;
-    width: 15px;
-    background-image: url("../left_arrow.svg");
+  height: 24px;
+  width: 15px;
+  background-image: url("../left_arrow.svg")
 }
 
 .carousel .carousel-control-next-icon {
-    height: 24px;
-    width: 15px;
-    background-image: url("../right_arrow.svg");
+  height: 24px;
+  width: 15px;
+  background-image: url("../right_arrow.svg")
 }
 
-.carousel .carousel-control-next{
-    right: -20%;
+.carousel .carousel-control-next {
+  right: -20%
 }
 
 .carousel-banner {
-    background: rgba(247, 247, 247, 0.7);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    transition: all 0.5s;
-    padding: 5% 0%;
-    /* transform: scale(0.95); */
+  background: rgba(247, 247, 247, .7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: all .5s;
+  padding: 5% 0%
 }
 
 .carousel-banner:hover {
-    /* background: rgba(253, 185, 45, 0.1); */
-    /* backdrop-filter: blur(1px); */
-    /* transform: scale(0.95); */
-    /* transition: all 1s; */
-    cursor: pointer;
+  cursor: pointer
 }
 
-
 .carousel .carousel-indicators li {
-    width: 8px;
-    height: 8px;
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color: #C4C4C4;
-
-    border-radius: 50%;
-    pointer-events: none;
+  width: 8px;
+  height: 8px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #C4C4C4;
+  border-radius: 50%;
+  pointer-events: none
 }
 
 .carousel-custom-caption {
   justify-content: center;
   position: relative;
   text-align: center;
-  margin: auto;
+  margin: auto
 }
 
-.arrow-hover{
-  opacity: 0.7;
+.arrow-hover {
+  opacity: .7;
   cursor: pointer;
-  transition: ease 0.5s;
-  transform: scale(0.5);
+  transition: ease .5s;
+  transform: scale(.5)
 }
-.arrow-hover:hover{
-  opacity: 0.5;
+
+.arrow-hover:hover {
+  opacity: .5
 }
 
 .next-project-box {
-    background:  rgba(253, 185, 45, 0.1);
-    padding: 10px;
+  background: rgba(253, 185, 45, .1);
+  padding: 10px
 }
 
 #adult-it {
-    background-image:url('../adultit.png'); 
-    align-items: center;
-    width: 100%;
-    border-radius: 10px;
-    transition: all 0.5s;
-    /* filter: blur(10px); */
+  background-image: url('../adultit.png');
+  align-items: center;
+  width: 100%;
+  border-radius: 10px;
+  transition: all .5s
 }
 
 .carousel-caption {
-    right: 0%;
-    left: 0%;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #303030
-};
+  right: 0%;
+  left: 0%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #303030
+}
+
+;
 
 .car-img {
-    transition: all 2.5s;
+  transition: all 2.5s
 }
 
 .carousel-title {
   font-family: 'minion-pro', serif;
-  font-size: 2rem!important;
+  font-size: 2rem !important
 }
 
 .myul {
-  list-style: none; /* Remove default bullets */
+  list-style: none
 }
 
 .myul .myli::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: #b5b5b5; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  content: "\2022";
+  color: #b5b5b5;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em
 }
 
 .myul .myli-big::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  content: "\2022";
   font-size: 2rem;
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 0.9em; /* Also needed for space (tweak if needed) */
+  font-weight: bold;
+  display: inline-block;
+  width: .9em;
   position: relative;
   top: 5px;
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em
 }
 
 .myul .sp1::before {
-  color: #DBEDF1; /* Change the color */
+  color: #DBEDF1
 }
 
 .myul .sp2::before {
-  color: #ADC9CF; /* Change the color */
-}
-.myul .sp3::before {
-  color: #6A9CA7; /* Change the color */
-}
-.myul .sp4::before {
-  color: #377482; /* Change the color */
+  color: #ADC9CF
 }
 
+.myul .sp3::before {
+  color: #6A9CA7
+}
+
+.myul .sp4::before {
+  color: #377482
+}
 
 .myol {
-  list-style: none; /* Remove default bullets */
-  counter-reset: my-awesome-counter;
+  list-style: none;
+  counter-reset: my-awesome-counter
 }
 
 .myol .myli {
-  /* margin: 0 1rem 0.5rem 0; */
   counter-increment: my-awesome-counter;
-  position: relative;
-
+  position: relative
 }
+
 .myol .myli::before {
-  /* list-style-type: decimal; */
-  content: counter(my-awesome-counter)  ;
-  color: #FDB92D; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
+  content: counter(my-awesome-counter);
+  color: #FDB92D;
+  font-weight: bold;
   font-size: 1.25rem;
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
+  display: inline-block;
+  width: 1em;
   position: relative;
   left: -5px;
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em
 }
 
 .ul-3 {
-  list-style: none; /* Remove default bullets */
+  list-style: none
 }
 
-.ul-3 .li-yes::before{
-  content: "\2713"  ;
+.ul-3 .li-yes::before {
+  content: "\2713";
   font-size: 1rem;
-  display: inline-block; /* Needed to add space between the bullet and the text */
+  display: inline-block;
   position: relative;
-  width: 1.9em; /* Also needed for space (tweak if needed) */
-  margin-left: -1.9em;
+  width: 1.9em;
+  margin-left: -1.9em
 }
 
-.ul-3 .li-no::before{
-  content: "\2717"  ;
+.ul-3 .li-no::before {
+  content: "\2717";
   font-size: 1rem;
-  display: inline-block; /* Needed to add space between the bullet and the text */
+  display: inline-block;
   position: relative;
-  width: 1.9em; /* Also needed for space (tweak if needed) */
-  margin-left: -1.9em;
+  width: 1.9em;
+  margin-left: -1.9em
 }
 
-.ol-2 .li-2{
+.ol-2 .li-2 {
   position: relative;
-  left: -1rem;
+  left: -1rem
 }
-
 
 .desktop-invisible {
-  display: none;
+  display: none
 }
 
-.mockup_container{
-  position:relative;
-  display:inline-block;
+.mockup_container {
+  position: relative;
+  display: inline-block
 }
-.mockup_container .mockup_overlay{
-  position:absolute;
+
+.mockup_container .mockup_overlay {
+  position: absolute;
   top: 6.65%;
   left: 7.98%;
   width: 69%;
   height: 80.8%;
   color: white;
-  border-radius: 8px;
+  border-radius: 8px
 }
 
-.mockup_right{
-  text-align: right;
-}
-.mockup_left{
-  text-align: left;
+.mockup_right {
+  text-align: right
 }
 
-.corgi-box{
-  flex-flow: row nowrap;
+.mockup_left {
+  text-align: left
 }
 
-p{
-  line-height: 1.5;
+.corgi-box {
+  flex-flow: row nowrap
 }
 
-.uii_text{
-  margin-top: 1.5rem!important;
+p {
+  line-height: 1.5
 }
 
-.car-read-more{
-  font-size: 0.85rem!important;
+.uii_text {
+  margin-top: 1.5rem !important
 }
 
-.car-read-more .read-more-arrow{
-  transform: scale(0.8);
-  padding-left: 2px;
+.car-read-more {
+  font-size: .85rem !important
 }
 
-/* .gtt-button{
-  display: none;
-} */
+.car-read-more .read-more-arrow {
+  transform: scale(.8);
+  padding-left: 2px
+}
 
-.gtt-button{
+.gtt-button {
   display: flex;
   position: fixed;
   bottom: 5%;
@@ -344,113 +356,126 @@ p{
   width: 60px;
   margin: auto;
   font-weight: 500;
-  transition: ease-in-out 0.1s;
+  transition: ease-in-out .1s
 }
 
-.gtt-button:hover{
-  box-shadow: 2px 2px 10px 2px rgba(205, 205, 205, 0.35);
-  border-color: #999999;
+.gtt-button:hover {
+  box-shadow: 2px 2px 10px 2px rgba(205, 205, 205, .35);
+  border-color: #999999
 }
 
-.gtt-button div{
+.gtt-button div {
   margin: auto;
   text-decoration: none;
-  color: #303030;
+  color: #303030
 }
 
 .gtt-button div:hover,
-.gtt-button div:active{
+.gtt-button div:active {
   margin: auto;
   text-decoration: none;
-  color: #303030;
+  color: #303030
 }
 
-.gtt-button img{
+.gtt-button img {
   margin: auto auto auto 0;
-  height: 1rem;
+  height: 1rem
 }
 
-
-@media (max-width: 992px) {
+@media (max-width:992px) {
   .sticky-hero__media {
-    height: 40vh;
+    height: 40vh
   }
 
-  .tm-content-title{
-    font-size: 2rem;
+  .tm-content-title {
+    font-size: 2rem
   }
 
-  #page-title{
-    padding-left: 0px;
-    padding-right: 0px;
+  #page-title {
+    padding-left: 0;
+    padding-right: 0
   }
 
-  .mobile-left{
-    padding-left: 0px;
-    padding-right: 0px;
+  .mobile-left {
+    padding-left: 0;
+    padding-right: 0
   }
 
-  .mobile-no-padding-bottom{
-    margin-bottom: 0!important;
+  .mobile-no-padding-bottom {
+    margin-bottom: 0 !important
   }
 
-  .corgi-ul .corgi-li{
-    margin-left: 1.5rem;
+  .corgi-ul .corgi-li {
+    margin-left: 1.5rem
   }
-  .yellow-box{
-    margin-bottom: 1.5rem!important;
+
+  .yellow-box {
+    margin-bottom: 1.5rem !important
   }
+
   .img-fluid {
     max-height: 100%;
-    width: auto;
+    width: auto
   }
 
-  .mockup_image_right{
+  .mockup_image_right {
     text-align: right;
-    padding-right: 0!important;
-    left: 15px;
+    padding-right: 0 !important;
+    left: 15px
   }
-  .mockup_right{
-    text-align: right;
+
+  .mockup_right {
+    text-align: right
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width:500px) {
   .mobile-invisible {
-    display: none!important;
+    display: none !important
   }
+
   .desktop-invisible {
-    display: block;
-  } 
-  /* .rounded-box{
-    padding: 0!important;
-  } */
-  .corgi-box{
-    display: none!important;
+    display: block
   }
+
+  .corgi-box {
+    display: none !important
+  }
+
   .branding-lofi {
     display: flex;
     align-items: center;
-    width: 100%;
-  }
-  .uii_text{
-    margin-top: 0rem!important;
-  }
-  .amigas-inline{
-    display: inline-block;
-  }
-  .car-yel{
-    margin-top: auto!important;
-    margin-bottom: auto!important;
-  }
-  .car-cap {
-    margin: auto!important;
-  }
-  .carousel-title{
-    font-size: 1.25rem!important;
+    width: 100%
   }
 
-  .mobile-full-width{
-    padding: 0!important;
+  .uii_text {
+    margin-top: 0 !important
+  }
+
+  .amigas-inline {
+    display: inline-block
+  }
+
+  .car-yel {
+    margin-top: auto !important;
+    margin-bottom: auto !important
+  }
+
+  .car-cap {
+    margin: auto !important
+  }
+
+  .carousel-title {
+    font-size: 1.25rem !important
+  }
+
+  .mobile-full-width {
+    padding: 0 !important
+  }
+}
+
+@media (max-width:992px) {
+  .sticky-hero__media {
+    height: 40vh
   }
 }
