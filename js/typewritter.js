@@ -1,7 +1,7 @@
 var curr_str = 0;
 var curr_chr = 0;
 var mode = 1;
-let desc_txt = ['a Product Manager', 'a UX Designer', 'an Illustrator', 'a Unicorn &#129412'];
+let desc_txt = ['a UX Designer', 'a Product Manager', 'an Illustrator', 'a Unicorn &#129412'];
 var speed = 100;
 
 function typeWriter() {
