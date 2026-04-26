@@ -65,7 +65,7 @@
   .crumb a:hover{color:var(--accent);}
   .crumb .sep{opacity:.5;}
 
-  .hero-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:64px;}
+  .hero-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:64px;}
   .hero-head .label{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:24px;display:flex;align-items:center;gap:10px;}
   .hero-head .label::before{content:"";width:24px;height:1px;background:currentColor;}
   .hero h1{
@@ -73,13 +73,13 @@
   }
   .hero h1 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
   .hero h1 .accent{color:var(--accent);}
-  .hero-head .lede{font-size:19px;line-height:1.45;color:var(--ink-2);max-width:480px;letter-spacing:-0.01em;}
+  .hero-head .lede{font-size:19px;line-height:1.45;color:var(--ink-2);max-width:480px;letter-spacing:-0.01em;margin-top:32px;}
   .hero-head .lede em{font-family:var(--serif);font-style:italic;color:var(--ink);font-weight:400;font-size:1.08em;}
   @media(max-width:880px){.hero-head{grid-template-columns:1fr;gap:24px;}}
 
   /* hero visual */
   .hero-visual{
-    aspect-ratio:21/9;border-radius:18px;overflow:hidden;position:relative;
+    aspect-ratio:4/3;border-radius:18px;overflow:hidden;position:relative;
     background:linear-gradient(135deg, var(--accent-soft), var(--bg-2));
     border:1px solid var(--line);
   }
@@ -277,23 +277,20 @@
         <div class="label">[ Case Study · 04 / 06 ]</div>
         <h1>
           A 3D <span class="serif">configurator</span><br>
-          driven by <span class="accent">generative</span><br>
+          driven by <span class="accent">generative AI</span><br>
           design.
         </h1>
-      </div>
-      <div class="reveal">
         <p class="lede">
           A web-based configuration engine driven by <em>generative design</em> and data models — letting users reshape complex 3D product models in seconds, not hours. Built with a 22-person cross-functional team at Steelcase's Digital Innovation Lab.
         </p>
       </div>
-    </div>
-
-    <div class="hero-visual reveal">
-      <img class="real" src="img/heroimgmockup_desktop.jpg" alt="Steelcase Configurator hero" />
-      <span class="corner c-tl">[ FIG.01 ]</span>
-      <span class="corner c-tr">CONFIDENTIAL · BETA</span>
-      <span class="corner c-bl">STEELCASE / NEXT-GEN PV</span>
-      <span class="corner c-br">2021 → PRESENT</span>
+      <div class="hero-visual reveal">
+        <img class="real" src="img/heroimgmockup_desktop.jpg" alt="Steelcase Configurator hero" />
+        <span class="corner c-tl">[ FIG.01 ]</span>
+        <span class="corner c-tr">CONFIDENTIAL · BETA</span>
+        <span class="corner c-bl">STEELCASE / NEXT-GEN PV</span>
+        <span class="corner c-br">2021 → 2024</span>
+      </div>
     </div>
 
     <div class="meta-strip reveal">
@@ -303,7 +300,7 @@
       </div>
       <div class="meta-cell">
         <span class="k">Duration</span>
-        <span class="v">Jul 2021 → Present</span>
+        <span class="v">2021 → 2024</span>
       </div>
       <div class="meta-cell">
         <span class="k">Team</span>
