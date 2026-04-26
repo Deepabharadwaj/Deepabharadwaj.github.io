@@ -1,6 +1,6 @@
+/* Project-specific overrides for the Amazon Prime Video case study. */
 .sticky-hero__media {
-    background: url('../img/heroimgmockup.jpg') no-repeat center center;
-    background-size: cover;
+    background-image: url('../img/heroimgmockup.jpg');
 }
 
 #chat1 {
@@ -110,8 +110,7 @@
 
 @media (max-width: 500px) {
     .sticky-hero__media {
-        background: url('../img/heroimgmockup_mobile.jpg') no-repeat center center;
-        background-size: cover
+        background-image: url('../img/heroimgmockup_mobile.jpg');
     }
 
     .goals-container{

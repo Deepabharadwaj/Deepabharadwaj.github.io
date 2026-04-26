@@ -27,6 +27,8 @@ html{
     height: 60vh;
     max-width: 100%;
     background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
     z-index: -1;
 }
 .sticky-hero__content {
