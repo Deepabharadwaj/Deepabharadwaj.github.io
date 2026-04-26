@@ -1,129 +1,676 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Deepa Bharadwaj | UX Design</title>
-    <link rel="icon" href="img/Logo/Logo_Normal.png" />
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Deepa Bharadwaj — UX Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: oklch(0.98 0.004 80);
+    --bg-2: oklch(0.955 0.005 80);
+    --ink: oklch(0.18 0.008 80);
+    --ink-2: oklch(0.40 0.008 80);
+    --ink-3: oklch(0.62 0.006 80);
+    --line: oklch(0.88 0.006 80);
+    --accent: oklch(0.58 0.14 45);
+    --accent-soft: oklch(0.92 0.04 60);
+    --sans: "Inter Tight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --serif: "Instrument Serif", "Times New Roman", serif;
+  }
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" />
-    <link rel="stylesheet" href="https://use.typekit.net/ikz0csl.css" />
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/stylesheet.css" />
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{font-size:16px;line-height:1.5;font-weight:400;letter-spacing:-0.01em;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  button{font:inherit;border:none;background:none;cursor:pointer;color:inherit;}
+  img,svg{display:block;max-width:100%;}
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
-    <script src="js/projects.js"></script>
-    <script src="js/render.js"></script>
-    <script src="js/index.js"></script>
-  </head>
+  ::selection{background:var(--ink);color:var(--bg);}
 
-  <body>
-    <div class="loader main-loadertext">
-      <div id="fun-heading"></div>
-      <div class="sub-loadertext" id="fun-content"></div>
+  /* mono label */
+  .mono{font-family:var(--mono);font-size:11px;letter-spacing:0.02em;text-transform:uppercase;color:var(--ink-2);font-weight:400;}
+
+  /* layout */
+  .container{max-width:1440px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.container{padding:0 20px;}}
+
+  /* ============== NAV ============== */
+  nav.top{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+    background:color-mix(in srgb, var(--bg) 75%, transparent);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease, background .3s ease;
+  }
+  nav.top.scrolled{border-bottom-color:var(--line);}
+  nav.top .row{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:500;letter-spacing:-0.02em;font-size:15px;}
+  .brand-mark{
+    width:22px;height:22px;border-radius:50%;
+    background:var(--ink);position:relative;overflow:hidden;
+  }
+  .brand-mark::after{
+    content:"";position:absolute;inset:0;
+    background:var(--accent);
+    transform:translateX(-50%);
+  }
+  .nav-links{display:flex;gap:36px;align-items:center;}
+  .nav-links a{font-size:14px;color:var(--ink-2);transition:color .2s;position:relative;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a .num{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-right:6px;vertical-align:1px;}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:8px 14px;border-radius:999px;
+    background:var(--ink);color:var(--bg);
+    font-size:13px;font-weight:500;letter-spacing:-0.005em;
+    transition:transform .2s, background .2s;
+  }
+  .nav-cta:hover{transform:translateY(-1px);background:var(--accent);}
+  .nav-cta .dot{width:6px;height:6px;border-radius:50%;background:#7CFFB2;box-shadow:0 0 8px #7CFFB2;}
+
+  @media(max-width:780px){.nav-links{display:none;}}
+
+  /* ============== HERO ============== */
+  .hero{padding:160px 0 120px;position:relative;}
+  .hero-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:end;}
+  .hero-meta{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:64px;}
+  .hero-meta .kv{display:flex;flex-direction:column;gap:4px;}
+  .hero-meta .kv .k{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;}
+  .hero-meta .kv .v{font-size:14px;color:var(--ink);}
+
+  .hero h1{
+    font-family:var(--sans);
+    font-weight:300;
+    font-size:clamp(48px, 9.5vw, 148px);
+    line-height:0.92;
+    letter-spacing:-0.045em;
+    color:var(--ink);
+  }
+  .hero h1 .serif{font-family:var(--serif);font-style:italic;font-weight:400;letter-spacing:-0.02em;}
+  .hero h1 .accent{color:var(--accent);}
+  .hero h1 .badge{
+    display:inline-flex;align-items:center;gap:10px;
+    vertical-align:middle;
+    padding:0 18px;height:0.85em;border-radius:999px;
+    background:var(--ink);color:var(--bg);
+    font-size:0.42em;font-weight:400;letter-spacing:-0.01em;
+    font-family:var(--sans);
+  }
+  .hero h1 .badge .dot{width:0.42em;height:0.42em;border-radius:50%;background:#7CFFB2;}
+
+  .hero-foot{
+    display:grid;grid-template-columns:1.4fr 1fr;
+    gap:48px;margin-top:80px;padding-top:32px;
+    border-top:1px solid var(--line);
+  }
+  .hero-foot .lede{font-size:20px;line-height:1.45;color:var(--ink-2);max-width:560px;letter-spacing:-0.015em;font-weight:400;}
+  .hero-foot .lede em{font-family:var(--serif);font-style:italic;color:var(--ink);font-weight:400;font-size:1.1em;}
+  .hero-foot .scroll-cue{display:flex;align-items:flex-end;justify-content:flex-end;gap:12px;color:var(--ink-3);font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.04em;}
+  .hero-foot .scroll-cue .arrow{
+    width:36px;height:36px;border-radius:50%;border:1px solid var(--line);
+    display:grid;place-items:center;
+    animation:bob 2.4s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(4px);}}
+
+  @media(max-width:780px){
+    .hero{padding:120px 0 80px;}
+    .hero-meta{flex-direction:column;gap:18px;}
+    .hero-foot{grid-template-columns:1fr;gap:32px;}
+    .hero-foot .scroll-cue{justify-content:flex-start;}
+  }
+
+  /* ============== TICKER ============== */
+  .ticker{
+    border-block:1px solid var(--line);
+    overflow:hidden;background:var(--bg);
+    padding:18px 0;
+  }
+  .ticker-track{display:flex;gap:48px;white-space:nowrap;animation:tick 40s linear infinite;}
+  .ticker-track span{font-family:var(--mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-2);display:inline-flex;align-items:center;gap:48px;}
+  .ticker-track span::after{content:"✦";color:var(--accent);}
+  @keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+  /* ============== SECTION HEAD ============== */
+  .sec-head{
+    display:flex;align-items:flex-end;justify-content:space-between;gap:32px;
+    padding:96px 0 48px;
+  }
+  .sec-head h2{
+    font-weight:300;letter-spacing:-0.035em;
+    font-size:clamp(32px,5vw,64px);line-height:0.98;
+  }
+  .sec-head h2 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
+  .sec-head .meta{display:flex;flex-direction:column;align-items:flex-end;gap:6px;text-align:right;}
+  @media(max-width:780px){
+    .sec-head{flex-direction:column;align-items:flex-start;padding:64px 0 32px;}
+    .sec-head .meta{align-items:flex-start;text-align:left;}
+  }
+
+  /* ============== WORK ============== */
+  .work{padding-bottom:64px;}
+  .work-list{display:flex;flex-direction:column;}
+  .work-item{
+    display:grid;grid-template-columns:64px 1fr 1.4fr 200px;gap:32px;align-items:center;
+    padding:32px 0;border-top:1px solid var(--line);
+    cursor:pointer;position:relative;
+    transition:padding .35s cubic-bezier(.4,0,.2,1);
+  }
+  .work-item:last-child{border-bottom:1px solid var(--line);}
+  .work-item .num{font-family:var(--mono);font-size:12px;color:var(--ink-3);}
+  .work-item .title{
+    font-size:clamp(28px,3.4vw,44px);font-weight:400;letter-spacing:-0.03em;line-height:1.05;
+    transition:transform .35s cubic-bezier(.4,0,.2,1), color .25s;
+  }
+  .work-item .title small{
+    display:block;font-size:13px;color:var(--ink-3);font-family:var(--mono);
+    text-transform:uppercase;letter-spacing:0.04em;margin-top:8px;font-weight:400;
+  }
+  .work-item .desc{font-size:15px;color:var(--ink-2);max-width:420px;letter-spacing:-0.005em;}
+  .work-item .tags{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;}
+  .work-item .tags span{
+    font-family:var(--mono);font-size:10px;text-transform:uppercase;
+    padding:5px 9px;border:1px solid var(--line);border-radius:999px;
+    color:var(--ink-2);letter-spacing:0.04em;
+  }
+
+  .work-item .arrow{
+    position:absolute;right:0;top:50%;transform:translateY(-50%);
+    width:48px;height:48px;border-radius:50%;background:var(--ink);color:var(--bg);
+    display:grid;place-items:center;
+    opacity:0;transition:opacity .25s, transform .35s cubic-bezier(.4,0,.2,1);
+    pointer-events:none;
+  }
+  .work-item:hover{padding-left:24px;}
+  .work-item:hover .title{color:var(--accent);}
+  .work-item:hover .arrow{opacity:0;}
+
+  /* preview thumbnail floating */
+  .work-item .preview{
+    position:absolute;pointer-events:none;
+    width:280px;height:200px;border-radius:14px;overflow:hidden;
+    background:var(--bg-2) center/cover no-repeat;border:1px solid var(--line);
+    opacity:0;transform:scale(.92) rotate(-3deg);
+    transition:opacity .3s, transform .35s cubic-bezier(.4,0,.2,1);
+    z-index:5;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,.18);
+  }
+  .work-item:hover .preview{opacity:1;transform:scale(1) rotate(-2deg);}
+
+  @media(max-width:980px){
+    .work-item{grid-template-columns:48px 1fr;gap:16px;}
+    .work-item .desc, .work-item .tags{grid-column:2/3;}
+    .work-item .desc{margin-top:8px;}
+    .work-item .tags{justify-content:flex-start;margin-top:12px;}
+    .work-item .preview{display:none;}
+  }
+
+  /* ============== CAPABILITIES ============== */
+  .caps{padding:64px 0 96px;}
+  .caps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;}
+  .cap{
+    background:var(--bg);padding:28px 24px;
+    display:flex;flex-direction:column;gap:14px;
+    min-height:200px;
+    transition:background .3s;
+    position:relative;overflow:hidden;
+  }
+  .cap:hover{background:var(--bg-2);}
+  .cap .ico{
+    width:36px;height:36px;border-radius:50%;
+    border:1px solid var(--ink);display:grid;place-items:center;
+    transition:background .3s, color .3s;
+  }
+  .cap:hover .ico{background:var(--ink);color:var(--bg);}
+  .cap h3{font-size:18px;font-weight:500;letter-spacing:-0.015em;margin-top:auto;}
+  .cap p{font-size:13px;color:var(--ink-2);line-height:1.45;}
+  .cap .num{font-family:var(--mono);font-size:10px;color:var(--ink-3);position:absolute;top:24px;right:24px;letter-spacing:0.04em;}
+  @media(max-width:980px){.caps-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.caps-grid{grid-template-columns:1fr;}}
+
+  /* ============== ABOUT ============== */
+  .about{padding:64px 0 120px;}
+  .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start;}
+  .about-portrait{
+    aspect-ratio:4/5;border-radius:18px;overflow:hidden;
+    background:linear-gradient(135deg, var(--accent-soft), var(--bg-2));
+    position:relative;
+    border:1px solid var(--line);
+  }
+  .about-portrait img.photo{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  }
+  .about-portrait .label{
+    position:absolute;left:20px;bottom:20px;
+    font-family:var(--mono);font-size:11px;color:var(--ink-2);
+    background:var(--bg);padding:6px 10px;border-radius:6px;
+    text-transform:uppercase;letter-spacing:0.04em;
+  }
+  .about-portrait .frame-corner{
+    position:absolute;width:18px;height:18px;border:1px solid var(--ink-2);
+  }
+  .about-portrait .frame-corner.tl{top:14px;left:14px;border-right:none;border-bottom:none;}
+  .about-portrait .frame-corner.tr{top:14px;right:14px;border-left:none;border-bottom:none;}
+  .about-portrait .frame-corner.bl{bottom:14px;left:14px;border-right:none;border-top:none;}
+  .about-portrait .frame-corner.br{bottom:14px;right:14px;border-left:none;border-top:none;}
+
+  .about-body h2{
+    font-size:clamp(28px,3.6vw,48px);font-weight:300;letter-spacing:-0.03em;line-height:1.05;margin-bottom:24px;
+  }
+  .about-body h2 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
+  .about-body p{font-size:17px;line-height:1.55;color:var(--ink-2);margin-bottom:18px;letter-spacing:-0.005em;max-width:520px;}
+  .about-body p strong{color:var(--ink);font-weight:500;}
+
+  .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px;border-top:1px solid var(--line);padding-top:32px;}
+  .stat .n{font-size:40px;font-weight:300;letter-spacing:-0.03em;color:var(--ink);}
+  .stat .n .serif{font-family:var(--serif);font-style:italic;}
+  .stat .l{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;margin-top:4px;}
+
+  @media(max-width:880px){.about-grid{grid-template-columns:1fr;gap:48px;}}
+
+  /* ============== CTA ============== */
+  .cta{
+    background:var(--ink);color:var(--bg);
+    border-radius:24px;
+    padding:80px 48px;margin:64px 32px;
+    position:relative;overflow:hidden;
+  }
+  .cta-inner{max-width:1440px;margin:0 auto;}
+  .cta .mono-label{font-family:var(--mono);font-size:11px;text-transform:uppercase;color:color-mix(in srgb, var(--bg) 60%, transparent);letter-spacing:0.06em;margin-bottom:32px;display:flex;align-items:center;gap:10px;}
+  .cta .mono-label::before{content:"";width:24px;height:1px;background:currentColor;}
+  .cta h2{
+    font-size:clamp(40px,7vw,108px);font-weight:300;line-height:0.95;letter-spacing:-0.04em;
+  }
+  .cta h2 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
+  .cta h2 .accent{color:var(--accent);}
+  .cta-row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:48px;flex-wrap:wrap;gap:24px;}
+  .cta-mail{
+    font-size:22px;letter-spacing:-0.015em;
+    display:inline-flex;align-items:center;gap:14px;
+    padding-bottom:6px;border-bottom:1px solid color-mix(in srgb, var(--bg) 30%, transparent);
+    transition:border-color .25s, color .25s;
+  }
+  .cta-mail:hover{color:var(--accent);border-bottom-color:var(--accent);}
+  .cta-availability{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;color:color-mix(in srgb, var(--bg) 70%, transparent);text-transform:uppercase;letter-spacing:0.04em;}
+  .cta-availability .dot{width:8px;height:8px;border-radius:50%;background:#7CFFB2;box-shadow:0 0 12px #7CFFB2;animation:pulse 1.8s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+
+  .cta-blob{
+    position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, var(--accent), transparent 65%);
+    opacity:.45;filter:blur(20px);pointer-events:none;
+  }
+
+  @media(max-width:640px){.cta{padding:48px 28px;margin:48px 16px;}}
+
+  /* ============== FOOTER ============== */
+  footer{padding:48px 0 32px;border-top:1px solid var(--line);}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .foot-links{display:flex;gap:24px;}
+  .foot-links a{font-size:13px;color:var(--ink-2);transition:color .2s;}
+  .foot-links a:hover{color:var(--ink);}
+  .foot-row .colophon{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;}
+
+  /* fade-in on scroll */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* cursor follower */
+  #cursor{
+    position:fixed;width:8px;height:8px;border-radius:50%;background:var(--accent);
+    pointer-events:none;z-index:100;mix-blend-mode:difference;
+    transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;
+    opacity:0;
+  }
+  body.has-cursor #cursor{opacity:1;}
+  #cursor.big{width:64px;height:64px;background:var(--bg);}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+
+<!-- NAV -->
+<nav class="top" id="topnav">
+  <div class="container row">
+    <a class="brand" href="#top">
+      <span class="brand-mark"></span>
+      <span>Deepa Bharadwaj</span>
+    </a>
+    <div class="nav-links">
+      <a href="#work"><span class="num">01</span>Work</a>
+      <a href="#capabilities"><span class="num">02</span>Capabilities</a>
+      <a href="#about"><span class="num">03</span>About</a>
+      <a href="#contact"><span class="num">04</span>Contact</a>
     </div>
-    <script>wait_loader();</script>
+    <a class="nav-cta" href="#contact">
+      <span class="dot"></span>
+      Get in touch
+    </a>
+  </div>
+</nav>
 
-    <section class="container">
-      <nav id="header" class="navbar navbar-expand-lg nav-hold"></nav>
-      <script>nav_active_id = 'nav-projects';</script>
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="container">
+    <div class="hero-meta reveal">
+      <div class="kv">
+        <span class="k">Builder</span>
+        <span class="v">Deepa Bharadwaj</span>
+      </div>
+      <div class="kv">
+        <span class="k">Currently</span>
+        <span class="v">Co-founder, Proxy Robotics</span>
+      </div>
+      <div class="kv">
+        <span class="k">Studying</span>
+        <span class="v">Stanford GSB · MBA '26</span>
+      </div>
+      <div class="kv">
+        <span class="k">Index</span>
+        <span class="v">2026 / Portfolio</span>
+      </div>
+    </div>
 
-      <div class="container projects-top">
-        <div class="row mx-auto" style="display: block;">
-          <div class="signature" style="text-align: center; font-size: 1.5rem; padding-bottom: 0;">deepabharadwaj</div>
+    <h1 class="reveal">
+      Building <span class="serif">infrastructure</span><br>
+      for the <span class="badge"><span class="dot"></span>physical world</span><br>
+      and the humans<br>
+      <span class="accent">who run it.</span>
+    </h1>
+
+    <div class="hero-foot reveal">
+      <p class="lede">
+        I'm a co-founder building <em>Proxy</em> — deployment infrastructure for the robotics industry. I work at the intersection of physical systems, software, and the humans who use them, while finishing my MBA at Stanford GSB.
+      </p>
+      <div class="scroll-cue">
+        <span>Scroll to explore</span>
+        <span class="arrow">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1.5v9M2 7l4 4 4-4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Robotics Infrastructure</span>
+    <span>Teleoperation</span>
+    <span>Go-to-Market</span>
+    <span>Product Strategy</span>
+    <span>0→1</span>
+    <span>Founder-led</span>
+    <span>Robotics Infrastructure</span>
+    <span>Teleoperation</span>
+    <span>Go-to-Market</span>
+    <span>Product Strategy</span>
+    <span>0→1</span>
+    <span>Founder-led</span>
+  </div>
+</div>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2>Selected <span class="serif">work</span></h2>
+      <div class="meta">
+        <span class="mono">[ 01 / Index ]</span>
+        <span style="font-size:13px;color:var(--ink-2);max-width:280px;">A handful of projects spanning enterprise tools, consumer products, and IoT.</span>
+      </div>
+    </div>
+
+    <div class="work-list" id="worklist">
+      <a class="work-item" href="#">
+        <span class="num">01 / 06</span>
+        <div class="title">
+          Proxy Robotics
+          <small>Co-founder · 2025 — Present</small>
         </div>
-        <div class="row mx-auto landing-page" style="display: block; padding-top: 70px;">
-          <div class="col-lg-7 col-md-10 mx-auto">
-            <div class="row mx-auto justify-content-center">
-              <h2 class="mb-5 tm-content-title" style="text-align: center;">Designing <br>human experiences</h2>
-              <div class="row mx-auto justify-content-center">
-                <div class="col-3" style="display: flex; flex-direction: row-reverse;">
-                  <div class="yellow-box"></div>
-                </div>
-                <div class="col-9 pr-0">
-                  Hi! I’m Deepa, a UX Designer based in San Francisco. I incorporate my architectural design background by leveraging empathy and a deep understanding of design systems to craft user-centered solutions.
-                  <hr class="read-more-spacer">
-                  <a href="docs/deepa-bharadwaj-resume.pdf">
-                    <button type="button" class="btn rounded read-more">Resume <img class="read-more-arrow" src="img/right-arrow.svg" alt=""></button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="desc">Deployment infrastructure for the robotics industry — an end-to-end teleoperation stack that works across embodiments (Kinova, Franka, Stretch, SO-101). Just as AWS made servers interchangeable, Proxy makes robot hardware interchangeable.</div>
+        <div class="tags">
+          <span>Co-founder</span><span>GTM</span><span>Investor Relations</span><span>Strategy</span><span>Operations</span>
+        </div>
+        <div class="preview" style="background:linear-gradient(135deg,#1a1a1a,#3a3a3a);"></div>
+        <span class="arrow">→</span>
+      </a>
+      <a class="work-item" href="#">
+        <span class="num">02 / 06</span>
+        <div class="title">
+          Stanford GSB
+          <small>MBA Candidate · 2024 — 2026</small>
+        </div>
+        <div class="desc">Focused on entrepreneurship, venture capital, and the operating playbook for founder-led companies. Putting the coursework into practice in real time by building Proxy alongside school.</div>
+        <div class="tags">
+          <span>MBA</span><span>Entrepreneurship</span><span>Venture Capital</span><span>Org Behavior</span>
+        </div>
+        <div class="preview" style="background-image:url('img/stanford.jpg');"></div>
+        <span class="arrow">→</span>
+      </a>
+      <a class="work-item" href="#">
+        <span class="num">03 / 06</span>
+        <div class="title">
+          Intrinsic <span style="font-family:var(--mono);font-size:0.45em;color:var(--ink-3);vertical-align:middle;">(Alphabet)</span>
+          <small>Product Manager · 2024</small>
+        </div>
+        <div class="desc">PM at Alphabet's robotics company (formerly Google X). Built tooling that streamlined the setup, deployment, and scaling of physical robotic workcells for industrial customers — the same problem space I now tackle at infrastructure scale with Proxy.</div>
+        <div class="tags">
+          <span>Product</span><span>Robotics</span><span>Developer Tools</span><span>0→1</span>
+        </div>
+        <div class="preview" style="background-image:url('img/intrinsic.png');"></div>
+        <span class="arrow">→</span>
+      </a>
+      <a class="work-item" href="#">
+        <span class="num">04 / 06</span>
+        <div class="title">
+          Steelcase — Digital Innovation Lab
+          <small>Product Manager · 2021 — 2024</small>
+        </div>
+        <div class="desc">Led a 22-person cross-functional team building an AI-powered product configurator driven by generative design and data models. Drove $100M+ in revenue impact.</div>
+        <div class="tags">
+          <span>Strategy</span><span>Roadmap</span><span>Research</span><span>E-commerce</span>
+        </div>
+        <div class="preview" style="background-image:url('img/scmockup.jpg');"></div>
+        <span class="arrow">→</span>
+      </a>
+      <a class="work-item" href="#">
+        <span class="num">05 / 06</span>
+        <div class="title">
+          Amazon Prime Video
+          <small>UX Designer · 2020</small>
+        </div>
+        <div class="desc">Enhanced the user experience and value proposition of Amazon Prime Video by adding personalization and social features to the platform.</div>
+        <div class="tags">
+          <span>Research</span><span>Product Design</span><span>Front-end</span>
+        </div>
+        <div class="preview" style="background-image:url('case-studies/amazon/img/hero.jpg');"></div>
+        <span class="arrow">→</span>
+      </a>
+      <a class="work-item" href="#">
+        <span class="num">06 / 06</span>
+        <div class="title">
+          Bark &nbsp;·&nbsp; Adult-it
+          <small>Product Designer · 2020</small>
+        </div>
+        <div class="desc">Two early projects: an IoT smart-collar onboarding flow (UX Hackathon 2020) and a mentorship app connecting young adults to credible mentors as they transition into adulthood.</div>
+        <div class="tags">
+          <span>Product Design</span><span>UX</span><span>Visual</span><span>Animation</span>
+        </div>
+        <div class="preview" style="background-image:url('case-studies/bark/img/hero.jpg');"></div>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="caps" id="capabilities">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2>How I <span class="serif">work</span></h2>
+      <div class="meta">
+        <span class="mono">[ 02 / Capabilities ]</span>
+      </div>
+    </div>
+    <div class="caps-grid reveal">
+      <div class="cap">
+        <span class="num">01</span>
+        <span class="ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="7" r="2" fill="currentColor"/></svg></span>
+        <h3>Founding &amp; GTM</h3>
+        <p>Pitch narrative, investor relations, early customer development, and operations for a 0→1 robotics company.</p>
+      </div>
+      <div class="cap">
+        <span class="num">02</span>
+        <span class="ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2v10" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+        <h3>Product Strategy</h3>
+        <p>Roadmaps, market positioning, and the operating cadence to actually ship them — across enterprise, consumer, and infra.</p>
+      </div>
+      <div class="cap">
+        <span class="num">03</span>
+        <span class="ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M2 6h10" stroke="currentColor" stroke-width="1.2"/></svg></span>
+        <h3>Physical + Software</h3>
+        <p>Tooling for robotic workcells, teleoperation interfaces, and 3D configurators — products where atoms meet bits.</p>
+      </div>
+      <div class="cap">
+        <span class="num">04</span>
+        <span class="ico"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12c2-6 6-9 10-10M2 12l3-1M2 12l1-3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <h3>UX &amp; Research</h3>
+        <p>An architect's eye for how people move through systems — flows, prototypes, and research that change product decisions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <h2>About</h2>
+      <div class="meta">
+        <span class="mono">[ 03 / Bio ]</span>
+      </div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-portrait reveal">
+        <img class="photo" src="img/about-me.jpg" alt="Deepa Bharadwaj" />
+        <span class="frame-corner tl"></span>
+        <span class="frame-corner tr"></span>
+        <span class="frame-corner bl"></span>
+        <span class="frame-corner br"></span>
+        <span class="label">DEEPA BHARADWAJ</span>
+      </div>
+      <div class="about-body reveal">
+        <h2>From <span class="serif">architecture</span> to robotics infrastructure.</h2>
+        <p>I'm a co-founder, product builder, and designer with a background that spans <strong>architecture, UX, product management, and robotics infrastructure</strong>.</p>
+        <p>Before Proxy, I was a PM at <strong>Intrinsic</strong> (Alphabet's robotics company), where I worked on tooling for deploying physical robotic workcells. Earlier, I led product at <strong>Steelcase's Digital Innovation Lab</strong>, where my team shipped an AI-powered configurator that drove over $100M in revenue impact.</p>
+        <p>I hold an MBA from the <strong>Stanford Graduate School of Business</strong> (Class of 2026) and two architecture degrees from the <strong>University of Michigan</strong>.</p>
+        <p>The throughline across architecture, product management, and founding Proxy has been the same: figuring out how to make complex, physical systems usable by the people who actually need them.</p>
+
+        <div class="stat-row">
+          <div class="stat"><div class="n">$100M<span class="serif">+</span></div><div class="l">Revenue impact</div></div>
+          <div class="stat"><div class="n">4</div><div class="l">Robot embodiments</div></div>
+          <div class="stat"><div class="n">2</div><div class="l">Architecture degrees</div></div>
         </div>
       </div>
-
-      <!-- Project rows are rendered from js/projects.js. See js/render.js. -->
-      <div id="project-list" data-root="."></div>
-
-      <hr class="mb-5">
-      <div class="row">
-        <div class="col-lg-5 col-sm-12 ml-auto order-lg-12 text-center">
-          <img class="img-fluid center-block" src="img/Homepage/recoimg.svg" loading="lazy" alt="">
-        </div>
-        <div class="col-lg-6 col-sm-12 order-lg-1 reco-container">
-          <div class="row mb-4 mx-0">
-            <img class="img-fluid project-img" src="img/Homepage/recoquotes.svg" loading="lazy" alt="">
-          </div>
-          <div id="carousel-reco" class="carousel slide mb-auto" data-ride="carousel" data-interval="7000">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row mb-5 mx-0" style="text-align: left;">
-                  Deepa is an exceptional designer. She not only understands the intricate detail of the entire user journey she composes it with exacting structure. Deepa will never back down from a challenge. While working together I enjoyed her wide and enveloping mind as well as her integrative approach. Hiring Deepa ensures that high quality design backed by meaningful insight is shipped—with no exception.
-                </div>
-                <div class="row mb-5 mx-0" style="text-align: left;">
-                  <div class="reco-name">Gavin Fiorina</div>
-                  <div class="reco-title">Professor, UC Berkeley Extension</div>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="row mb-5 mx-0" style="text-align: left;">
-                  Deepa is a proactive, talented Designer. She was a great UX student. The thing that makes Deepa really standout is the speed at which she delivers. I have witnessed in realtime how fast Deepa works with Design tools, as well as her turnaround time for deliverables. I am sure she will not have a problem keeping up with her co-workers, even at the most fast-paced companies.
-                </div>
-                <div class="row mb-5 mx-0" style="text-align: left;">
-                  <div class="reco-name">Klarence OuYang</div>
-                  <div class="reco-title">UI Engineer, Castlight Health</div>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="row mb-5 mx-0" style="text-align: left;">
-                  Deepa is an incredibly talented architect and designer with a desire to make her projects & studio better. She is a very active & respectful collaborator always wanting to contribute. She has shown ability to work on all aspects of projects, large and small. Beyond Architecture, Deepa studies many other design disciplines to bring a more well-rounded approach to projects.
-                </div>
-                <div class="row mb-5 mx-0" style="text-align: left;">
-                  <div class="reco-name">Kurt Volkman</div>
-                  <div class="reco-title">Senior Associate VP, CallisonRTKL</div>
-                </div>
-              </div>
-            </div>
-            <a class="carousel-control-next" href="#carousel-reco" role="button" data-slide="next">
-              <span class="carousel-control-next-icon reco-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-        <ol class="carousel-indicators reco-indicators">
-          <li data-target="#carousel-reco" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-reco" data-slide-to="1"></li>
-          <li data-target="#carousel-reco" data-slide-to="2"></li>
-        </ol>
-      </div>
-
-      <footer id="footer"></footer>
-    </section>
-    <div class="row" id="footer-banner-desktop">
-      <div class="bottom-line-box c1"></div>
-      <div class="bottom-line-box c2"></div>
-      <div class="bottom-line-box c3"></div>
-      <div class="bottom-line-box c4"></div>
-      <div class="bottom-line-box c5"></div>
     </div>
-  </body>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta-blob"></div>
+  <div class="cta-inner">
+    <div class="mono-label">[ 04 ] Let's build something</div>
+    <h2>
+      Building in <span class="serif">robotics?</span><br>
+      Let's <span class="accent">talk.</span>
+    </h2>
+    <div class="cta-row">
+      <a class="cta-mail" href="mailto:deepa@proxyrobotics.com">
+        deepa@proxyrobotics.com
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="cta-availability">
+        <span class="dot"></span>
+        Proxy is hiring · 2026
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container foot-row">
+    <span class="colophon">© 2026 Deepa Bharadwaj — All rights reserved</span>
+    <div class="foot-links">
+      <a href="#">LinkedIn</a>
+      <a href="#">Proxy Robotics</a>
+      <a href="#">Read.cv</a>
+      <a href="#top">Back to top ↑</a>
+    </div>
+    <span class="colophon">v 2.0 · Designed in SF</span>
+  </div>
+</footer>
+
+<script>
+  // sticky nav border
+  const nav = document.getElementById('topnav');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.08, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // floating preview thumbnail follows cursor over work items
+  document.querySelectorAll('.work-item').forEach(item => {
+    const prev = item.querySelector('.preview');
+    if (!prev) return;
+    item.addEventListener('mousemove', (e) => {
+      const rect = item.getBoundingClientRect();
+      const x = e.clientX - rect.left + 24;
+      const y = e.clientY - rect.top - 100;
+      prev.style.left = x + 'px';
+      prev.style.top  = y + 'px';
+    });
+  });
+
+  // smooth scroll for in-page links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (ev) => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const el = document.querySelector(id);
+      if (el) { ev.preventDefault(); window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 60, behavior:'smooth'}); }
+    });
+  });
+
+  // tiny cursor blob (desktop only)
+  const cursor = document.getElementById('cursor');
+  if (matchMedia('(pointer:fine)').matches) {
+    document.body.classList.add('has-cursor');
+    window.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+    document.querySelectorAll('a, button, .work-item').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('big'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('big'));
+    });
+  }
+</script>
+
+</body>
 </html>
