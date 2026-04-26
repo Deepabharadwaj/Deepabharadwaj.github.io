@@ -4,6 +4,9 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Deepa Bharadwaj — UX Designer</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -51,13 +54,9 @@
   nav.top .row{display:flex;align-items:center;justify-content:space-between;height:64px;}
   .brand{display:flex;align-items:center;gap:10px;font-weight:500;letter-spacing:-0.02em;font-size:15px;}
   .brand-mark{
-    width:22px;height:22px;border-radius:50%;
-    background:var(--ink);position:relative;overflow:hidden;
-  }
-  .brand-mark::after{
-    content:"";position:absolute;inset:0;
-    background:var(--accent);
-    transform:translateX(-50%);
+    width:26px;height:26px;border-radius:50%;
+    background:var(--bg) url('/img/logo-mark.png') center/cover no-repeat;
+    overflow:hidden;
   }
   .nav-links{display:flex;gap:36px;align-items:center;}
   .nav-links a{font-size:14px;color:var(--ink-2);transition:color .2s;position:relative;}
@@ -400,10 +399,10 @@
         <div class="tags">
           <span>Co-founder</span><span>GTM</span><span>Investor Relations</span><span>Strategy</span><span>Operations</span>
         </div>
-        <div class="preview" style="background:linear-gradient(135deg,#1a1a1a,#3a3a3a);"></div>
+        <div class="preview" style="background-image:url('img/proxy.png');"></div>
         <span class="arrow">→</span>
       </a>
-      <a class="work-item" href="#">
+      <a class="work-item" href="case-studies/intrinsic/index.html">
         <span class="num">02 / 06</span>
         <div class="title">
           Intrinsic <span style="font-family:var(--mono);font-size:0.45em;color:var(--ink-3);vertical-align:middle;">(Google X Robotics)</span>

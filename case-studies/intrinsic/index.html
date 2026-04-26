@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Intrinsic — EC Org Self-Serve · Case Study · Deepa Bharadwaj</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: oklch(0.98 0.004 80);
+    --bg-2: oklch(0.955 0.005 80);
+    --ink: oklch(0.18 0.008 80);
+    --ink-2: oklch(0.40 0.008 80);
+    --ink-3: oklch(0.62 0.006 80);
+    --line: oklch(0.88 0.006 80);
+    --accent: oklch(0.58 0.14 45);
+    --accent-soft: oklch(0.92 0.04 60);
+    --sans: "Inter Tight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --serif: "Instrument Serif", "Times New Roman", serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{font-size:16px;line-height:1.5;font-weight:400;letter-spacing:-0.01em;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  img,svg,video{display:block;max-width:100%;}
+  ::selection{background:var(--ink);color:var(--bg);}
+
+  .mono{font-family:var(--mono);font-size:11px;letter-spacing:0.02em;text-transform:uppercase;color:var(--ink-2);font-weight:400;}
+  .container{max-width:1440px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.container{padding:0 20px;}}
+
+  /* NAV */
+  nav.top{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:color-mix(in srgb, var(--bg) 75%, transparent);border-bottom:1px solid transparent;transition:border-color .3s;}
+  nav.top.scrolled{border-bottom-color:var(--line);}
+  nav.top .row{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:500;letter-spacing:-0.02em;font-size:15px;}
+  .brand-mark{width:26px;height:26px;border-radius:50%;background:var(--bg) url('/img/logo-mark.png') center/cover no-repeat;overflow:hidden;}
+  .nav-links{display:flex;gap:36px;align-items:center;}
+  .nav-links a{font-size:14px;color:var(--ink-2);transition:color .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a .num{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-right:6px;vertical-align:1px;}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--ink);color:var(--bg);font-size:13px;font-weight:500;transition:transform .2s, background .2s;}
+  .nav-cta:hover{transform:translateY(-1px);background:var(--accent);}
+  .nav-cta .arrow{font-family:var(--mono);font-size:12px;}
+  @media(max-width:780px){.nav-links{display:none;}}
+
+  /* HERO */
+  .hero{padding:140px 0 64px;}
+  .crumb{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:48px;flex-wrap:wrap;}
+  .crumb a{color:var(--ink-2);transition:color .2s;}
+  .crumb a:hover{color:var(--accent);}
+  .crumb .sep{opacity:.5;}
+  .hero-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:64px;}
+  .hero-head .label{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+  .hero-head .label::before{content:"";width:24px;height:1px;background:currentColor;}
+  .hero h1{font-weight:300;font-size:clamp(40px,7.5vw,108px);line-height:0.94;letter-spacing:-0.045em;}
+  .hero h1 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
+  .hero h1 .accent{color:var(--accent);}
+  .hero-head .lede{font-size:19px;line-height:1.45;color:var(--ink-2);max-width:480px;letter-spacing:-0.01em;margin-top:32px;}
+  .hero-head .lede em{font-family:var(--serif);font-style:italic;color:var(--ink);font-weight:400;font-size:1.08em;}
+  @media(max-width:880px){.hero-head{grid-template-columns:1fr;gap:24px;}}
+
+  /* hero visual — Flowstate-style portal mock; if a real screenshot is dropped in via img.real, it takes over */
+  .hero-visual{
+    aspect-ratio:4/3;border-radius:18px;overflow:hidden;position:relative;
+    background:#0E1318;
+    border:1px solid var(--line);color:var(--bg);
+  }
+  .hero-visual img.real{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;}
+  .hero-visual .browser-bar{
+    height:36px;background:#161C23;display:flex;align-items:center;gap:8px;padding:0 14px;
+    border-bottom:1px solid #232a33;
+  }
+  .hero-visual .dot{width:11px;height:11px;border-radius:50%;background:#444;}
+  .hero-visual .dot.r{background:#ff5f57;} .hero-visual .dot.y{background:#febc2e;} .hero-visual .dot.g{background:#28c840;}
+  .hero-visual .url{flex:1;font-family:var(--mono);font-size:11px;color:#8a96a3;text-align:center;letter-spacing:0.04em;}
+  .hero-visual .frame{
+    position:absolute;inset:36px 0 0 0;
+    background:linear-gradient(160deg,#0E1318 0%, #131923 60%, #1a2230 100%);
+    overflow:hidden;display:grid;grid-template-columns:160px 1fr;
+  }
+  .hero-visual .side{
+    border-right:1px solid #232a33;padding:18px 14px;display:flex;flex-direction:column;gap:8px;
+  }
+  .hero-visual .side .logo{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;color:#cfd6df;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;}
+  .hero-visual .side .logo::before{content:"";width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,#4285f4,#34a853);}
+  .hero-visual .side .nav-i{font-family:var(--mono);font-size:9px;color:#8a96a3;letter-spacing:0.04em;text-transform:uppercase;padding:5px 8px;border-radius:6px;}
+  .hero-visual .side .nav-i.on{background:rgba(255,255,255,.06);color:#fff;}
+  .hero-visual .body{padding:18px 22px;display:flex;flex-direction:column;gap:12px;overflow:hidden;}
+  .hero-visual .crumb-row{font-family:var(--mono);font-size:9px;color:#8a96a3;letter-spacing:0.04em;text-transform:uppercase;}
+  .hero-visual .htitle{font-size:15px;font-weight:500;color:#fff;letter-spacing:-0.01em;}
+  .hero-visual .table{display:flex;flex-direction:column;border:1px solid #232a33;border-radius:8px;overflow:hidden;}
+  .hero-visual .row-h{display:grid;grid-template-columns:1.5fr 1fr 1fr 80px;gap:8px;padding:8px 12px;background:#161C23;font-family:var(--mono);font-size:8px;color:#8a96a3;letter-spacing:0.06em;text-transform:uppercase;}
+  .hero-visual .row-d{display:grid;grid-template-columns:1.5fr 1fr 1fr 80px;gap:8px;padding:9px 12px;border-top:1px solid #232a33;font-size:10px;color:#cfd6df;align-items:center;}
+  .hero-visual .row-d:first-of-type{border-top:none;}
+  .hero-visual .pill{font-family:var(--mono);font-size:8px;padding:2px 6px;border-radius:999px;background:rgba(80,180,120,.15);color:#7CD992;letter-spacing:0.04em;text-transform:uppercase;width:fit-content;}
+  .hero-visual .pill.warn{background:rgba(244,180,80,.15);color:#F4B450;}
+  .hero-visual .corner{position:absolute;font-family:var(--mono);font-size:10px;color:rgba(255,255,255,.4);letter-spacing:0.04em;text-transform:uppercase;z-index:3;}
+  .hero-visual .c-tl{top:54px;right:18px;}
+  .hero-visual .c-bl{bottom:18px;right:18px;}
+  @media(max-width:780px){
+    .hero-visual .frame{grid-template-columns:1fr;}
+    .hero-visual .side{display:none;}
+  }
+
+  /* META STRIP */
+  .meta-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:64px 0;}
+  .meta-cell{background:var(--bg);padding:24px;display:flex;flex-direction:column;gap:8px;}
+  .meta-cell .k{font-family:var(--mono);font-size:10px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.06em;}
+  .meta-cell .v{font-size:16px;color:var(--ink);letter-spacing:-0.01em;line-height:1.35;}
+  @media(max-width:780px){.meta-strip{grid-template-columns:repeat(2,1fr);}}
+
+  /* SECTION */
+  section.case{padding:64px 0;}
+  .sec-row{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:start;}
+  .sec-row .sec-label{position:sticky;top:96px;}
+  .sec-row .sec-label .num{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:0.04em;text-transform:uppercase;display:block;margin-bottom:8px;}
+  .sec-row .sec-label h2{font-size:32px;font-weight:300;letter-spacing:-0.03em;line-height:1.05;}
+  .sec-row .sec-label h2 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
+  .sec-body p{font-size:19px;line-height:1.55;color:var(--ink-2);max-width:680px;letter-spacing:-0.01em;margin-bottom:20px;}
+  .sec-body p strong{color:var(--ink);font-weight:500;}
+  .sec-body p em{font-family:var(--serif);font-style:italic;color:var(--ink);font-weight:400;font-size:1.06em;}
+  .sec-body h3{font-size:22px;font-weight:500;letter-spacing:-0.02em;margin:32px 0 12px;color:var(--ink);}
+  .sec-body ul{list-style:none;padding:0;margin:8px 0 24px;}
+  .sec-body ul li{
+    position:relative;padding-left:28px;font-size:16px;color:var(--ink-2);line-height:1.55;margin-bottom:10px;max-width:680px;letter-spacing:-0.005em;
+  }
+  .sec-body ul li::before{
+    content:"";position:absolute;left:6px;top:11px;width:8px;height:1px;background:var(--accent);
+  }
+  .sec-body .pull{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:clamp(28px,3.4vw,42px);line-height:1.18;letter-spacing:-0.02em;
+    color:var(--ink);max-width:760px;margin:32px 0;
+  }
+  .sec-body .pull::before{content:"\201C";color:var(--accent);margin-right:4px;}
+  .sec-body .pull::after{content:"\201D";color:var(--accent);margin-left:2px;}
+  .sec-body .pull cite{display:block;font-family:var(--mono);font-size:11px;font-style:normal;color:var(--ink-3);letter-spacing:0.04em;text-transform:uppercase;margin-top:18px;}
+  @media(max-width:880px){.sec-row{grid-template-columns:1fr;gap:24px;}.sec-row .sec-label{position:static;}}
+
+  hr.div{border:none;border-top:1px solid var(--line);margin:0;}
+
+  /* stat row */
+  .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:24px 0;}
+  .stat-tile{background:var(--bg);padding:28px 24px;display:flex;flex-direction:column;gap:10px;min-height:170px;position:relative;}
+  .stat-tile .num{font-family:var(--mono);font-size:10px;color:var(--ink-3);position:absolute;top:18px;right:18px;letter-spacing:0.04em;}
+  .stat-tile .big{font-size:46px;font-weight:300;letter-spacing:-0.035em;color:var(--ink);}
+  .stat-tile .big .serif{font-family:var(--serif);font-style:italic;}
+  .stat-tile .big .accent{color:var(--accent);}
+  .stat-tile .lab{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;}
+  .stat-tile .desc{font-size:14px;color:var(--ink-2);line-height:1.45;}
+  @media(max-width:780px){.stat-grid{grid-template-columns:1fr;}}
+
+  /* figure (real images supported) */
+  .figure{
+    border-radius:18px;overflow:hidden;border:1px solid var(--line);
+    background:var(--bg-2);position:relative;aspect-ratio:16/10;
+  }
+  .figure.tall{aspect-ratio:4/5;}
+  .figure.wide{aspect-ratio:21/9;}
+  .figure:has(img.real){aspect-ratio:auto;}
+  .figure img.real{display:block;width:100%;height:auto;}
+  .figure .stripes{position:absolute;inset:0;background-image:repeating-linear-gradient(135deg, transparent 0 18px, color-mix(in srgb, var(--ink) 5%, transparent) 18px 19px);}
+  .figure .label{position:absolute;left:20px;top:20px;z-index:1;font-family:var(--mono);font-size:11px;color:var(--ink-2);background:color-mix(in srgb, var(--bg) 88%, transparent);padding:6px 10px;border-radius:6px;text-transform:uppercase;letter-spacing:0.04em;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+  .figure .center-tag{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-family:var(--mono);font-size:13px;color:var(--ink-2);background:var(--bg);padding:10px 16px;border-radius:8px;border:1px solid var(--line);white-space:nowrap;}
+  .figure-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:24px;align-items:start;}
+  @media(max-width:680px){.figure-row{grid-template-columns:1fr;}}
+  .figure-caption{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;margin-top:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+
+  /* video block */
+  .video-block{
+    aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid var(--line);
+    background:var(--ink);color:var(--bg);position:relative;
+  }
+  .video-block video{width:100%;height:100%;object-fit:cover;}
+  .video-block .meta{position:absolute;left:24px;top:24px;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.04em;color:rgba(255,255,255,.85);background:rgba(0,0,0,.35);padding:6px 10px;border-radius:6px;backdrop-filter:blur(6px);z-index:2;}
+  .video-block .duration{position:absolute;right:24px;top:24px;font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.85);background:rgba(0,0,0,.35);padding:6px 10px;border-radius:6px;backdrop-filter:blur(6px);z-index:2;}
+
+  /* MVP feature cards */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:16px;}
+  .feat{background:var(--bg);padding:28px 24px;display:flex;flex-direction:column;gap:14px;min-height:200px;}
+  .feat .idx{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.06em;}
+  .feat h4{font-size:18px;font-weight:500;letter-spacing:-0.015em;line-height:1.25;color:var(--ink);}
+  .feat p{font-size:14px;color:var(--ink-2);line-height:1.5;margin:0;}
+  .feat .sym{margin-top:auto;font-family:var(--mono);font-size:10px;color:var(--ink-3);letter-spacing:0.04em;text-transform:uppercase;display:flex;justify-content:space-between;}
+  @media(max-width:880px){.feat-grid{grid-template-columns:1fr;}}
+
+  /* timeline */
+  .timeline{margin-top:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .tl-row{display:grid;grid-template-columns:120px 200px 1fr 100px;gap:24px;padding:18px 0;border-bottom:1px dashed var(--line);align-items:center;}
+  .tl-row:last-child{border-bottom:none;}
+  .tl-row .wk{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:0.04em;text-transform:uppercase;}
+  .tl-row .ttl{font-size:16px;color:var(--ink);font-weight:500;letter-spacing:-0.01em;}
+  .tl-row .own{font-size:13px;color:var(--ink-2);}
+  .tl-row .st{font-family:var(--mono);font-size:11px;letter-spacing:0.04em;text-transform:uppercase;text-align:right;}
+  .tl-row .st.done{color:oklch(0.55 0.13 145);}
+  .tl-row .st.done::before{content:"●  ";}
+  .tl-row .st.prog{color:var(--accent);}
+  .tl-row .st.prog::before{content:"◐  ";}
+  @media(max-width:780px){.tl-row{grid-template-columns:1fr 1fr;}.tl-row .own{display:none;}}
+
+  /* persona / participants */
+  .persona-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;}
+  .persona-card{background:var(--bg-2);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px;}
+  .persona-card .ph{
+    aspect-ratio:1/1;border-radius:10px;background:linear-gradient(135deg, var(--accent-soft), var(--bg-2));
+    border:1px solid var(--line);position:relative;overflow:hidden;display:grid;place-items:center;
+    font-family:var(--mono);font-size:11px;color:var(--ink-2);letter-spacing:0.06em;text-transform:uppercase;
+  }
+  .persona-card .ph::before{content:"";position:absolute;inset:0;background-image:repeating-linear-gradient(45deg, transparent 0 12px, color-mix(in srgb, var(--ink) 6%, transparent) 12px 13px);}
+  .persona-card .ph span{position:relative;z-index:1;background:var(--bg);padding:6px 10px;border-radius:6px;border:1px solid var(--line);}
+  .persona-card .lab{font-family:var(--mono);font-size:10px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;}
+  .persona-card h4{font-size:16px;font-weight:500;letter-spacing:-0.015em;}
+  .persona-card p{font-size:13px;color:var(--ink-2);line-height:1.5;}
+  @media(max-width:780px){.persona-grid{grid-template-columns:1fr;}}
+
+  /* HMW block */
+  .hmw{
+    margin:32px 0;padding:48px 32px;border-radius:18px;
+    background:var(--ink);color:var(--bg);position:relative;overflow:hidden;
+  }
+  .hmw::before{content:"\201C";position:absolute;top:0;right:24px;font-family:var(--serif);font-size:200px;color:var(--accent);line-height:1;opacity:.5;}
+  .hmw .lab{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:color-mix(in srgb, var(--bg) 60%, transparent);margin-bottom:20px;display:flex;align-items:center;gap:10px;position:relative;z-index:1;}
+  .hmw .lab::before{content:"";width:24px;height:1px;background:currentColor;}
+  .hmw .q{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:clamp(28px,3.6vw,44px);line-height:1.2;letter-spacing:-0.02em;
+    max-width:880px;position:relative;z-index:1;
+  }
+
+  /* before / after process */
+  .before-after{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:24px 0;}
+  .ba{background:var(--bg);padding:32px 28px;display:flex;flex-direction:column;gap:14px;}
+  .ba.before{background:var(--bg-2);}
+  .ba .lab{font-family:var(--mono);font-size:10px;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink-3);display:flex;align-items:center;gap:8px;}
+  .ba.before .lab{color:var(--ink-3);}
+  .ba.after .lab{color:var(--accent);}
+  .ba h4{font-size:20px;font-weight:500;letter-spacing:-0.02em;color:var(--ink);}
+  .ba ol{list-style:none;padding:0;margin:8px 0 0;display:flex;flex-direction:column;gap:8px;counter-reset:step;}
+  .ba ol li{font-size:14px;color:var(--ink-2);line-height:1.45;padding-left:32px;position:relative;counter-increment:step;}
+  .ba ol li::before{content:counter(step);position:absolute;left:0;top:1px;width:22px;height:22px;border-radius:50%;background:var(--bg-2);border:1px solid var(--line);font-family:var(--mono);font-size:10px;display:grid;place-items:center;color:var(--ink-2);}
+  .ba.after ol li::before{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+  @media(max-width:780px){.before-after{grid-template-columns:1fr;}}
+
+  /* recommendations */
+  .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px;}
+  .rec{background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px;min-height:230px;}
+  .rec .tag{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:0.06em;text-transform:uppercase;display:flex;align-items:center;gap:8px;}
+  .rec .tag::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);}
+  .rec h4{font-size:20px;font-weight:500;letter-spacing:-0.02em;line-height:1.2;color:var(--ink);}
+  .rec p{font-size:14px;color:var(--ink-2);line-height:1.5;margin:0;}
+  @media(max-width:880px){.rec-grid{grid-template-columns:1fr;}}
+
+  /* team strip */
+  .team{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap;}
+  .team .chip{font-family:var(--mono);font-size:11px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-2);text-transform:uppercase;letter-spacing:0.04em;}
+  .team .chip.me{background:var(--ink);color:var(--bg);border-color:var(--ink);}
+
+  /* prototype CTA */
+  .proto-cta{
+    display:inline-flex;align-items:center;gap:14px;
+    padding:14px 22px;border-radius:999px;
+    background:var(--ink);color:var(--bg);
+    font-size:14px;letter-spacing:-0.005em;
+    transition:transform .2s, background .2s;
+    margin-top:12px;
+  }
+  .proto-cta:hover{transform:translateY(-2px);background:var(--accent);}
+  .proto-cta .arrow{font-family:var(--mono);font-size:14px;}
+
+  .confidential-note{
+    margin:48px 0 0;padding:24px 28px;background:var(--bg-2);border:1px solid var(--line);border-radius:14px;
+    display:flex;gap:16px;align-items:flex-start;
+  }
+  .confidential-note .ico{
+    width:36px;height:36px;border-radius:8px;background:var(--ink);color:var(--bg);
+    display:grid;place-items:center;flex-shrink:0;font-family:var(--mono);font-size:11px;letter-spacing:0.04em;
+  }
+  .confidential-note .body{font-size:14px;color:var(--ink-2);line-height:1.55;}
+  .confidential-note .body strong{color:var(--ink);font-weight:500;}
+
+  /* NEXT */
+  .next{padding:96px 0 64px;}
+  .next-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:16px;}
+  .next-head h3{font-size:clamp(28px,4vw,48px);font-weight:300;letter-spacing:-0.03em;}
+  .next-head h3 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
+  .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .next-card{background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px;min-height:240px;transition:transform .3s, background .3s;}
+  .next-card:hover{transform:translateY(-4px);background:var(--bg);}
+  .next-card .nc-meta{font-family:var(--mono);font-size:10px;text-transform:uppercase;color:var(--ink-3);letter-spacing:0.04em;}
+  .next-card h4{font-size:22px;font-weight:400;letter-spacing:-0.02em;line-height:1.15;margin-top:auto;}
+  .next-card p{font-size:14px;color:var(--ink-2);line-height:1.45;}
+  .next-card .go{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--ink);letter-spacing:0.04em;}
+  @media(max-width:880px){.next-grid{grid-template-columns:1fr;}}
+
+  /* CTA / FOOTER */
+  .cta{background:var(--ink);color:var(--bg);border-radius:24px;padding:80px 48px;margin:64px 32px;position:relative;overflow:hidden;}
+  .cta-inner{max-width:1440px;margin:0 auto;}
+  .cta .ml{font-family:var(--mono);font-size:11px;text-transform:uppercase;color:color-mix(in srgb, var(--bg) 60%, transparent);letter-spacing:0.06em;margin-bottom:32px;display:flex;align-items:center;gap:10px;}
+  .cta .ml::before{content:"";width:24px;height:1px;background:currentColor;}
+  .cta h2{font-size:clamp(40px,6vw,88px);font-weight:300;line-height:0.96;letter-spacing:-0.04em;}
+  .cta h2 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
+  .cta h2 .accent{color:var(--accent);}
+  .cta-row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:48px;flex-wrap:wrap;gap:24px;}
+  .cta-mail{font-size:22px;display:inline-flex;align-items:center;gap:14px;padding-bottom:6px;border-bottom:1px solid color-mix(in srgb, var(--bg) 30%, transparent);transition:color .25s, border-color .25s;}
+  .cta-mail:hover{color:var(--accent);border-bottom-color:var(--accent);}
+  .cta-blob{position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--accent), transparent 65%);opacity:.45;filter:blur(20px);pointer-events:none;}
+  @media(max-width:640px){.cta{padding:48px 28px;margin:48px 16px;}}
+
+  footer{padding:48px 0 32px;border-top:1px solid var(--line);}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .foot-row .colophon{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;}
+  .foot-links{display:flex;gap:24px;}
+  .foot-links a{font-size:13px;color:var(--ink-2);transition:color .2s;}
+  .foot-links a:hover{color:var(--ink);}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  .progress{position:fixed;left:0;top:0;height:2px;background:var(--accent);width:0%;z-index:60;transition:width .1s linear;}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<nav class="top" id="topnav">
+  <div class="container row">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark"></span>
+      <span>Deepa Bharadwaj</span>
+    </a>
+    <div class="nav-links">
+      <a href="../../index.html#work"><span class="num">01</span>Work</a>
+      <a href="../../index.html#about"><span class="num">02</span>About</a>
+      <a href="../../index.html#contact"><span class="num">03</span>Contact</a>
+    </div>
+    <a class="nav-cta" href="../../index.html">
+      <span class="arrow">←</span>
+      Back to index
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="crumb reveal">
+      <a href="../../index.html">Index</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#work">Selected Work</a>
+      <span class="sep">/</span>
+      <span>Intrinsic — EC Org Self-Serve</span>
+    </div>
+
+    <div class="hero-head">
+      <div class="reveal">
+        <div class="label">[ Case Study · 02 / 06 ]</div>
+        <h1>
+          Self-serve <span class="serif">tooling</span><br>
+          for the <span class="accent">robotics</span><br>
+          deployment stack.
+        </h1>
+        <p class="lede">
+          A 0→1 product engagement at <em>Intrinsic</em> (Alphabet's robotics company, formerly Google X). Replacing a manual, CLI-driven org provisioning workflow with a self-serve UI that lets <em>Solution Builders</em> independently set up and manage end-customer organizations in Flowstate.
+        </p>
+      </div>
+      <div class="hero-visual reveal">
+        <img class="real" src="img/hero-dashboard.png" alt="Flowstate Managed Organizations dashboard — empty state and populated state" />
+        <span class="corner c-tl">[ FIG.01 · MVP DASHBOARD ]</span>
+        <span class="corner c-bl">CONFIDENTIAL · INTRINSIC 2025</span>
+      </div>
+    </div>
+
+    <div class="meta-strip reveal">
+      <div class="meta-cell">
+        <span class="k">Role</span>
+        <span class="v">Product Manager · 0→1 PRD, UX, Research, Launch</span>
+      </div>
+      <div class="meta-cell">
+        <span class="k">Year</span>
+        <span class="v">2025</span>
+      </div>
+      <div class="meta-cell">
+        <span class="k">Team</span>
+        <span class="v">
+          <span class="team">
+            <span class="chip me">Deepa · PM</span>
+            <span class="chip">Eng × 4</span>
+            <span class="chip">UXD</span>
+            <span class="chip">UXR</span>
+            <span class="chip">Leadership × 2</span>
+          </span>
+        </span>
+      </div>
+      <div class="meta-cell">
+        <span class="k">Outcome</span>
+        <span class="v">MVP shipped to dev environment · Validated with 6 partners (Trinity, Trumpf, internal CSEs)</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 01 PROBLEM -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">01 · The Problem</span>
+        <h2>Org creation lived in the <span class="serif">CLI.</span></h2>
+      </div>
+      <div class="sec-body">
+        <p>Flowstate is Intrinsic's robotics deployment platform. Solution Builders (SBs) — the system integrators who deploy robot solutions for industrial end customers — needed a way to spin up new <strong>End Customer (EC) organizations</strong> for every deployment.</p>
+
+        <p>The existing process required SBs to be granted an <em>orgCreator</em> role, then run <strong>inctl</strong> commands by hand. In practice, almost no SB used the CLI. Instead, they emailed an Account Executive every time they needed a new org. The AE became the bottleneck.</p>
+
+        <h3>Why this mattered</h3>
+        <ul>
+          <li>Every new deployment was blocked behind a manual, ticketed handoff to an internal team.</li>
+          <li>SBs had no direct visibility or control over the orgs they were meant to manage.</li>
+          <li>The model didn't scale. As Intrinsic grew its partner base, AE time became a scarce resource standing between revenue and customers.</li>
+          <li>Future capabilities — IPC management, automated billing, subscription tracking — all assumed SBs could provision orgs themselves.</li>
+        </ul>
+
+        <div class="stat-grid">
+          <div class="stat-tile">
+            <span class="num">01</span>
+            <div class="big">100<span class="accent">%</span></div>
+            <div class="desc">of EC orgs were created through manual AE intervention via CLI</div>
+            <span class="lab">Pre-MVP baseline</span>
+          </div>
+          <div class="stat-tile">
+            <span class="num">02</span>
+            <div class="big">~30<span class="serif">m</span></div>
+            <div class="desc">average backend provisioning delay between submission and access</div>
+            <span class="lab">Acceptable for MVP</span>
+          </div>
+          <div class="stat-tile">
+            <span class="num">03</span>
+            <div class="big">3</div>
+            <div class="desc">core workflows missing entirely from the SB-facing UI</div>
+            <span class="lab">Org creation · Users · Lifecycle</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- 02 PRD / SCOPING -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">02 · Scoping the MVP</span>
+        <h2>From PRD draft to <span class="serif">three pillars.</span></h2>
+      </div>
+      <div class="sec-body">
+        <p>I led the PRD end-to-end — stakeholder interviews, scope definition, dependency mapping, and rollout planning. The biggest unlock was framing the work around the SB's actual lifecycle with a customer, not the backend topology.</p>
+        <p>Through reviews with engineering, design, marketing, and legal, the MVP collapsed to three pillars — sized so we could ship a working dev-environment deployment by the end of the engagement.</p>
+
+        <div class="feat-grid">
+          <div class="feat">
+            <span class="idx">PILLAR 01</span>
+            <h4>EC Organization Creation</h4>
+            <p>SB admins enter org name, location, and admin contact through Flowstate UI. Org ID auto-generated. Email-based onboarding kicks off automatically. No more inctl, no more AE ticket.</p>
+            <span class="sym"><span>Must Have</span><span>b/430293288</span></span>
+          </div>
+          <div class="feat">
+            <span class="idx">PILLAR 02</span>
+            <h4>EC User &amp; Access Management</h4>
+            <p>SBs invite EC users by email and assign a role — Admin or Developer for the MVP. View, modify, and remove users with corresponding backend updates and email triggers.</p>
+            <span class="sym"><span>Must Have</span><span>b/430293246</span></span>
+          </div>
+          <div class="feat">
+            <span class="idx">PILLAR 03</span>
+            <h4>EC Organization Management</h4>
+            <p>Centralized "Managed Organizations" dashboard. Org switcher, list view with key info, deletion flow with explicit confirmation. Foundation for future IPC + billing features.</p>
+            <span class="sym"><span>Must Have</span><span>b/430293566</span></span>
+          </div>
+        </div>
+
+        <h3>What I deliberately cut</h3>
+        <ul>
+          <li><strong>IPC management</strong> from the new org dashboard — sequenced as a follow-on so we didn't block on a parallel infra effort.</li>
+          <li><strong>Billing automation</strong> — explicitly deferred; the MVP defaults every new EC org to the free tier so we never have to charge during onboarding.</li>
+          <li><strong>EC user journey post-invite</strong> — out of scope. The MVP only covers what the SB does.</li>
+        </ul>
+
+        <p class="pull">
+          The main reason an SB creates an EC org is when they're actively thinking about deploying a solution. Everything else is noise.
+          <cite>— PRD assumption · validated in research</cite>
+        </p>
+
+        <div class="figure" style="margin-top:24px;">
+          <img class="real" src="img/dashboard.png" alt="Managed Organizations dashboard — populated state" />
+          <span class="label">[ FIG · Managed Organizations dashboard ]</span>
+        </div>
+        <div class="figure-caption">
+          <span>The three pillars made tangible — provisioning, users, lifecycle in one surface</span>
+          <span>Flowstate · MVP build</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- 03 SOLUTION / DEMO -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">03 · The Solution</span>
+        <h2>The new <span class="serif">workflow.</span></h2>
+      </div>
+      <div class="sec-body">
+        <p>The redesigned flow folds three previously-disconnected steps — provisioning, inviting users, and lifecycle management — into one continuous SB experience inside Flowstate.</p>
+
+        <div class="before-after">
+          <div class="ba before">
+            <span class="lab">Before · CLI + AE handoff</span>
+            <h4>Manual, ticket-driven, days to days+</h4>
+            <ol>
+              <li>SB emails Account Executive requesting a new EC org</li>
+              <li>AE files a backend request with Intrinsic ops</li>
+              <li>Ops grants orgCreator role to a designated user</li>
+              <li>SB runs <code>inctl</code> commands to provision</li>
+              <li>SB emails AE again to add EC users</li>
+              <li>Repeat for every change to the org or user list</li>
+            </ol>
+          </div>
+          <div class="ba after">
+            <span class="lab">After · Self-serve UI</span>
+            <h4>Direct, in-product, ~30 minutes end-to-end</h4>
+            <ol>
+              <li>SB opens Flowstate → Managed Organizations</li>
+              <li>"Create Managed Organization" → name, location, billing contact</li>
+              <li>On-screen confirmation; backend provisions in ~20–30 mins</li>
+              <li>Email arrives; SB navigates to the new org</li>
+              <li>Invites EC users by email, assigns Admin or Developer</li>
+              <li>Manages, switches, or deletes orgs from the centralized dashboard</li>
+            </ol>
+          </div>
+        </div>
+
+        <h3>Live demo — Flowstate dev environment</h3>
+        <p>End-to-end walkthrough of the MVP shipped at the close of the engagement: creating an EC org, inviting users, switching contexts, and managing lifecycle from the dashboard.</p>
+
+        <div class="video-block">
+          <span class="meta">Flowstate · Dev Environment</span>
+          <span class="duration">DEMO</span>
+          <video src="assets/ec-org-demo.mp4" controls preload="metadata" playsinline></video>
+        </div>
+        <div class="figure-caption">
+          <span>[ Fig.02 · MVP demo on Flowstate ]</span>
+          <span>Final presentation · Sep 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- 04 JOURNEY -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">04 · The Journey</span>
+        <h2>A focused sprint, <span class="serif">end to end.</span></h2>
+      </div>
+      <div class="sec-body">
+        <p>I owned the work from problem framing to dev-environment deployment, partnering with engineering, design, and UXR. Here's how the milestones landed against the plan.</p>
+
+        <div class="timeline">
+          <div class="tl-row">
+            <span class="wk">Week 01–02</span>
+            <span class="ttl">PRD draft completion</span>
+            <span class="own">Owner · Deepa</span>
+            <span class="st done">Done</span>
+          </div>
+          <div class="tl-row">
+            <span class="wk">Week 03</span>
+            <span class="ttl">Sketches &amp; lo-fi UX flows</span>
+            <span class="own">Owner · Deepa</span>
+            <span class="st done">Done</span>
+          </div>
+          <div class="tl-row">
+            <span class="wk">Week 04</span>
+            <span class="ttl">Initial Figma prototype</span>
+            <span class="own">Owner · Tiffany (UXD) + Deepa</span>
+            <span class="st done">Done</span>
+          </div>
+          <div class="tl-row">
+            <span class="wk">Week 04–10</span>
+            <span class="ttl">Backend infra + frontend dev</span>
+            <span class="own">Owner · German &amp; Marcos (Eng)</span>
+            <span class="st done">Done</span>
+          </div>
+          <div class="tl-row">
+            <span class="wk">Week 06</span>
+            <span class="ttl">Marketing approval — invite emails</span>
+            <span class="own">Owner · Jim (Mktg)</span>
+            <span class="st done">Done</span>
+          </div>
+          <div class="tl-row">
+            <span class="wk">Week 07–08</span>
+            <span class="ttl">User interviews · Trinity, Trumpf, 3 CSEs</span>
+            <span class="own">Owner · Rebecca (UXR), Jason, Deepa</span>
+            <span class="st done">Done</span>
+          </div>
+          <div class="tl-row">
+            <span class="wk">Week 09</span>
+            <span class="ttl">Synthesis &amp; MVP refinement</span>
+            <span class="own">Owner · Rebecca + Deepa</span>
+            <span class="st done">Done</span>
+          </div>
+          <div class="tl-row">
+            <span class="wk">Week 12</span>
+            <span class="ttl">🔔 MVP deployed to dev environment</span>
+            <span class="own">Owner · Eng + Deepa</span>
+            <span class="st done">Shipped</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- 05 RESEARCH -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">05 · User Research</span>
+        <h2>Six conversations, <span class="serif">three insights.</span></h2>
+      </div>
+      <div class="sec-body">
+        <p>I co-ran a rapid usability study with our UXR partner, testing the Figma prototype against three real tasks: <strong>create an EC org</strong>, <strong>add users + assign roles</strong>, and <strong>manage / delete an existing org</strong>.</p>
+
+        <h3>Who we recruited</h3>
+        <p>A deliberate mix to cross-cut role and product familiarity — three <strong>external partners</strong> from Trinity &amp; Trumpf (General Manager, Service Tech, Domain Architect across NA and EU) and three <strong>internal Customer Solutions Engineers</strong> who broker the manual workflow today. Five of six had hands-on Flowstate fluency; one didn't. Coverage across NA (5) and EU (1) — important for surfacing the GDPR signal we found.</p>
+
+        <h3>Insight 01 — Core workflows lacked "power user" efficiency</h3>
+        <p>Users immediately flagged the single-user invite as a major bottleneck. Onboarding a customer felt disjointed; bulk operations were table stakes for this audience.</p>
+        <p class="pull">
+          When you create a new organization… that is going to be a cumbersome step to add one [person at a time]. You may want some bulk editing mechanism, right?
+          <cite>— P4 · Internal CSE</cite>
+        </p>
+
+        <h3>Insight 02 — A strategic disconnect about End Customers</h3>
+        <p>Solution Builders questioned the purpose of EC-specific user roles when they'd been told ECs would not actually use the platform. The role-permission UI was undermined by a missing strategic narrative about who the EC is and what they need.</p>
+        <p class="pull">
+          My instinct is to just select the 'Developer' checkbox. But what's the actual difference between selecting only 'Developer' versus selecting both 'Developer' and 'Viewer'? It's not clear what is included.
+          <cite>— P6 · Internal CSE</cite>
+        </p>
+
+        <h3>Insight 03 — A new business opportunity surfaced</h3>
+        <p>Unprompted, partners asked for commercial controls — subscription expiry, renewal, reactivation — directly inside the Managed Organizations dashboard. The feature was being asked to evolve from <em>tooling</em> into a <em>business mission control</em>.</p>
+        <p class="pull">
+          I would want to be able to manage their subscription from within here. I would want to be able to see when's their expiration date… and reactivate their subscription for next year.
+          <cite>— P1 · External Partner</cite>
+        </p>
+
+        <h3>Cross-cutting: persona segmentation by company context</h3>
+        <p>The research showed a partner's <strong>company context</strong> — geography, size, business model — was a stronger predictor of needs than their formal role. A feature critical to a European partner (GDPR-driven data deletion) was a non-issue for a US partner. We surfaced a missing <em>business leader</em> persona focused on commercial management.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- 06 USABILITY -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">06 · Usability Notes</span>
+        <h2>The friction we <span class="serif">found.</span></h2>
+      </div>
+      <div class="sec-body">
+        <p>Beyond the strategic insights, the study surfaced concrete UI improvements we fed directly into the build. The five highest-impact ones:</p>
+
+        <div class="feat-grid">
+          <div class="feat">
+            <span class="idx">FRICTION 01</span>
+            <h4>Org creation is hidden in a dropdown</h4>
+            <p>5 of 6 users had to be prompted to read the org-switcher tooltip before discovering the create action. Users expected a prominent button or "+" affordance.</p>
+            <span class="sym"><span>Fix · Reposition CTA</span><span>P0</span></span>
+          </div>
+          <div class="feat">
+            <span class="idx">FRICTION 02</span>
+            <h4>Creation form is too thin</h4>
+            <p>Single name + location wasn't enough for partners managing customers with multiple sites. Need sub-locations or internal tags.</p>
+            <span class="sym"><span>Fix · Form fields</span><span>P1</span></span>
+          </div>
+          <div class="feat">
+            <span class="idx">FRICTION 03</span>
+            <h4>Single-user invite is the wrong primitive</h4>
+            <p>Users expected to add a team in one motion — paste a list of emails, pick roles, send. The one-at-a-time pattern read as broken, not minimal.</p>
+            <span class="sym"><span>Fix · Bulk invite</span><span>P0</span></span>
+          </div>
+          <div class="feat">
+            <span class="idx">FRICTION 04</span>
+            <h4>Roles felt non-hierarchical</h4>
+            <p>Partners expected selecting "Admin" to imply lower-level permissions automatically. Independent checkboxes for each role created confusion.</p>
+            <span class="sym"><span>Fix · Role hierarchy</span><span>P1</span></span>
+          </div>
+          <div class="feat">
+            <span class="idx">FRICTION 05</span>
+            <h4>Account ≠ Organization settings</h4>
+            <p>Co-locating personal account and org controls was high-stakes confusion. Multiple users feared deleting their own account when they meant to delete a managed org.</p>
+            <span class="sym"><span>Fix · Separate menus</span><span>P0</span></span>
+          </div>
+          <div class="feat">
+            <span class="idx">FRICTION 06</span>
+            <h4>Delete needs a recovery story</h4>
+            <p>Legal counsel confirmed Intrinsic's incentive is customer return, not aggressive deletion. The "Delete" confirmation needed to surface the 30-day archive window explicitly.</p>
+            <span class="sym"><span>Fix · Confirm copy</span><span>P0</span></span>
+          </div>
+        </div>
+
+        <p class="pull">
+          Deleting all the data from my customer is not allowed in Europe because the data belongs to the customer.
+          <cite>— P3 · External partner · EU</cite>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- 07 IMPACT -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">07 · The Result</span>
+        <h2>From <span class="serif">idea</span> to shipped product.</h2>
+      </div>
+      <div class="sec-body">
+        <p>The MVP shipped to Intrinsic's development environment on schedule, validated against six real users, and laid the groundwork for the team's commercial roadmap.</p>
+
+        <div class="stat-grid">
+          <div class="stat-tile">
+            <span class="num">01</span>
+            <div class="big">3 <span class="accent">→</span> 1</div>
+            <div class="desc">workflows consolidated — provisioning, user management, and lifecycle, all in one self-serve surface</div>
+            <span class="lab">Outcome</span>
+          </div>
+          <div class="stat-tile">
+            <span class="num">02</span>
+            <div class="big">0 <span class="serif">AE</span></div>
+            <div class="desc">tickets required to spin up a new EC org in the post-MVP path. Provisioning becomes infrastructure, not a service</div>
+            <span class="lab">Outcome</span>
+          </div>
+          <div class="stat-tile">
+            <span class="num">03</span>
+            <div class="big">6</div>
+            <div class="desc">partners and internal experts validated the design before launch — Trinity, Trumpf, 3 CSEs, plus leadership review</div>
+            <span class="lab">Validation</span>
+          </div>
+        </div>
+
+        <div class="confidential-note">
+          <span class="ico">CONF</span>
+          <div class="body">
+            <strong>Note on imagery.</strong> The screenshots and prototype frames in this case study are stylized representations. Actual UI, internal terminology, and roadmap details remain proprietary to Intrinsic / Alphabet. Anything sensitive has been generalized; everything shown here is consistent with the public framing of the work.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- 08 RECOMMENDATIONS / WHAT'S NEXT -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">08 · What's Next</span>
+        <h2>Three bets for the <span class="serif">next phase.</span></h2>
+      </div>
+      <div class="sec-body">
+        <p>The closing recommendation to leadership distilled the research into three sequenced bets — the path from "self-serve infrastructure" to "commercial mission control."</p>
+
+        <div class="rec-grid">
+          <div class="rec">
+            <span class="tag">Bet 01 · Monetization</span>
+            <h4>Enrich the dashboard with commercial data</h4>
+            <p>Subscription status, renewal dates, reactivation flows. The signal partners gave us — they already think of this surface as the place to manage customer commercial relationships. Lean in.</p>
+          </div>
+          <div class="rec">
+            <span class="tag">Bet 02 · EC Insights</span>
+            <h4>Define the End Customer journey</h4>
+            <p>A dedicated UXR study to resolve the strategic disconnect. Until we know what ECs do in Flowstate, we can't build meaningful roles for them. Clarity here unblocks the entire user-management surface.</p>
+          </div>
+          <div class="rec">
+            <span class="tag">Bet 03 · Scalability</span>
+            <h4>Ship the power-user features</h4>
+            <p>Bulk invites, separated Account vs. Org settings, hierarchical roles, granular org segmentation. The minimum to make "self-serve" feel <em>actually</em> self-serve at scale.</p>
+          </div>
+        </div>
+
+        <h3>What I'd carry forward</h3>
+        <ul>
+          <li><strong>Frame for the lifecycle, not the topology.</strong> The PRD landed because it was structured around what an SB does over time, not how the backend was wired.</li>
+          <li><strong>Recruit for context, not titles.</strong> Geography and business model gave us more usable signal than role labels did.</li>
+          <li><strong>Treat "self-serve" as a contract, not a feature.</strong> Every place a user has to go to a human breaks the contract — bulk invites, recovery windows, role inheritance are all expressions of the same promise.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEEP READING -->
+<section class="next">
+  <div class="container">
+    <div class="next-head reveal">
+      <h3>Keep <span class="serif">reading.</span></h3>
+      <span class="mono">[ More case studies ]</span>
+    </div>
+    <div class="next-grid">
+      <a class="next-card reveal" href="../steelcase/index.html">
+        <span class="nc-meta">04 / 06 · Steelcase</span>
+        <p>Led a 22-person team building an AI-powered product configurator. $100M+ in revenue impact.</p>
+        <h4>Steelcase Configurator →</h4>
+        <span class="go">Read case study →</span>
+      </a>
+      <a class="next-card reveal" href="../amazon/index.html">
+        <span class="nc-meta">05 / 06 · Prime Video</span>
+        <p>Research-led UX redesign that re-anchored a streaming experience around the individual user.</p>
+        <h4>Prime Video Redesign →</h4>
+        <span class="go">Read case study →</span>
+      </a>
+      <a class="next-card reveal" href="../bark/index.html">
+        <span class="nc-meta">06 / 06 · Bark</span>
+        <p>An IoT smart-collar onboarding flow. Top-10 finalist at UX Hackathon 2020.</p>
+        <h4>Bark Smart Collar →</h4>
+        <span class="go">Read case study →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta">
+  <span class="cta-blob"></span>
+  <div class="cta-inner">
+    <div class="ml">[ Let's talk ]</div>
+    <h2>
+      Building in <span class="serif">robotics?</span><br>
+      <span class="accent">Let's talk.</span>
+    </h2>
+    <div class="cta-row">
+      <a class="cta-mail" href="mailto:deepabh@stanford.edu">
+        <span>deepabh@stanford.edu</span>
+        <span class="mono" style="color:inherit;opacity:.7;">→</span>
+      </a>
+      <span class="mono" style="color:color-mix(in srgb, var(--bg) 60%, transparent);">[ Stanford GSB · MBA '26 · Co-founder, Proxy Robotics ]</span>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container foot-row">
+    <span class="colophon">© 2026 Deepa Bharadwaj — All work shown with permission</span>
+    <div class="foot-links">
+      <a href="https://www.linkedin.com/in/deepa-bharadwaj/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.proxyrobotics.ai" target="_blank" rel="noopener">Proxy Robotics</a>
+      <a href="#">Read.cv</a>
+      <a href="../../index.html">Index ↑</a>
+    </div>
+    <span class="colophon">Case 02 / 06 · Intrinsic</span>
+  </div>
+</footer>
+
+<script>
+  const topnav = document.getElementById('topnav');
+  const progress = document.getElementById('progress');
+  const onScroll = () => {
+    if(window.scrollY > 12) topnav.classList.add('scrolled'); else topnav.classList.remove('scrolled');
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = Math.min(100, (window.scrollY / h) * 100) + '%';
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
