@@ -157,6 +157,10 @@
     transition:padding .35s cubic-bezier(.4,0,.2,1);
   }
   .work-item:last-child{border-bottom:1px solid var(--line);}
+  div.work-item{cursor:default;}
+  div.work-item:hover{padding-left:0;}
+  div.work-item:hover .title{color:inherit;}
+  div.work-item .arrow{display:none;}
   .work-item .num{font-family:var(--mono);font-size:12px;color:var(--ink-3);}
   .work-item .title{
     font-size:clamp(28px,3.4vw,44px);font-weight:400;letter-spacing:-0.03em;line-height:1.05;
@@ -415,7 +419,7 @@
         <div class="preview" style="background-image:url('img/intrinsic.png');"></div>
         <span class="arrow">→</span>
       </a>
-      <a class="work-item" href="#">
+      <div class="work-item">
         <span class="num">03 / 06</span>
         <div class="title">
           Stanford GSB
@@ -426,12 +430,11 @@
           <span>MBA</span><span>Entrepreneurship</span><span>Venture Capital</span><span>Org Behavior</span>
         </div>
         <div class="preview" style="background-image:url('img/stanford.jpg');"></div>
-        <span class="arrow">→</span>
-      </a>
+      </div>
       <a class="work-item" href="case-studies/steelcase/index.html">
         <span class="num">04 / 06</span>
         <div class="title">
-          Steelcase — Digital Innovation Lab
+          Steelcase Digital Innovation Lab
           <small>Product Manager · 2021 — 2024</small>
         </div>
         <div class="desc">Led a 22-person cross-functional team building an AI-powered product configurator driven by generative design and data models. Drove $100M+ in revenue impact.</div>
