@@ -1,216 +1,251 @@
-$(function(){
-  $("#footer").load("common/footer.html"); 
+/**
+ * Site-wide behavior: nav loading, loader splash, nav-ball animation,
+ * scroll highlights, and read-more arrow animation.
+ *
+ * Globals (intentionally exposed; referenced from inline HTML handlers):
+ *   - wait_loader()                       loader splash content
+ *   - replace(el, src)                    swap an <img> src
+ *   - init(canvasId), kill(canvasId)      nav-ball hover animation
+ *   - nav_active_id                       page-set hint for which nav item is active
+ */
+
+/* -------------------------------------------------------------------------- */
+/* Partials: header, footer (and case-study variants)                          */
+/* -------------------------------------------------------------------------- */
+$(function () {
+  $('#header').load('common/header.html');
+  $('#footer').load('common/footer.html');
+  $('#header-cs').load('../common/header-cs.html');
+  $('#footer-cs').load('../common/footer-cs.html');
 });
 
-$(function(){
-  $("#header").load("common/header.html"); 
-});
-
-$(function(){
-  $("#footer-cs").load("../common/footer-cs.html");
-});
-
-$(function(){
-  $("#header-cs").load("../common/header-cs.html");
-});
-
-function replace(location, image){ 
-  $(location).attr("src", image);
+/* -------------------------------------------------------------------------- */
+/* Tiny image swap helper used by inline onmouseover/onmouseout attributes     */
+/* -------------------------------------------------------------------------- */
+function replace(el, src) {
+  $(el).attr('src', src);
 }
 
-class Ball{
-  constructor(context, interval) {
-    this.context = context;
-    this.interval= interval;
-    this.rest_ball = false;
-    this.max_neg = 10;
-    this.x = 10;
-    this.dx = 0.5;
-  }
+/* -------------------------------------------------------------------------- */
+/* Bouncing-ball nav hover animation                                           */
+/* -------------------------------------------------------------------------- */
+function isTouchEnabled() {
+  return (
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
 }
 
-var ball = {}; 
+function Ball(context, intervalId) {
+  this.context = context;
+  this.interval = intervalId;
+  this.rest_ball = false;
+  this.max_neg = 10;
+  this.x = 10;
+  this.dx = 0.5;
+}
 
-function init(myCanvas)
-{
-  const canvas = document.getElementById(myCanvas);
-  if(!ball[myCanvas] || ball[myCanvas].interval == false){
-    ball[myCanvas] = new Ball(canvas.getContext('2d'), setInterval(draw,10, myCanvas))
+var ball = {};
+
+function init(canvasId) {
+  var canvas = document.getElementById(canvasId);
+  if (!ball[canvasId] || ball[canvasId].interval === false) {
+    ball[canvasId] = new Ball(
+      canvas.getContext('2d'),
+      setInterval(drawBall, 10, canvasId)
+    );
   } else {
-    ball[myCanvas].x = 10;
-    ball[myCanvas].dx = 0.5;
-    ball[myCanvas].max_neg = 10;
-    ball[myCanvas].rest_ball = false;
+    var b = ball[canvasId];
+    b.x = 10;
+    b.dx = 0.5;
+    b.max_neg = 10;
+    b.rest_ball = false;
   }
 }
 
-function draw(myCanvas)
-{
-  if (is_touch_enabled())
-    return;
-  var curr_ball = ball[myCanvas];
-  curr_ball.context.clearRect(0,0, 300,300);
-  curr_ball.context.beginPath();
-  curr_ball.context.fillStyle="#fdb92d";
-  curr_ball.context.arc(25, curr_ball.x,8,0,Math.PI*2,true);
-  curr_ball.context.closePath();
-  curr_ball.context.fill();
-  // Boundary Logic
-  if( curr_ball.x< curr_ball.max_neg || curr_ball.x>30) 
-     curr_ball.dx =- curr_ball.dx; 
-  curr_ball.x += curr_ball.dx;
-  if(curr_ball.rest_ball && curr_ball.x <= -18){
-    clearInterval(curr_ball.interval);
-    curr_ball.interval = false;
+function drawBall(canvasId) {
+  if (isTouchEnabled()) return;
+  var b = ball[canvasId];
+  b.context.clearRect(0, 0, 300, 300);
+  b.context.beginPath();
+  b.context.fillStyle = '#fdb92d';
+  b.context.arc(25, b.x, 8, 0, Math.PI * 2, true);
+  b.context.closePath();
+  b.context.fill();
+
+  if (b.x < b.max_neg || b.x > 30) b.dx = -b.dx;
+  b.x += b.dx;
+  if (b.rest_ball && b.x <= -18) {
+    clearInterval(b.interval);
+    b.interval = false;
   }
 }
 
-function kill(myCanvas) {
-  var curr_ball = ball[myCanvas];
-  curr_ball.max_neg = -30;
-  curr_ball.rest_ball = true;
-  curr_ball.dx *=3;
+function kill(canvasId) {
+  var b = ball[canvasId];
+  b.max_neg = -30;
+  b.rest_ball = true;
+  b.dx *= 3;
 }
 
-function is_touch_enabled() { 
-  return ( 'ontouchstart' in window ) ||  
-         ( navigator.maxTouchPoints > 0 ) ||  
-         ( navigator.msMaxTouchPoints > 0 ); 
+/* -------------------------------------------------------------------------- */
+/* Loader splash (random fun fact while the page boots)                        */
+/* -------------------------------------------------------------------------- */
+var FUN_FACTS = [
+  {
+    heading: "While we wait &#x1F605; , Deepa's Fun Fact #1",
+    content:
+      "I’m currently learning kickboxing, hope to become a part-time kickboxing instructor on the weekends soon. Gotta keep practicing my jabs & crosses though! &#129354;&#127939;&#8205;&#9792;&#65039;&#128074; ",
+  },
+  {
+    heading: "While we wait &#x1F605; , Deepa’s Fun Fact #2",
+    content:
+      "I’m obsessed with corgis, and adopted a 6 month old corgi puppy called Strippaw. Check out his instagram page @strippawthecorgi, don’t forget to follow! &#128054; &#128248;",
+  },
+  {
+    heading: "While we wait &#x1F605; , Deepa’s Fun Fact #3",
+    content:
+      "I’m an adrenaline junkie, gone skydiving, rock climbing, skiing, paragliding & ziplining. Post Covid, bungee jumping off the Grand Canyon is next! &#127938;&#127964;&#65039;&#128170;",
+  },
+  {
+    heading: "While we wait &#x1F605; , Deepa's Fun Fact #4",
+    content:
+      "Been designing buildings for a couple of years across India & the USA, one of my competition entries for an Eco Park Gateway in India was actually built! &#129304; &#128119;&#8205;&#9792;&#65039; &#127959;&#65039;",
+  },
+  {
+    heading: "While we wait &#x1F605; , Deepa’s Fun Fact #5",
+    content:
+      "My partner is a robotics engineer, we both absolutely love collaborating on our projects. It’s an epic combination of design + tech! &#129302; &#129299; &#128591; ",
+  },
+  {
+    heading: "While we wait &#x1F605; , Deepa’s Fun Fact #6",
+    content:
+      "I love learning about different technologies and how to use them to design more creatively and efficiently. Currently learning how to code in Javascript, and animate in After Effects! &#128187; &#128588; &#128587;&#8205;&#9792;&#65039; ",
+  },
+];
+
+var loaderReadyAt = Date.now();
+
+function wait_loader() {
+  var pick = FUN_FACTS[Math.floor(Math.random() * FUN_FACTS.length)];
+  $('#fun-heading').html(pick.heading);
+  $('#fun-content').html(pick.content);
+  loaderReadyAt = Date.now();
 }
 
-function isScrolledIntoView(elem) {
-    var docViewTop = $(window).scrollTop()+800;
-    var docViewBottom = docViewTop + $(window).height()-200;
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-
-    return ((elemTop <= docViewTop) && (elemTop > $(window).scrollTop()+100));
-}
-
-function isScrolledIntoView2(elem) {
-  var $window = $(window),
-      docViewTop = $window.scrollTop(),
-      docViewBottom = docViewTop + $window.height(),
-      elemTop = $(elem).offset().top - 100,
-      elemBottom = elemTop + $(elem).outerHeight() + 125;
-  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
-}
-
-var anime_dict = {};
-
-allInView = function () {
-
-	var elements = document.getElementsByClassName("highlight");
-
-	var i;
-	for (i = 0; i < elements.length; i++) {
-		if (isScrolledIntoView(elements[i])) {
-  			elements[i].style.backgroundPosition = "-100% 0";
-		}
-		else {
-			elements[i].style.backgroundPosition = "0% 0";
-		}
+function hideLoader() {
+  var loader = document.querySelector('.loader');
+  if (loader && !loader.classList.contains('hidden')) {
+    loader.classList.add('hidden');
   }
- 
-  if(is_touch_enabled()){
+}
+
+/* -------------------------------------------------------------------------- */
+/* Active nav state — pages set `nav_active_id` inline before this runs        */
+/* -------------------------------------------------------------------------- */
+var nav_active_id = 'nav-about';
+
+function setActiveNav() {
+  var el = document.getElementById(nav_active_id);
+  if (el) {
+    el.classList.add('active');
+  } else {
+    setTimeout(setActiveNav, 200);
+  }
+}
+
+function bindNavToggle() {
+  var toggle = document.getElementById('toggle');
+  if (toggle) {
+    $('#toggle').click(function () {
+      $(this).toggleClass('active');
+    });
+  } else {
+    setTimeout(bindNavToggle, 200);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Scroll-driven highlight + read-more arrow nudges                            */
+/* -------------------------------------------------------------------------- */
+function isHighlightInView(el) {
+  var docViewTop = $(window).scrollTop() + 800;
+  var elemTop = $(el).offset().top;
+  return elemTop <= docViewTop && elemTop > $(window).scrollTop() + 100;
+}
+
+function isReadMoreInView(el) {
+  var $window = $(window);
+  var docViewTop = $window.scrollTop();
+  var docViewBottom = docViewTop + $window.height();
+  var elemTop = $(el).offset().top - 100;
+  var elemBottom = elemTop + $(el).outerHeight() + 125;
+  return elemBottom <= docViewBottom && elemTop >= docViewTop;
+}
+
+var arrowAnimations = {};
+
+function updateScrollHighlights() {
+  var highlights = document.getElementsByClassName('highlight');
+  for (var i = 0; i < highlights.length; i++) {
+    highlights[i].style.backgroundPosition = isHighlightInView(highlights[i])
+      ? '-100% 0'
+      : '0% 0';
+  }
+
+  if (isTouchEnabled()) {
     var arrows = document.querySelectorAll('.read-more');
-    for (i = 0; i < arrows.length; i++) {
-      if (isScrolledIntoView2(arrows[i])) {
-        anime_dict[i].play();
-      }
-      else {
-        anime_dict[i].restart();
-        anime_dict[i].pause();
+    for (var j = 0; j < arrows.length; j++) {
+      if (isReadMoreInView(arrows[j])) {
+        arrowAnimations[j].play();
+      } else {
+        arrowAnimations[j].restart();
+        arrowAnimations[j].pause();
       }
     }
   }
 }
 
-// $(window).scroll(allInView);
-
-var headings = ["While we wait &#x1F605; , Deepa's Fun Fact #1",
-                "While we wait &#x1F605; , Deepa’s Fun Fact #2",
-                "While we wait &#x1F605; , Deepa’s Fun Fact #3",
-                "While we wait &#x1F605; , Deepa's Fun Fact #4",
-                "While we wait &#x1F605; , Deepa’s Fun Fact #5",
-                "While we wait &#x1F605; , Deepa’s Fun Fact #6",];
-var contents = ["I’m currently learning kickboxing, hope to become a part-time kickboxing instructor on the weekends soon. Gotta keep practicing my jabs & crosses though! &#129354;&#127939;&#8205;&#9792;&#65039;&#128074; ",
-                "I’m obsessed with corgis, and adopted a 6 month old corgi puppy called Strippaw. Check out his instagram page @strippawthecorgi, don’t forget to follow! &#128054; &#128248;",
-                "I’m an adrenaline junkie, gone skydiving, rock climbing, skiing, paragliding & ziplining. Post Covid, bungee jumping off the Grand Canyon is next! &#127938;&#127964;&#65039;&#128170;",
-                "Been designing buildings for a couple of years across India & the USA, one of my competition entries for an Eco Park Gateway in India was actually built! &#129304; &#128119;&#8205;&#9792;&#65039; &#127959;&#65039;",
-                "My partner is a robotics engineer, we both absolutely love collaborating on our projects. It’s an epic combination of design + tech! &#129302; &#129299; &#128591; ",
-                "I love learning about different technologies and how to use them to design more creatively and efficiently. Currently learning how to code in Javascript, and animate in After Effects! &#128187; &#128588; &#128587;&#8205;&#9792;&#65039; "
-              ];
-
-var nav_active_id = "nav-about";
-
-var time_ready = Date.now();
-function wait_loader() {
-  var num = Math.floor((Math.random() * headings.length));
-  $("#fun-heading").html(headings[num]);
-  $("#fun-content").html(contents[num]);
-  time_ready = Date.now();
-}
-
-const hide_fun = async () => {
-  const loader = document.querySelector(".loader");
-  if(loader && !loader.classList.contains("hidden") ){
-    loader.className += " hidden"; // class "loader hidden"  
-  }
-}
-
-set_active = function() {
-  var nav_active = document.getElementById(nav_active_id);
-  if(nav_active)
-    nav_active.classList.add("active");
-  else
-    setTimeout(set_active, 200);
-}
-
-set_nav_toggle = function() {
-  var toggle = document.getElementById("toggle");
-  if(toggle) {
-    $('#toggle').click(function() {
-      $(this).toggleClass('active');
-    });
-  } else {
-    setTimeout(set_nav_toggle, 200);
-  }
-}
-
-window.addEventListener('load', function() {
-  var time_left = 2000 - Date.now() + time_ready;
-  if(time_left > 0)
-    setTimeout(hide_fun, time_left);
-  else
-    hide_fun();
+function bindReadMoreAnimations() {
   var arrows = document.querySelectorAll('.read-more');
-  var i;
-	for (i = 0; i < arrows.length; i++) {
-    var arrow = arrows[i];
-    let animation = anime({
+  arrows.forEach(function (arrow, i) {
+    var animation = anime({
       targets: arrow.children,
       translateX: 20,
       duration: 500,
       direction: 'alternate',
       easing: 'linear',
-      loop: true
+      loop: true,
     });
-    anime_dict[i] = animation;
+    arrowAnimations[i] = animation;
     animation.pause();
 
-    arrow.addEventListener ('mouseover', function hover(){
+    arrow.addEventListener('mouseover', function () {
       animation.play();
     });
-    arrow.addEventListener ('mouseleave', function leave(){
+    arrow.addEventListener('mouseleave', function () {
       animation.restart();
       animation.pause();
     });
+  });
+}
+
+/* -------------------------------------------------------------------------- */
+/* Boot                                                                        */
+/* -------------------------------------------------------------------------- */
+window.addEventListener('load', function () {
+  var LOADER_MIN_MS = 2000;
+  var elapsed = Date.now() - loaderReadyAt;
+  if (elapsed < LOADER_MIN_MS) {
+    setTimeout(hideLoader, LOADER_MIN_MS - elapsed);
+  } else {
+    hideLoader();
   }
-  
-  set_active();
-  set_nav_toggle();
-  $(allInView);
-  window.addEventListener('scroll', allInView);
+
+  bindReadMoreAnimations();
+  setActiveNav();
+  bindNavToggle();
+  updateScrollHighlights();
+  window.addEventListener('scroll', updateScrollHighlights);
 });

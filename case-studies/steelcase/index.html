@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZDZMHT5ESP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-ZDZMHT5ESP");
+</script>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Steelcase Configurator — Case Study · Deepa Bharadwaj</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: oklch(0.98 0.004 80);
+    --bg-2: oklch(0.955 0.005 80);
+    --ink: oklch(0.18 0.008 80);
+    --ink-2: oklch(0.40 0.008 80);
+    --ink-3: oklch(0.62 0.006 80);
+    --line: oklch(0.88 0.006 80);
+    --accent: oklch(0.58 0.14 45);
+    --accent-soft: oklch(0.92 0.04 60);
+    --sans: "Inter Tight", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --serif: "Instrument Serif", "Times New Roman", serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  body{font-size:16px;line-height:1.5;font-weight:400;letter-spacing:-0.01em;overflow-x:hidden;}
+  a{color:inherit;text-decoration:none;}
+  img,svg,video{display:block;max-width:100%;}
+  ::selection{background:var(--ink);color:var(--bg);}
+
+  .mono{font-family:var(--mono);font-size:11px;letter-spacing:0.02em;text-transform:uppercase;color:var(--ink-2);font-weight:400;}
+  .container{max-width:1440px;margin:0 auto;padding:0 32px;}
+  .container-tight{max-width:880px;margin:0 auto;padding:0 32px;}
+  @media(max-width:640px){.container,.container-tight{padding:0 20px;}}
+
+  /* ============== NAV ============== */
+  nav.top{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+    background:color-mix(in srgb, var(--bg) 75%, transparent);
+    border-bottom:1px solid transparent;transition:border-color .3s ease;
+  }
+  nav.top.scrolled{border-bottom-color:var(--line);}
+  nav.top .row{display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:500;letter-spacing:-0.02em;font-size:15px;}
+  .brand-mark{width:26px;height:26px;border-radius:50%;background:var(--bg) url('/img/logo-mark.png') center/cover no-repeat;overflow:hidden;}
+  .nav-links{display:flex;gap:36px;align-items:center;}
+  .nav-links a{font-size:14px;color:var(--ink-2);transition:color .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a .num{font-family:var(--mono);font-size:10px;color:var(--ink-3);margin-right:6px;vertical-align:1px;}
+  .nav-cta{
+    display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;
+    background:var(--ink);color:var(--bg);font-size:13px;font-weight:500;
+    transition:transform .2s, background .2s;
+  }
+  .nav-cta:hover{transform:translateY(-1px);background:var(--accent);}
+  .nav-cta .arrow{font-family:var(--mono);font-size:12px;}
+  @media(max-width:780px){.nav-links{display:none;}}
+
+  /* ============== HERO ============== */
+  .hero{padding:140px 0 64px;}
+  .crumb{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:48px;}
+  .crumb a{color:var(--ink-2);transition:color .2s;}
+  .crumb a:hover{color:var(--accent);}
+  .crumb .sep{opacity:.5;}
+
+  .hero-head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;margin-bottom:64px;}
+  .hero-head .label{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+  .hero-head .label::before{content:"";width:24px;height:1px;background:currentColor;}
+  .hero h1{
+    font-weight:300;font-size:clamp(40px,7.5vw,108px);line-height:0.94;letter-spacing:-0.045em;
+  }
+  .hero h1 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
+  .hero h1 .accent{color:var(--accent);}
+  .hero-head .lede{font-size:19px;line-height:1.45;color:var(--ink-2);max-width:480px;letter-spacing:-0.01em;margin-top:32px;}
+  .hero-head .lede em{font-family:var(--serif);font-style:italic;color:var(--ink);font-weight:400;font-size:1.08em;}
+  @media(max-width:880px){.hero-head{grid-template-columns:1fr;gap:24px;}}
+
+  /* hero visual */
+  .hero-visual{
+    aspect-ratio:4/3;border-radius:18px;overflow:hidden;position:relative;
+    background:linear-gradient(135deg, var(--accent-soft), var(--bg-2));
+    border:1px solid var(--line);
+  }
+  .hero-visual img.real{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  }
+  .hero-visual .corner{position:absolute;font-family:var(--mono);font-size:10px;color:var(--ink-2);background:color-mix(in srgb, var(--bg) 86%, transparent);padding:5px 8px;border-radius:4px;letter-spacing:0.04em;text-transform:uppercase;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);}
+  .hero-visual .c-tl{top:18px;left:18px;}
+  .hero-visual .c-tr{top:18px;right:18px;}
+  .hero-visual .c-bl{bottom:18px;left:18px;}
+  .hero-visual .c-br{bottom:18px;right:18px;}
+
+  /* ============== META STRIP ============== */
+  .meta-strip{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:64px 0;
+  }
+  .meta-cell{background:var(--bg);padding:24px 24px;display:flex;flex-direction:column;gap:8px;}
+  .meta-cell .k{font-family:var(--mono);font-size:10px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.06em;}
+  .meta-cell .v{font-size:16px;color:var(--ink);letter-spacing:-0.01em;line-height:1.35;}
+  @media(max-width:780px){.meta-strip{grid-template-columns:repeat(2,1fr);}}
+
+  /* ============== SECTION ============== */
+  section.case{padding:64px 0;}
+  .sec-row{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:start;}
+  .sec-row .sec-label{position:sticky;top:96px;}
+  .sec-row .sec-label .num{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:0.04em;text-transform:uppercase;display:block;margin-bottom:8px;}
+  .sec-row .sec-label h2{font-size:32px;font-weight:300;letter-spacing:-0.03em;line-height:1.05;}
+  .sec-row .sec-label h2 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
+  .sec-body p{font-size:19px;line-height:1.55;color:var(--ink-2);max-width:640px;letter-spacing:-0.01em;margin-bottom:20px;}
+  .sec-body p strong{color:var(--ink);font-weight:500;}
+  .sec-body p em{font-family:var(--serif);font-style:italic;color:var(--ink);font-weight:400;font-size:1.06em;}
+  .sec-body .pull{
+    font-family:var(--serif);font-style:italic;font-weight:400;
+    font-size:clamp(28px,3.4vw,42px);line-height:1.15;letter-spacing:-0.02em;
+    color:var(--ink);max-width:760px;margin:32px 0;
+  }
+  .sec-body .pull::before{content:"\201C";color:var(--accent);margin-right:4px;}
+  .sec-body .pull::after{content:"\201D";color:var(--accent);margin-left:2px;}
+  @media(max-width:880px){.sec-row{grid-template-columns:1fr;gap:24px;}.sec-row .sec-label{position:static;}}
+
+  hr.div{border:none;border-top:1px solid var(--line);margin:0;}
+
+  /* impact tiles */
+  .tile-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:24px;}
+  .tile{background:var(--bg);padding:32px 24px;display:flex;flex-direction:column;gap:12px;min-height:180px;position:relative;}
+  .tile .num{font-family:var(--mono);font-size:10px;color:var(--ink-3);position:absolute;top:20px;right:20px;letter-spacing:0.04em;}
+  .tile .big{font-size:48px;font-weight:300;letter-spacing:-0.035em;color:var(--ink);}
+  .tile .big .serif{font-family:var(--serif);font-style:italic;}
+  .tile .big .accent{color:var(--accent);}
+  .tile .lab{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;margin-top:auto;}
+  .tile .desc{font-size:14px;color:var(--ink-2);line-height:1.45;}
+  @media(max-width:780px){.tile-grid{grid-template-columns:1fr;}}
+
+  /* solution figure (real image) */
+  .figure{
+    border-radius:18px;overflow:hidden;border:1px solid var(--line);
+    background:var(--bg-2);position:relative;
+    aspect-ratio:16/10;
+  }
+  .figure img.real{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  }
+  .figure .label{
+    position:absolute;left:20px;top:20px;z-index:1;
+    font-family:var(--mono);font-size:11px;color:var(--ink-2);
+    background:color-mix(in srgb, var(--bg) 88%, transparent);padding:6px 10px;border-radius:6px;
+    text-transform:uppercase;letter-spacing:0.04em;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  }
+  .figure-caption{
+    font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;
+    margin-top:14px;display:flex;justify-content:space-between;
+  }
+
+  /* video block */
+  .video-block{
+    aspect-ratio:16/9;border-radius:18px;overflow:hidden;border:1px solid var(--line);
+    background:var(--ink);color:var(--bg);position:relative;
+  }
+  .video-block video{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  }
+  .video-block .meta{
+    position:absolute;left:24px;bottom:24px;z-index:1;
+    font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.04em;
+    color:var(--bg);background:color-mix(in srgb, var(--ink) 50%, transparent);padding:6px 10px;border-radius:6px;
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  }
+
+  .confidential-card{
+    margin-top:32px;padding:24px;border:1px dashed var(--line);border-radius:14px;
+    display:flex;gap:16px;align-items:flex-start;background:var(--bg-2);
+  }
+  .confidential-card .ico{width:32px;height:32px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;flex-shrink:0;}
+  .confidential-card p{margin:0;font-size:15px;color:var(--ink-2);line-height:1.5;}
+  .confidential-card a{color:var(--accent);border-bottom:1px solid var(--accent);}
+
+  /* roadmap */
+  .roadmap{margin-top:24px;display:flex;flex-direction:column;}
+  .road-step{
+    display:grid;grid-template-columns:64px 1fr;gap:24px;align-items:start;
+    padding:24px 0;border-top:1px solid var(--line);
+  }
+  .road-step:last-child{border-bottom:1px solid var(--line);}
+  .road-step .idx{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:0.04em;padding-top:6px;}
+  .road-step h4{font-size:20px;font-weight:400;letter-spacing:-0.015em;margin-bottom:6px;}
+  .road-step p{font-size:15px;color:var(--ink-2);line-height:1.5;margin:0;max-width:560px;}
+
+  /* ============== NEXT CASE ============== */
+  .next{padding:96px 0 64px;}
+  .next-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:32px;flex-wrap:wrap;gap:16px;}
+  .next-head h3{font-size:clamp(28px,4vw,48px);font-weight:300;letter-spacing:-0.03em;}
+  .next-head h3 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
+  .next-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .next-card{
+    background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:24px;
+    display:flex;flex-direction:column;gap:14px;min-height:240px;
+    transition:transform .3s, background .3s;
+  }
+  .next-card:hover{transform:translateY(-4px);background:var(--bg);}
+  .next-card .nc-meta{font-family:var(--mono);font-size:10px;text-transform:uppercase;color:var(--ink-3);letter-spacing:0.04em;}
+  .next-card h4{font-size:22px;font-weight:400;letter-spacing:-0.02em;line-height:1.15;margin-top:auto;}
+  .next-card p{font-size:14px;color:var(--ink-2);line-height:1.45;}
+  .next-card .go{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--ink);letter-spacing:0.04em;}
+  @media(max-width:880px){.next-grid{grid-template-columns:1fr;}}
+
+  /* ============== CTA / FOOTER ============== */
+  .cta{
+    background:var(--ink);color:var(--bg);border-radius:24px;
+    padding:80px 48px;margin:64px 32px;position:relative;overflow:hidden;
+  }
+  .cta-inner{max-width:1440px;margin:0 auto;}
+  .cta .ml{font-family:var(--mono);font-size:11px;text-transform:uppercase;color:color-mix(in srgb, var(--bg) 60%, transparent);letter-spacing:0.06em;margin-bottom:32px;display:flex;align-items:center;gap:10px;}
+  .cta .ml::before{content:"";width:24px;height:1px;background:currentColor;}
+  .cta h2{font-size:clamp(40px,6vw,88px);font-weight:300;line-height:0.96;letter-spacing:-0.04em;}
+  .cta h2 .serif{font-family:var(--serif);font-style:italic;font-weight:400;}
+  .cta h2 .accent{color:var(--accent);}
+  .cta-row{display:flex;justify-content:space-between;align-items:flex-end;margin-top:48px;flex-wrap:wrap;gap:24px;}
+  .cta-mail{font-size:22px;display:inline-flex;align-items:center;gap:14px;padding-bottom:6px;border-bottom:1px solid color-mix(in srgb, var(--bg) 30%, transparent);transition:color .25s, border-color .25s;}
+  .cta-mail:hover{color:var(--accent);border-bottom-color:var(--accent);}
+  .cta-blob{position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle at 30% 30%, var(--accent), transparent 65%);opacity:.45;filter:blur(20px);pointer-events:none;}
+  @media(max-width:640px){.cta{padding:48px 28px;margin:48px 16px;}}
+
+  footer{padding:48px 0 32px;border-top:1px solid var(--line);}
+  .foot-row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+  .foot-row .colophon{font-family:var(--mono);font-size:11px;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;}
+  .foot-links{display:flex;gap:24px;}
+  .foot-links a{font-size:13px;color:var(--ink-2);transition:color .2s;}
+  .foot-links a:hover{color:var(--ink);}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(20px);transition:opacity .8s ease, transform .8s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  /* progress bar */
+  .progress{position:fixed;left:0;top:0;height:2px;background:var(--accent);width:0%;z-index:60;transition:width .1s linear;}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- NAV -->
+<nav class="top" id="topnav">
+  <div class="container row">
+    <a class="brand" href="../../index.html">
+      <span class="brand-mark"></span>
+      <span>Deepa Bharadwaj</span>
+    </a>
+    <div class="nav-links">
+      <a href="../../index.html#work"><span class="num">01</span>Work</a>
+      <a href="../../index.html#about"><span class="num">02</span>About</a>
+      <a href="../../index.html#contact"><span class="num">03</span>Contact</a>
+    </div>
+    <a class="nav-cta" href="../../index.html">
+      <span class="arrow">←</span>
+      Back to index
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="crumb reveal">
+      <a href="../../index.html">Index</a>
+      <span class="sep">/</span>
+      <a href="../../index.html#work">Selected Work</a>
+      <span class="sep">/</span>
+      <span>Steelcase</span>
+    </div>
+
+    <div class="hero-head">
+      <div class="reveal">
+        <div class="label">[ Case Study · 04 / 06 ]</div>
+        <h1>
+          A 3D <span class="serif">configurator</span><br>
+          driven by <span class="accent">generative AI</span><br>
+          design.
+        </h1>
+        <p class="lede">
+          A web-based configuration engine driven by <em>generative design</em> and data models — letting users reshape complex 3D product models in seconds, not hours. Built with a 22-person cross-functional team at Steelcase's Digital Innovation Lab.
+        </p>
+      </div>
+      <div class="hero-visual reveal">
+        <img class="real" src="img/heroimgmockup_desktop.jpg" alt="Steelcase Configurator hero" />
+        <span class="corner c-tl">[ FIG.01 ]</span>
+        <span class="corner c-tr">CONFIDENTIAL · BETA</span>
+        <span class="corner c-bl">STEELCASE / NEXT-GEN PV</span>
+        <span class="corner c-br">2021 → 2024</span>
+      </div>
+    </div>
+
+    <div class="meta-strip reveal">
+      <div class="meta-cell">
+        <span class="k">Role</span>
+        <span class="v">Lead Product Strategy &amp; UX</span>
+      </div>
+      <div class="meta-cell">
+        <span class="k">Duration</span>
+        <span class="v">2021 → 2024</span>
+      </div>
+      <div class="meta-cell">
+        <span class="k">Team</span>
+        <span class="v">3 Engineers · Exec sponsor · Biz Dev · Generative-design agency</span>
+      </div>
+      <div class="meta-cell">
+        <span class="k">Status</span>
+        <span class="v">Beta launched · 300+ pilot users · Handoff to IT</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PROBLEM -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">01 · Problem</span>
+        <h2>Complexity was costing <span class="serif">deals.</span></h2>
+      </div>
+      <div class="sec-body">
+        <p>Users spent enormous amounts of time navigating the complexity of <strong>Steelcase's product portfolio</strong> and customizing 3D models per their customer's requests.</p>
+        <p>Ease of doing business is key to retaining customers — and the existing platform was frustrating enough that the company was losing projects to it.</p>
+        <p class="pull">If we couldn't make customization fast, we'd keep losing deals to teams that already had.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- SOLUTION -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">02 · Solution</span>
+        <h2>Next-gen <span class="serif">product</span> visualization.</h2>
+      </div>
+      <div class="sec-body">
+        <p>Under the theme of <em>Next-Gen Product Visualization</em>, we asked: could we build an experience where a sales rep, dealer, or customer could find a product and customize it directly in the browser — no installs, no specialists, no back-and-forth?</p>
+        <p>The answer became a <strong>web-based configurator</strong> powered by a generative-design engine. Pick a product, change the variables that matter — height, finish, fabric, footprint — and watch the 3D model regenerate in real time.</p>
+
+        <div class="figure" style="margin-top:32px;">
+          <img class="real" src="img/scimg-min.jpeg" alt="Steelcase Configurator interface" />
+          <span class="label">[ Solution · Configurator UI ]</span>
+        </div>
+        <div class="figure-caption">
+          <span>FIG.02 — Configurator interface, beta build</span>
+          <span>SC / DIL · 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- IMPACT -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">03 · Impact</span>
+        <h2>From research to <span class="serif">revenue.</span></h2>
+      </div>
+      <div class="sec-body">
+        <p>The tool was envisioned from <strong>market research and business goals</strong>, validated through a pilot, and tracked all the way to revenue impact.</p>
+        <div class="tile-grid">
+          <div class="tile">
+            <span class="num">01</span>
+            <div class="big">$100M<span class="accent">+</span></div>
+            <div class="desc">Revenue impact attributed to faster, more accurate configurations across the sales pipeline.</div>
+            <span class="lab">Revenue / Pipeline</span>
+          </div>
+          <div class="tile">
+            <span class="num">02</span>
+            <div class="big">300<span class="serif">+</span></div>
+            <div class="desc">Pilot users tested the beta and validated high desirability across sales, dealer, and customer roles.</div>
+            <span class="lab">Pilot Users</span>
+          </div>
+          <div class="tile">
+            <span class="num">03</span>
+            <div class="big">22</div>
+            <div class="desc">A cross-functional team — engineering, business development, marketing, generative-design partners — coordinated end-to-end.</div>
+            <span class="lab">Team Members</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- PROCESS / VIDEO -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">04 · Walkthrough</span>
+        <h2>The tool, in <span class="serif">motion.</span></h2>
+      </div>
+      <div class="sec-body">
+        <div class="video-block" id="videoblock">
+          <video src="img/configurator_video.mp4" autoplay muted loop playsinline controls preload="metadata"></video>
+          <span class="meta">Configurator walkthrough · Confidential</span>
+        </div>
+
+        <div class="confidential-card">
+          <span class="ico">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l5 2v4c0 3-2.5 5-5 6-2.5-1-5-3-5-6V3l5-2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          </span>
+          <p>The nature of this project is <strong>confidential</strong> — we are still scaling the experience and operating it in beta. Please <a href="mailto:deepabh@stanford.edu">reach out</a> for a walkthrough or further detail.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="div" />
+
+<!-- ROADMAP -->
+<section class="case">
+  <div class="container">
+    <div class="sec-row reveal">
+      <div class="sec-label">
+        <span class="num">05 · Roadmap</span>
+        <h2>What comes <span class="serif">next.</span></h2>
+      </div>
+      <div class="sec-body">
+        <p>With high desirability proven through the pilot, the team is in active handoff to IT peers. The next horizons:</p>
+        <div class="roadmap">
+          <div class="road-step">
+            <span class="idx">→ 01</span>
+            <div>
+              <h4>Scale the experience</h4>
+              <p>Identify the key processes and roles required to operate the configurator at full scale across regions.</p>
+            </div>
+          </div>
+          <div class="road-step">
+            <span class="idx">→ 02</span>
+            <div>
+              <h4>Gate beta access</h4>
+              <p>Limit access during beta through user-authentication technology so feedback stays high-signal.</p>
+            </div>
+          </div>
+          <div class="road-step">
+            <span class="idx">→ 03</span>
+            <div>
+              <h4>Brand integration</h4>
+              <p>Integrate Steelcase's visual design system end-to-end through collaboration with the BrandComm team.</p>
+            </div>
+          </div>
+          <div class="road-step">
+            <span class="idx">→ 04</span>
+            <div>
+              <h4>Extend the engine</h4>
+              <p>After this version launches, branch a second experience that leverages the configurator engine in a new context.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT CASES -->
+<section class="next">
+  <div class="container">
+    <div class="next-head reveal">
+      <h3>Keep <span class="serif">reading.</span></h3>
+      <span class="mono">[ Related Work · 03 ]</span>
+    </div>
+    <div class="next-grid reveal">
+      <a class="next-card" href="https://www.proxyrobotics.ai" target="_blank" rel="noopener">
+        <span class="nc-meta">→ Co-founder · 2025</span>
+        <p>Deployment infrastructure for the robotics industry — an end-to-end teleoperation stack across embodiments.</p>
+        <h4>Proxy Robotics</h4>
+        <span class="go">Read case <span style="font-family:var(--mono);">↗</span></span>
+      </a>
+      <a class="next-card" href="../../index.html#work">
+        <span class="nc-meta">→ Product Manager · 2025</span>
+        <p>Tooling that streamlined the setup, deployment, and scaling of physical robotic workcells for industrial customers.</p>
+        <h4>Intrinsic (Google X Robotics)</h4>
+        <span class="go">Read case <span style="font-family:var(--mono);">↗</span></span>
+      </a>
+      <a class="next-card" href="../../index.html#work">
+        <span class="nc-meta">→ UX Designer · 2020</span>
+        <p>Personalization and social features for a streaming service used by hundreds of millions of viewers.</p>
+        <h4>Amazon Prime Video</h4>
+        <span class="go">Read case <span style="font-family:var(--mono);">↗</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-blob"></div>
+  <div class="cta-inner">
+    <div class="ml">[ Get in touch ]</div>
+    <h2>
+      Want the <span class="serif">full</span><br>
+      walkthrough?
+    </h2>
+    <div class="cta-row">
+      <a class="cta-mail" href="mailto:deepabh@stanford.edu">
+        deepabh@stanford.edu
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 11L11 3M11 3H5M11 3v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a class="cta-mail" href="../../index.html" style="font-family:var(--mono);font-size:13px;text-transform:uppercase;letter-spacing:0.04em;">
+        ← Back to all work
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot-row">
+    <span class="colophon">© 2026 Deepa Bharadwaj</span>
+    <div class="foot-links">
+      <a href="https://www.linkedin.com/in/deepa-bharadwaj/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="#">Résumé (PDF)</a>
+      <a href="#">Read.cv</a>
+      <a href="../../index.html">Index ↑</a>
+    </div>
+    <span class="colophon">Case 04 / 06 · Steelcase</span>
+  </div>
+</footer>
+
+<script>
+  // sticky nav border + progress bar
+  const nav = document.getElementById('topnav');
+  const prog = document.getElementById('progress');
+  const onScroll = () => {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+    const h = document.documentElement;
+    const total = h.scrollHeight - h.clientHeight;
+    prog.style.width = Math.min(100, (window.scrollY / total) * 100) + '%';
+  };
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.08, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // smooth scroll for in-page links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (ev) => {
+      const id = a.getAttribute('href');
+      if (id.length < 2) return;
+      const el = document.querySelector(id);
+      if (el) { ev.preventDefault(); window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 60, behavior:'smooth'}); }
+    });
+  });
+</script>
+
+</body>
+</html>

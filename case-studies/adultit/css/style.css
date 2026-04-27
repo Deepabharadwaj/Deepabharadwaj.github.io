@@ -1,4 +1,4 @@
+/* Project-specific overrides for the Adult-it case study. */
 .sticky-hero__media {
-    background: url('../img/heroimgmockup.jpg') no-repeat center center;
-    background-size: cover;
+  background-image: url('../img/heroimgmockup.jpg');
 }
